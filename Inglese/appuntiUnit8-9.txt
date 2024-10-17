@@ -14,11 +14,12 @@ Used to,be use to,get used to:
 
 		Esempio: I'm getting used to work in my new office
 
+
 Grammatica Unit 9
 
 2nd Conditional
 
-È il corrispondente inglese del periodo ipotetico della possibilità in italiano.La struttura è la seguente:
+È il corrispondente inglese del periodo ipotetico della possibilità immaginaria in italiano.La struttura è la seguente:
 
 	if + Past simple + soggetto + would + forma base
 		
@@ -26,4 +27,119 @@ Grammatica Unit 9
 
 1st Conditional vs 2nd Conditional
 
-Mentre il 2nd Conditional abbiamo visto che si usa 
+Mentre il 2nd Conditional abbiamo visto che si usa per il periodo ipotetico della possibilità immaginaria, il 1st Conditional si usa per una possibilità reale futura
+		|													|
+		v													v
+		If I won the lottery,I would travel the world								If it rains tomorrow, I'll pick up the umbrella
+
+
+If I were you
+
+È un espressione usata per fare riferimento a situazioni nelle quali ci si immedesima nella persona con la quale si sta parlando
+
+	Esempio: If I were you, I would talk to her
+
+Wish + Past Simple
+
+Si usa per esprimere un desiderio per il presente per dire che uno vorrebbe che le cose fossero diverse da come sono in realtà
+
+	Esempio: I wish I was born rich
+
+(On) my own
+
+	.My own: Si usa per rafforzare l'idea di possesso esclusivo di un oggetto
+
+		Esempio: I wish I had my own laptop
+	
+        .On my own: Si usa per esprimere un azione avvenuta in totale autonomia, fatta da soli senza l'aiuto di nessuno
+
+		Esempio: I made this draw on my own
+
+
+Lessico Unit 8-9
+
+Universitario:
+	degree: Laurea
+	finals: Esami finali
+	graduate: Laurearsi/Laureato
+	grant: Borsa di studio
+	hall of residence: Residenza studentesca 
+	higher education: Università
+	lecture: Lezioni
+	lecturer: Professori
+	term/semester: Semestre
+	tuition fees: Tasse
+	tutorial: Lezione ma con meno studenti
+	undergraduate: Non laureato
+
+British vs American english:
+	autumn/fall
+	bill/check
+	biscuit/cookies
+	chips/fries
+	city centre/downtown
+	crisps/potato chips
+	flat/apartment
+	football/soccer
+	holiday/vacation
+	lift/elevator
+	lorry/truck
+	(mobile) phone/cell phone
+	pants/underpants
+	pavement/sidewalk
+	return(ticket)/round trip(ticket)
+	rubbish/garbage
+	toilet/bathroom
+	trainers/sneakers
+	trousers/pants
+	underground/subway
+
+Phrasal verbs:
+	break down: Guastarsi
+	bring up: Menzionare
+	carry on: Continuare
+	come across: Imbattersi
+	find out: Scoprire
+	get away with: Cavarsela
+	get down to: Applicarsi
+	get over: Riuscire ad andare avanti
+	keep quiet: Stare in silenzio
+	look through: Sbirciare
+	make up: Inventare
+	mess around: Scherzare
+	pass on: Dare dopo l'uso
+	pick up: Andare a prendere
+	point out: Indicare
+	sort out: Risolvere
+	stay over: Fermarsi a dormire
+	turn out: Giungere a conclusioni
+
+Personality:
+	arrogant: Arrogante
+	cheerful: Allegro
+	disloyal: Disonorevole
+	easy-going: Alla mano
+	fussy: Schizzinoso
+	hard-working: Laborioso
+	insensitive: Insensibile
+	lazy: Pigro
+	loyal: Onesto
+	miserable: Triste
+	modest: Modesto
+	moody: Lunatico
+	nosy: Ficcanaso
+	outgoing: Estroverso	
+	polite: Educato
+	reliable: Affidabile
+	reserved: Riservato
+	rude: Scortese
+	sarcastic: Sarcastico
+	selfish: Egoista
+	sensible: Ignavo
+	sensitive: Empatico
+	silly: Sciocco
+	snooty: Altezzoso
+	stingy: Avaro
+	stubborn: Testardo
+	unreliable: Inaffidabile
+		
