@@ -1,0 +1,8 @@
+/*Guarino Andrea 4BI boxCenter.css*/
+
+/*centra tutti gli elementi della classe box all'interno della pagina*/
+.box{    
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;		
+		}

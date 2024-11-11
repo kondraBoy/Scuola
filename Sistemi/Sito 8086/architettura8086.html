@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+	<!--Guarino Andrea 4BI architettura8086.html-->
+    <title>Intel 8086: Architettura</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css/index.css">
+	<link rel="stylesheet" type="text/css" href="Css/boxCenter.css">
+</head>
+<body>
+    <header>
+        <h1>Intel 8086: Architettura</h1>
+    </header>
+	<a class="home" href="intel.html">Torna alla macro area</a>
+    <br>
+	<br>
+	<div class="box">
+		<h2>Struttura Generale</h2>
+		<p class="paragrafo">L'Intel 8086 è un microprocessore a 16 bit, il che significa che il bus di dati può trasferire 16 bit (2 byte) di dati simultaneamente. Questo permette di gestire un numero maggiore di dati rispetto ai processori a 8 bit, migliorando le prestazioni complessive e la capacità di elaborazione.</p>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Bus dati e Bus indirizzi</h2>
+		<ul>
+			<li><p class="paragrafo"><strong>Bus dati</strong>: Consente il trasferimento di dati tra il microprocessore, la memoria e le periferiche. Poiché il bus di dati è di 16 bit, il processore può trasferire due byte di dati in un'unica operazione.</p></li>
+			<li><p class="paragrafo"><strong>Bus degli indirizzi</strong>: Il 8086 utilizza un bus di indirizzi a 20 bit, permettendo di indirizzare fino a 1 MB di memoria (2^20 = 1.048.576 byte). Anche se il processore è a 16 bit, può accedere a una quantità di memoria superiore grazie all'architettura segmentata.</p></li>
+		</ul>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>I registri</h2>
+		<p class="paragrafo">I registri sono piccole quantità di memoria all'interno di un microprocessore utilizzate per memorizzare temporaneamente dati e istruzioni durante l'esecuzione di programmi. I registri sono fondamentali per il funzionamento del processore, poiché consentono l'accesso rapido a informazioni e operandi senza dover accedere alla memoria principale (RAM)</p>
+		<p class="paragrafo">I registri si dividono in base al tipo di utilizzi in base al tipo di utilizzo</p>
+		<ul>
+			<li><p class="paragrafo"><strong>Registri Generali</strong>: Utilizzati per operazioni aritmetiche, logiche e per l'indirizzamento dei dati.</p></li>
+			<li><p class="paragrafo"><strong>Registri di Segmento</strong>: Utilizzati per gestire la memoria segmentata, indicando l'inizio di segmenti specifici di memoria.</p></li>
+			<li><p class="paragrafo"><strong>Registro di Istruzione</strong>: Contiene l'indirizzo della prossima istruzione da eseguire.</p></li>
+			<li><p class="paragrafo"><strong>Registri di Flag</strong>: Contengono informazioni sullo stato dell'ultima operazione eseguita e influenzano il flusso delle istruzioni.</p></li>
+		</ul>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Architettura della memoria</h2>
+		<ul>	
+			<li><p class="paragrafo"><strong>Memoria Segmentata</strong>: La memoria è divisa in segmenti di massimo 64 KB. Ogni registro di segmento punta all'inizio di un segmento, e l'offset viene utilizzato per accedere a una posizione specifica all'interno di quel segmento.</p></li>
+			<li><p class="paragrafo"><strong>Indirizzamento</strong>: L'indirizzamento avviene combinando il valore del registro di segmento e un offset, consentendo al processore di accedere fino a 1 MB di memoria utilizzando la formula:</p></li>
+		</ul>
+		<p class="paragrafo"><i>Indirizzo fisico = (Segmento &times; 16) + Offset</i></p>
+   	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2> Unità di Controllo e Unità Aritmetico-Logica (ALU)</h2>
+		<ul>	
+			<li><p class="paragrafo"><strong>Unità di Controllo</strong>: Coordina l'esecuzione delle istruzioni e gestisce il flusso di dati tra i vari componenti del processore.</p></li>
+			<li><p class="paragrafo"><strong>ALU</strong>: Effettua operazioni aritmetiche e logiche, come somma, sottrazione e operazioni logiche bit a bit.</p></li>
+		</ul>
+   	</div>
+	<br>
+	<br>
+    <footer>
+        <p>&copy; Guarino Andrea, Intel 8086 &amp; Assembly</p>
+    </footer>
+</body>
+</html>

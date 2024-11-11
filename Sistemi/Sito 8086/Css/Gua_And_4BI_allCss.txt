@@ -1,0 +1,134 @@
+/*Guarino Andrea 4BI index.css*/
+
+body {
+    /* Imposta il font predefinito e rimuove margini e padding di default del body */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Colore di sfondo dell'intera pagina */
+    background-color: #f4f4f4;
+}
+
+header {
+    /* Imposta il colore di sfondo per l'header e il testo bianco */
+    background-color: #333;
+    color: #fff;
+    /* Centra il testo orizzontalmente */
+    text-align: center;
+    /* Aggiunge padding intorno all'header */
+    padding: 8px;
+}
+
+h1 {
+    /* Rimuove i margini predefiniti dal titolo h1 */
+    margin: 0;
+}
+
+.paragrafo {
+    /* Centra il testo del paragrafo orizzontalmente */
+    text-align: center;
+	text-align: justify;
+    /* Aggiunge uno spazio interno al paragrafo */
+    padding: 16px;
+}
+
+.pulsanti {
+    display: flex;
+    /* Permette di andare a capo quando necessario */
+	flex-wrap: wrap; 
+    justify-content: space-around;
+    padding: 16px;
+}
+
+.box {
+    /* Imposta uno sfondo bianco per ogni box */
+    background-color: #fff;
+    /* Aggiunge bordi arrotondati agli angoli */
+    border-radius: 10px;
+    /* Spazio interno per il contenuto della box */
+    padding: 16px;
+    /* Aggiunge un'ombra leggera intorno alle box per creare effetto 3D */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Centra il testo all'interno della box */
+    text-align: center;
+    /* Imposta la larghezza delle box al 45% del contenitore */
+    width: 45%;
+}
+
+
+h2 {
+    /* Aggiunge uno spazio inferiore sotto l'elemento h2 */
+    margin-bottom: 1em;
+}
+
+a {
+    /* Definisce il link come un elemento inline-block per permettere padding */
+    display: inline-block;
+    /* Aggiunge padding interno al link */
+    padding: 8px 16px;
+    /* Colore di sfondo del link (blu) */
+    background-color: #007bff;
+    /* Colore del testo del link (bianco) */
+    color: #fff;
+    /* Arrotonda leggermente i bordi del link */
+    border-radius: 5px;
+}
+
+a:hover {
+    /* Cambia il colore di sfondo del link quando viene passato il mouse sopra */
+    background-color: #0056b3;
+}
+
+footer {
+    /* Imposta lo stesso stile dell'header con colore di sfondo scuro e testo bianco */
+    background-color: #333;
+    color: #fff;
+    /* Centra il testo nel footer */
+    text-align: center;
+    /* Aggiunge padding interno */
+    padding: 8px;
+    /* Posiziona il footer fisso in fondo alla pagina */
+    position: relative;
+    bottom: 0;
+    /* Fa in modo che il footer occupi l'intera larghezza della finestra */
+    width: 100%;
+}
+
+.img{
+	/*sposta le immagini a destra rispetto al foglio html*/
+	position:relative; 
+	left:800px; 
+	bottom:250px;
+}
+--------------------------------------------
+/*Guarino Andrea 4BI boxCenter.css*/
+
+/*centra tutti gli elementi della classe box all'interno della pagina*/
+.box{    
+			position:relative;
+			margin-left:auto;
+			margin-right:auto;		
+		}
+--------------------------------------------
+/*Guarino Andrea 4BI table.css*/
+
+/*Fornisce lo stile da adottare per tutte le tabelle della pagina*/
+
+table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		th, td {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		tr{
+			background-color: #f9f9f9;
+		}

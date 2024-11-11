@@ -1,0 +1,80 @@
+Linguaggio di programmazione orientato agli oggetti ed agli eventi,utilizzato nella programmazione lato client (esteso poi anche al lato server) per la creazione, in siti web e applicazioni web, di effetti dinamici interattivi.
+Permette di definire dei componenti detti oggetti che hanno uno stato ed un comportamento simile tra di loro durante tutto il programma.
+Nei programmi scritti utilizzando la tecnica a eventi il flusso del programma è largamente determinato dal verificarsi di eventi esterni.
+Con il termine lato client si indicano le operazioni di elaborazione effettuate da un client in un architettura Client-Server.
+JavaScript viene letto e interpretato dal browser direttamente sulla macchina dell'utente
+
+in HTML 5 per indicare del codice JS si usa il tag <script></script> si mette nel body
+
+Si possono usare funzioni senza nome
+
+
+<p id="pippo"><p> 
+
+
+pippo.onclick = function(){
+	pluto.innerHTML = "WOW"; //innerHTML in questo caso è l'attributo della classe paragrafo che lavora con il contenuto interno 					   dell'oggetto
+
+};
+
+{} blocco di istruzioni
+; fine di un istruzione (C-like)
+Function definisce una funzione
+
+onclick: evento scaturito al click del mouse
+
+pippo e pluto: 2 oggetti che identificano il paragrafo
+
+alert("Lollo");
+//comando standard javascript che ricevuto come parametro un messaggio fa spuntare un messaggio pop-up il visitatore dovrà premere OK.È
+//un metodo statico che fa riferimento all'oggetto finestra del browser che è sottointeso
+
+Il testo va sempre riportato come "" o '' ed indica delle stringhe
+
+È case sensitive, quindi c'è differenza tra maiuscole e minuscole
+
+document.write("testo");
+//write è il metodo del document("pagina nel quale viene eseguito") dicendo che ciò che viene indicato tra parantesi deve essere scritto //nel documento
+
+.getElementById();
+//È un metodo che permette di scegliere un id, lo cerca e poi ne modifica le caratteristiche le caratteristiche
+
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+Esempio di script che permette di accendere e spegnere una lampadina
+
+<!DOCTYPE html>
+<html>
+	<head>
+    	<script>
+        	function accendiSpegni(stato){
+              if(stato==true)
+                  document.getElementById('myImage').src='pic_bulbon.gif';
+              else
+                  document.getElementById('myImage').src='pic_bulboff.gif';
+            }
+        </script>
+    </head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="accendiSpegni(true)" >Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="accendiSpegni(false)">Turn off the light</button>
+
+</body>
+</html>
+
+
+Per dichiarare una variabile si possono dichiarare in quattro modi:
+	automaticamente (da non usare)
+	var (da non usare)
+	let
+	const (dichiari una costante)

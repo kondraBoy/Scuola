@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Guarino Andrea 4BI interruptAss.html -->
+    <title>Assembly: Interrupt INT 21h</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css/index.css">
+    <link rel="stylesheet" type="text/css" href="Css/boxCenter.css">
+</head>
+<body>
+    <header>
+        <h1>Interrupt DOS - INT 21h</h1>
+    </header>
+    <a class="home" href="assembly.html">Torna alla macro area</a>
+    <br>
+    <br>
+	<p class="paragrafo">Un interrupt è un segnale che interrompe il flusso normale di esecuzione di un programma per richiamare una funzione specifica o un'operazione di sistema. È uno dei principali meccanismi utilizzati dai processori per gestire eventi esterni o interni che richiedono attenzione immediata. Gli interrupt permettono al sistema di rispondere a eventi come input/output, errori hardware, o operazioni temporizzate senza dover attendere che il programma principale li gestisca direttamente.</p>
+    <br>
+	<br>
+	<div class="box">
+        <h2>Funzione 01h - Leggere un Carattere da Input Standard</h2>
+        <p class="paragrafo">
+            La funzione 01h dell'interrupt <code>INT 21h</code> legge un carattere da input standard (di solito la tastiera).
+            Il carattere letto viene restituito nel registro <code>AL</code>.
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AH, 01h   ; Funzione di lettura carattere
+            INT 21h       ; Chiamata di interrupt
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Funzione 02h - Scrivere un Carattere su Output Standard</h2>
+        <p class="paragrafo">
+            La funzione 02h dell'interrupt <code>INT 21h</code> scrive un carattere su output standard (di solito lo schermo). 
+            Il carattere da stampare viene specificato nel registro <code>DL</code>.
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AH, 02h   ; Funzione di scrittura carattere
+            MOV DL, 'A'   ; Carattere da scrivere
+            INT 21h       ; Chiamata di interrupt
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Funzione 09h - Stampa di una Stringa</h2>
+        <p class="paragrafo">
+            La funzione 09h di <code>INT 21h</code> permette di stampare una stringa su output standard.
+            La stringa deve terminare con il simbolo '$'.
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AH, 09h         ; Funzione di stampa stringa
+            MOV DX, OFFSET msg  ; Indirizzo della stringa
+            INT 21h             ; Chiamata di interrupt
+        msg db 'Ciao, mondo$', 0
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Funzione 4Ch - Terminare il Programma</h2>
+        <p class="paragrafo">
+            La funzione 4Ch di <code>INT 21h</code> termina l'esecuzione di un programma e restituisce il controllo al sistema operativo. 
+            È possibile restituire un codice di uscita specificato nel registro <code>AL</code>.
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AH, 4Ch   ; Funzione di terminazione programma
+            MOV AL, 00h   ; Codice di uscita 0
+            INT 21h       ; Chiamata di interrupt
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Esempio Completo - Lettura e Stampa di un Carattere</h2>
+        <p class="paragrafo">
+            Questo esempio combina le funzioni di lettura e scrittura caratteri per leggere un carattere da tastiera e stamparlo su schermo.
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AH, 01h   ; Funzione di lettura carattere
+            INT 21h       ; Legge il carattere e lo mette in AL
+            MOV DL, AL    ; Copia il carattere letto in DL
+            MOV AH, 02h   ; Funzione di scrittura carattere
+            INT 21h       ; Stampa il carattere su schermo
+        </pre>
+    </div>
+	<br>
+	<br>
+    <footer>
+        <p>&copy; Guarino Andrea, Intel 8086 &amp; Assembly</p>
+    </footer>
+</body>
+</html>

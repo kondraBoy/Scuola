@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+	<!--Guarino Andrea 4BI vantaggiInnovazioni8086.html-->
+    <title>Intel 8086: Vantaggi ed innovazioni</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css/index.css">
+	<link rel="stylesheet" type="text/css" href="Css/table.css">
+	<link rel="stylesheet" type="text/css" href="Css/boxCenter.css">
+</head>
+<body>
+    <header>
+        <h1>Intel 8086: Vantaggi ed innovazioni</h1>
+    </header>
+	<a class="home" href="intel.html">Torna alla macro area</a>
+    <br>
+	<br>
+	<div class="box">
+		<h2>Architettura a 16 bit</h2>
+		<p class="paragrafo">L'8086 è il primo microprocessore a implementare un'architettura a 16 bit, il che significa che può elaborare dati in blocchi di 16 bit alla volta. Questo migliora significativamente le prestazioni rispetto ai processori a 8 bit precedenti, consentendo un calcolo più veloce e un accesso più efficiente alla memoria.</p>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Memoria segmentata</h2>
+		<p class="paragrafo">L'8086 introduce il concetto di memoria segmentata, che consente al processore di accedere a più di 1 MB di memoria (fino a 1 MB, dato che gli indirizzi sono a 20 bit). Questa segmentazione consente di organizzare la memoria in segmenti distinti (codice, dati, stack), migliorando la gestione della memoria e l'efficienza.</p>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Set di istruzioni esteso</h2>
+		<p class="paragrafo">L'8086 offre un set di istruzioni ampliato rispetto ai processori precedenti, inclusi nuovi comandi per la manipolazione di dati e operazioni aritmetiche. Ciò consente agli sviluppatori di scrivere codice più complesso e di sfruttare appieno le capacità hardware.</p>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Architettura retrocompatibile</h2>
+		<p class="paragrafo">L'architettura dell'8086 è stata progettata per essere compatibile con i precedenti microprocessori Intel a 8 bit, il che ha facilitato il passaggio degli sviluppatori e la riutilizzazione del software esistente. Questo ha contribuito a una transizione più fluida verso l'uso dell'8086 nei nuovi sistemi.</p>
+   	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Concetto di scalarità</h2>
+		<p class="paragrafo">È quel concetto che fa riferimento alla capacità del processore di eseguire una singola operazione per ciclo di clock, in contrapposizione al parallelismo. L'8086 è progettato per eseguire una serie di istruzioni in modo sequenziale, aumentando l'efficienza attraverso ottimizzazioni nel ciclo di clock.Le fasi di esecuzioni si dividono in questo modo:</p>
+	</div>
+	<br>
+	<br>
+	<div class="box">
+		<h2>Pipeline</h2>
+		<p class="paragrafo">In un'architettura a pipeline, il processo di esecuzione delle istruzioni è suddiviso in diverse fasi, ciascuna delle quali può essere eseguita in modo indipendente. Questo approccio consente al processore di eseguire più istruzioni in parallelo, anche se ciascuna istruzione viene elaborata in modo sequenziale all'interno della sua fase.Ogni istruzione presenta le seguenti fasi:</p>
+		<ul>
+			<li><p class="paragrafo"><strong>Fetch</strong>: Recupero dell'istruzione dalla memoria.</p></li>
+			<li><p class="paragrafo"><strong>Decode</strong>: Decodifica dell'istruzione per capire quale operazione eseguire.</p></li>
+			<li><p class="paragrafo"><strong>Execute</strong>: Esecuzione dell'istruzione.</p></li>
+			<li><p class="paragrafo"><strong>Write Back</strong>:Scrittura dei risultati nella memoria o nei registri.</p></li>
+		</ul>
+		<p class="paragrafo">La pipeline, attraverso la sua implementazione nell'8086 ha permesso di ottenere molti vantaggi e svantaggi rappresentati nella tabella sottostante</p>
+	<table class="paragrafo">
+		<thead>
+			<tr>
+				<th>Vantaggi</th>
+				<th>Svantaggi</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Maggiore Throughput</td>
+				<td>Possibili Data Hazards</td>
+			</tr>
+			<tr>
+				<td>Utilizzo Efficiente delle Risorse</td>
+				<td>Control Hazards</td>
+			</tr>
+			<tr>
+				<td>Riduzione della Latency Complessiva</td>
+				<td>Structural Hazards</td>
+			</tr>
+			<tr>
+				<td>Processo di Esecuzione Sovrapposto</td>
+				<td>Overhead di Controllo Maggiore</td>
+			</tr>
+			<tr>
+				<td>Maggiore Efficienza nell'Elaborazione delle Istruzioni</td>
+				<td>Possibili Stall (Pause) nella Pipeline</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+    <footer>
+        <p>&copy; Guarino Andrea, Intel 8086 &amp; Assembly</p>
+    </footer>
+</body>
+</html>

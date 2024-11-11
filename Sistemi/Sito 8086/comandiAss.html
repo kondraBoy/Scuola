@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <!-- Guarino Andrea 4BI comandiAss.html -->
+    <title>Assembly: Comandi</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css/index.css">
+	<link rel="stylesheet" type="text/css" href="Css/boxCenter.css">
+</head>
+<body>
+    <header>
+        <h1>Comandi principali</h1>
+    </header>
+    <a class="home" href="assembly.html">Torna alla macro area</a>
+    <br>
+	<br>
+	<div class="box">
+        <h2>Comandi di Assegnazione</h2>
+        <p class="paragrafo">
+            I comandi di assegnazione sono utilizzati per memorizzare valori in registri o variabili. 
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV AX, 5   ; Assegna il valore 5 al registro AX
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Comandi di Confronto e Salto</h2>
+        <p class="paragrafo">
+            I comandi di confronto vengono utilizzati per confrontare due valori, e i salti consentono di 
+            dirigere il flusso del programma in base al risultato del confronto. 
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            CMP AX, BX  ; Confronta i valori nei registri AX e BX
+            JE label     ; Salta all'etichetta "label" se AX è uguale a BX
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Struttura If</h2>
+        <p class="paragrafo">
+            La struttura "if" in Assembly può essere implementata utilizzando i comandi di confronto e salto. 
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            CMP AX, 10
+            JL less_than_ten  ; Salta a "less_than_ten" se AX è minore di 10
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Struttura Ciclo Pre-condizionale</h2>
+        <p class="paragrafo">
+            Un ciclo pre-condizionale esegue il blocco di codice finché una condizione è vera. 
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV CX, 5           ; Inizializza il contatore a 5
+        loop_start:
+            ; Codice da eseguire
+            LOOP loop_start     ; Decrementa CX e salta se CX non è zero
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Struttura Ciclo Post-condizionale</h2>
+        <p class="paragrafo">
+            Un ciclo post-condizionale esegue il blocco di codice almeno una volta prima di verificare la condizione. 
+            Esempio:
+        </p>
+        <pre class="paragrafo">
+            MOV CX, 5           ; Inizializza il contatore a 5
+        do_while_start:
+            ; Codice da eseguire
+            DEC CX              ; Decrementa CX
+        }while_loop:
+            CMP CX, 0
+            JG do_while_start   ; Salta a "do_while_start" se CX è maggiore di 0
+        </pre>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Salti Intrasegmentali e Intersegmentali</h2>
+        <p class="paragrafo">
+            I salti intrasegmentali sono utilizzati per saltare a una posizione all'interno dello stesso segmento di codice. 
+            Gli intersegmentali, invece, possono saltare tra segmenti diversi. 
+            Esempio di salto intrasegmentale:
+        </p>
+        <pre class="paragrafo">
+            JMP label           ; Salta all'etichetta "label" all'interno dello stesso segmento
+        </pre>
+        <p class="paragrafo">
+            Esempio di salto intersegmentale:
+        </p>
+        <pre class="paragrafo">
+            JMP far_label       ; Salta a "far_label" in un segmento diverso
+        </pre>
+    </div>
+	<br>
+	<br>
+    <footer>
+        <p>&copy; Guarino Andrea, Intel 8086 &amp; Assembly</p>
+    </footer>
+</body>
+</html>

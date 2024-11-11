@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <!--Guarino Andrea 4BI registri8086.html -->
+    <title>Intel 8086: Registri fisici</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css/index.css">
+    <link rel="stylesheet" type="text/css" href="Css/table.css">
+	<link rel="stylesheet" type="text/css" href="Css/boxCenter.css">
+</head>
+<body>
+    <header>
+        <h1>Registri Fisici Intel 8086</h1>
+    </header>
+    <a class="home" href="intel.html">Torna alla macro area</a>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Introduzione ai Registri dell'Intel 8086</h2>
+        <p class="paragrafo">L'Intel 8086 dispone di numerosi registri che svolgono ruoli fondamentali nel controllo delle operazioni del processore. I registri sono divisi in categorie a seconda della loro funzione, come i registri generali, di segmento, di puntatore e di flag.</p>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Registri Generali</h2>
+        <p class="paragrafo">I registri generali sono utilizzati per molte operazioni comuni, come il trasferimento di dati, operazioni aritmetiche e logiche, e sono cruciali per l'esecuzione delle istruzioni.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Registro</th>
+                    <th>Descrizione</th>
+                    <th>Dimensione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AX</td>
+                    <td>Accumulator, usato per operazioni aritmetiche e logiche</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>BX</td>
+                    <td>Base, utilizzato per indirizzamento a base</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>CX</td>
+                    <td>Counter, usato per contare iterazioni in loop</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>DX</td>
+                    <td>Data, utilizzato per operazioni di input/output e moltiplicazioni</td>
+                    <td>16-bit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Registri di Segmento</h2>
+        <p class="paragrafo">I registri di segmento sono utilizzati per gestire la memoria segmentata, una caratteristica unica dell'architettura dell'Intel 8086. Permettono di indirizzare fino a 1 MB di memoria utilizzando l'offset dei segmenti.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Registro</th>
+                    <th>Descrizione</th>
+                    <th>Dimensione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CS</td>
+                    <td>Code Segment, contiene l'indirizzo di partenza del segmento codice</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>DS</td>
+                    <td>Data Segment, contiene l'indirizzo di partenza del segmento dati</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>SS</td>
+                    <td>Stack Segment, contiene l'indirizzo di partenza dello stack</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>ES</td>
+                    <td>Extra Segment, utilizzato per l'indirizzamento aggiuntivo</td>
+                    <td>16-bit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Registri di Puntatore e Indice</h2>
+        <p class="paragrafo">Questi registri sono utilizzati per operazioni specifiche come il puntamento e l'indicizzazione di dati e indirizzi in memoria.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Registro</th>
+                    <th>Descrizione</th>
+                    <th>Dimensione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SP</td>
+                    <td>Stack Pointer, punta all'elemento superiore dello stack</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>BP</td>
+                    <td>Base Pointer, usato per l'indirizzamento di dati nello stack</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>SI</td>
+                    <td>Source Index, utilizzato per operazioni di stringhe</td>
+                    <td>16-bit</td>
+                </tr>
+                <tr>
+                    <td>DI</td>
+                    <td>Destination Index, utilizzato per operazioni di stringhe</td>
+                    <td>16-bit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<br>
+	<br>
+    <div class="box">
+        <h2>Registri di Flag</h2>
+        <p class="paragrafo">I registri di flag contengono informazioni sullo stato delle operazioni eseguite e influenzano il flusso di esecuzione del programma. Ogni bit in questi registri rappresenta uno specifico flag o condizione.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Flag</th>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ZF (Zero Flag)</td>
+                    <td>Indica se il risultato di un'operazione è zero</td>
+                </tr>
+                <tr>
+                    <td>CF (Carry Flag)</td>
+                    <td>Indica se c'è stato un riporto o prestito</td>
+                </tr>
+                <tr>
+                    <td>OF (Overflow Flag)</td>
+                    <td>Indica se si è verificato un overflow aritmetico</td>
+                </tr>
+                <tr>
+                    <td>SF (Sign Flag)</td>
+                    <td>Indica se il risultato è negativo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<br>
+	<br>
+    <footer>
+        <p>&copy; Guarino Andrea, Intel 8086 &amp; Assembly</p>
+    </footer>
+</body>
+</html>
