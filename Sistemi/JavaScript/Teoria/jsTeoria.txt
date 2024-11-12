@@ -102,3 +102,7 @@ isNaN()
 controlla se il valore inserito all'interno come parametro è un NaN
 
 restituisce true se è un NaN altrimenti restituisce false
+
+confirm()
+
+ci permette di interagire con l'utente restituuendo un boolean true se l'utente clicca OK altrimenti restituisce false
