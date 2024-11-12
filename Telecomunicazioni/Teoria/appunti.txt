@@ -6,3 +6,7 @@ Quando si lavora in serie tutte le tensioni si sommano mentre quando si lavora i
 tensioni rimangono le stesse
 
 È il carico che stabilisce la corrente che circola nel circuito
+
+Potenza è il prodotto tra la tensione e l'intensità di corrente
+
+P=V*i   Unità di misura: Watt (W)
