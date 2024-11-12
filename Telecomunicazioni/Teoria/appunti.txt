@@ -1,0 +1,8 @@
+Si lavora con le tensioni solo in maniera differenziale mentre con le correnti si lavora in maniera assoluta.
+Ogni componente elettronico di un circuito ha una caduta di tensione, ovvero un abbassamento della tensione quindi 
+in uscita avrò sempre una tensione minore a quella in entratap
+
+Quando si lavora in serie tutte le tensioni si sommano mentre quando si lavora in parallelo le correnti cambiano e le
+tensioni rimangono le stesse
+
+È il carico che stabilisce la corrente che circola nel circuito
