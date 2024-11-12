@@ -1,0 +1,101 @@
+﻿Linux non è un sistema operativo bensì un kernel, l'ultimo modulo del sistema operativo che si trova a stretto contatto con l'hardware.
+Il creatore voleva che il codice di Linux fosse open source, poichè Unix (sistema operativo degli anni 70 su cui basa) era coperto da diritti d'autore e lui voleva che il kernel fosse accessibile a tutti.
+
+Differenze tra Windows e le varie distro:
+
+.Windows coperto da copyright mentre le distro sono open source
+.Linux si basa su un gestore di pacchetti di funzionalità che si collega a una repo online (per ubuntu apt [advanced packaging tool]) che possono essere installati per ampliare le funzionalità del sistema
+ mentre per Windows ci sono i file .exe dei setup
+.La root in Linux è identificata dallo / mentre per Win abbiamo un etichetta (C:)
+
+per creare una cartella=>mkdir (non si può creare un albero di directory direttamente in una riga,per farlo si usa mkdirhier che deve essere installato separatamente)
+
+quando si inserisce la password del sudo è invisibile nel prompt perchè viene sostituita a monitor con uno spazio bianco
+
+anche in Linux c'è un help e si fa così nome del comando --help oppure man nome del comando
+
+pippo@pippo-VirtualBox:~$
+|    |		|	
+v    v		v
+user concat	hostname(come verrà identificata la macchina nella rete)
+
+~=>indica la path dell'utente /home/username
+
+$=>indica i permessi di cui sto usufruendo nel momento in cui sto eseguendo i comandi, in poche parole il tipo di utente che sta usando il prompt
+
+$=>utente senza privilegi
+#=>Admin (super user)
+
+sudo=>super user do con il parametro -s si entra nel pannello di esecuzione dei comandi come Admin
+per uscire dalla modalità admin si usa exit
+Alcuni utenti è possibile che non vengano riconosciuti come Admin perchè non presenti nella lista dei sudoers(un file nel quale è presente il nome degli utenti che hanno accesso al sudo)
+
+clear=>pulisce tutte le righe di comando
+
+cd=>per spostarsi tra le cartelle
+
+cd ..=>per tornare indietro
+
+cd /=>per tornare alla root
+
+cd -=>ci si reca nella directory del comando precedente
+
+cd ~=>ci si reca nella directory user (/Home/pippo)
+
+ls=>visualizza contenuti della cartella(c'è anche il dir ma il comando ls differenzia per colori file e cartelle)
+
+ls -l=>visualizza i contenuti come il dir di MSDOS
+
+ls -r=>visualizza i contenuti in maniera alfabetica decrescente
+
+ls -R=>visualizza i contenuti anche delle sottodirectory
+
+ls -s=>visualizza la dimensione e il nome della cartella
+
+ls -t=>visualizza i file per ordine di ultima modifica
+
+pwd=>(print working directory)stampa la directory nella quale sto lavorando
+
+history=>cronologia dei comandi inseriti in tutte le sessioni avvenute
+
+man ls=>apre lo user command dove si visualizza l'help del comando indicato successivamente
+
+rmdir=>elimina una directory solo se è vuota
+
+rm=>rimuove file 
+
+rm -d=>rimuove directory vuote
+
+rm -r=>rimuove cartelle con dei contenuti al suo interno
+
+touch=>crea un file specificando nome ed estensione
+
+cat=>visualizzo il contenuto di un file
+
+cat -n=>indica anche il numero di riga
+
+> Reindirizzamento output
+
+>> Reindirizzamento append
+
+tac=>visualizzo il contentuto dall'ultima riga verso la prima
+
+more=>visualizza il file una porzione per volta
+
+less=>opposto di more
+
+cp=>copia file (stessa sintassi copy MSDOS)
+
+cp -r=>copia la cartella
+
+cp -v=>cosa viene copiato e dove
+
+mv=>sposta il file(stessa sintassi move MSDOS),puoi anche rinominare il file
+
+
+Nella iso delle Guest Additions ci sono alcuni eseguibili dell'ambiente Win e ci sono dei pkg riservati a dei sistemi Solaris e Darwin (kernel XNU) (creati da Oracle) 
+
+I file da eseguire sono quelli .run
+
+sudo adduser pippo vboxsf diamo i permessi a pippo per poter accedere alla virtual box shared folders
+

@@ -37,7 +37,7 @@ document.write("testo");
 //write è il metodo del document("pagina nel quale viene eseguito") dicendo che ciò che viene indicato tra parantesi deve essere scritto //nel documento
 
 .getElementById();
-//È un metodo che permette di scegliere un id, lo cerca e poi ne modifica le caratteristiche le caratteristiche
+//È un metodo che permette di scegliere un id, lo cerca e poi ne modifica le caratteristiche 
 
 document.getElementById("demo").innerHTML = "Hello JavaScript";
 
@@ -78,3 +78,27 @@ Per dichiarare una variabile si possono dichiarare in quattro modi:
 	var (da non usare)
 	let
 	const (dichiari una costante)
+
+metodo prompt
+
+Quel metodo che che ti permette di inserire dei dati all'interno
+
+let person = prompt ("testo da visualizzare prima","testo di default");
+							|
+							v
+						   opzionale
+
+parseInt(string,radix);
+	   |
+	   v
+	obbligatorio
+	valore da 
+	convertire
+
+Se il primo carattere è un numero avviene la conversione altrimenti ritorna NaN (Not a Number)
+
+isNaN() 
+
+controlla se il valore inserito all'interno come parametro è un NaN
+
+restituisce true se è un NaN altrimenti restituisce false
