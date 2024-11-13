@@ -1,0 +1,91 @@
+Per runnare Java si passa da un compilatore che produrrà un file bytecode .class e poi verrà interpretato dalla Java Virtual Machine per eseguire il codice che arriva dal file.class e renderlo eseguibile nel codice macchina della macchina reale sulla quale si trova installata la JVM
+
+Il nome che diamo alla classe deve essere uguale al nome del file
+
+nome della classe è il nome del file.java
+
+public static void main(String[] args)
+
+public=>indica che questo tipo di funzione è visibile all'interno di tutto il progetto che abbiamo creato
+
+static=>significa che posso richiamare questa funzione senza il bisogno di aver un oggetto
+
+String[] args=>È un parametro che contiene tutti i vari parametri che io passo facendo partire l'esecuzione da prompt
+
+CLASSE
+è uno stampino in cui sono contentute struct e metodi (funzioni) e che può essere usato per fabbricare tanti oggetti di quella classe
+
+È C-like quindi la maggior parte delle istruzioni è uguale al C
+
+String per dichiarare stringhe e boolean al posto di bool per le variabili booleane
+
+INPUT/OUTPUT
+
+OUTPUT
+
+System.out.println("Buongiorno"); //ln manda a capo sout tab shortcut 
+
+Per concatenare si usa il +, per differenziarlo dall'operatore matematico 
+
+"Buongiorno" + num
+
+INPUT
+
+Si usa la classe Scanner
+
+Scanner input = new Scanner(System.in);
+
+Dichiaro un oggetto input di classe Scanner che è provvista di vari metodi che ci permettono di convertire i valori che arrivano dallo standard input in valori alfanumerici
+
+la new è come la malloc
+
+()=>flusso dati da cui leggere i dati, in questo caso standard input (System.in)
+
+Per accedere ai metodi di qualsiasi classe si usa la dot notation
+
+shortcut
+
+ctrl+shift freccia giu e su    sposta la riga di codice
+capo sout tab 		       System.out.println("");
+ctrl / 			       commenta le righe selezionate
+ctrl+shift+/                   commenta le righe selezionate in blocco
+
+Due tipi di variabili
+
+Primitivi               
+Sempre istanziate a compile time. Risiedono sullo stack 
+.int
+.float
+.boolean
+.char
+
+Riferimento
+Sono dei puntatori che fanno riferimento ad un oggetto che deve essere ancora creato.Sono sempre istanziate a run time
+.Classi
+.Array
+
+Scanner input = new Scanner(System.in); 
+
+Con la new si va ad istanziare nell'heap una zona di memoria alla quale punta input
+
+Costruttori = è un particolare metodo che ha lo stesso nome della classe che viene utilizzato tramite parametri ed inizializza gli attributi di un oggetto della classe e ne esistono di 3 tipi:
+	.default (no parametri)
+	.con parametri
+	.di copia
+
+Posso avere più metodi con lo stesso nome (overloading) che si differenziano grazie a numero e tipo di parametri associati
+
+Il main può solamente richiamare procedure static perché il main è static
+
+Per istanziare un array di tipo primitivo si utilizza 
+	int num[] = new int[NMAX]
+
+	int indica il tipo dell'array, num l'identificatore e NMAX il numero di elementi
+
+Per accedere agli elementi dell'array si utilizza un indice (i)
+
+Abbiamo la possiblità di utlizzare l'attributo lenght (.length) che ci permette di conoscere il numero di elementi dell'array
+
+Try,catch,finally
+
+Si usano quando c'è un interrupt dovuto ad un eccezione che porterebbe alla terminazione forzata del processo
