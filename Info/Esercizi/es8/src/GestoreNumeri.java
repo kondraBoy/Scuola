@@ -11,13 +11,52 @@ public class GestoreNumeri {
 
 
 
+    public int findMAXorMin(int num){
+        int number= this.numeri[0];
+        if(num==1){
+            for(int i=0;i<this.lastNumero;i++){
+                if(this.numeri[i]>number)
+                    number=this.numeri[i];
+            }
+        }
+        if(num==2){
+            for(int i=0;i<this.lastNumero;i++){
+                if(this.numeri[i]<number)
+                    number=this.numeri[i];
+            }
+        }
+        if(num!=1 && num!=2)
+            number=-1;
+        return number;
+    }
 
+    public double mediaNumbers(){
+        int somma=0;
+        double media=-1;
+        for(int i=0;i<this.lastNumero;i++){
+            somma=+this.numeri[i];
+        }
+        media=somma/this.lastNumero;
+        return media;
+    }
 
+    public String csvStringNumbers(){
+        String csvString = this.numeri[0] + ";";
+        for(int i=1;i<this.lastNumero;i++){
+            csvString += this.numeri[i] + ";";
+        }
+        return csvString;
+    }
 
-
-
-
-
+    public boolean addNumber(int num){
+        boolean check=false;
+        if(this.pari==true && num%2==0){
+            this.numeri[this.lastNumero]=num;
+            check=true;
+            this.lastNumero++;
+        }
+        return check;
+    }
 
 
     //COSTRUTTORI
@@ -35,7 +74,7 @@ public class GestoreNumeri {
         setPari(pari);
         this.numeri = new int[NMAX];
     }
-    public gestoreNumeri(GestoreNumeri a){
+    public void gestoreNumeri(GestoreNumeri a){
         setVmin(a.vmin);
         setVmax(a.vmax);
         setPari(a.pari);
@@ -44,7 +83,7 @@ public class GestoreNumeri {
 
     //SETTER
     public boolean setVmin(int vmin){
-        boolean check;
+        boolean check = true;
         if(vmin>this.vmax){
             check=false;
         }else{
@@ -54,7 +93,7 @@ public class GestoreNumeri {
     }
 
     public boolean setVmax(int vmax) {
-        boolean check;
+        boolean check = true;
         if(vmax<0){
             check=false;
         }else{
