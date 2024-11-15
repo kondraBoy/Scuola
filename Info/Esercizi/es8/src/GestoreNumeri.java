@@ -1,5 +1,5 @@
 public class GestoreNumeri {
-    private final int NMAX = 100;
+    private int NMAX;
     private int vmin;
     private int vmax;
     private int numeri[];
@@ -74,7 +74,7 @@ public class GestoreNumeri {
         setPari(pari);
         this.numeri = new int[NMAX];
     }
-    public void gestoreNumeri(GestoreNumeri a){
+    public void GestoreNumeri(GestoreNumeri a){
         setVmin(a.vmin);
         setVmax(a.vmax);
         setPari(a.pari);
@@ -82,6 +82,15 @@ public class GestoreNumeri {
     }
 
     //SETTER
+
+    public int setNMAX(int NMAX) {
+        if(!checkNMAX(NMAX)){
+            return -1;
+        }else
+            this.NMAX=NMAX;
+    }
+
+
     public boolean setVmin(int vmin){
         boolean check = true;
         if(vmin>this.vmax){
@@ -118,5 +127,13 @@ public class GestoreNumeri {
 
     public boolean getPari(){
         return pari;
+    }
+
+    //CHECKER
+    private boolean checkNMAX(int NMAX){
+        boolean check;
+        if(NMAX<0){
+            check = false;
+        return check;
     }
 }
