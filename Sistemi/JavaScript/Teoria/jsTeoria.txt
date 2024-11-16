@@ -105,4 +105,4 @@ restituisce true se è un NaN altrimenti restituisce false
 
 confirm()
 
-ci permette di interagire con l'utente restituuendo un boolean true se l'utente clicca OK altrimenti restituisce false
+ci permette di interagire con l'utente restitutuendo un boolean true se l'utente clicca OK altrimenti restituisce false

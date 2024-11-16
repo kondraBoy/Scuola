@@ -58,7 +58,11 @@ pwd=>(print working directory)stampa la directory nella quale sto lavorando
 
 history=>cronologia dei comandi inseriti in tutte le sessioni avvenute
 
-man ls=>apre lo user command dove si visualizza l'help del comando indicato successivamente
+man ls=> apre lo user command dove si visualizza l'help del comando indicato successivamente
+
+mkdir=> crea una directory
+
+mkdir -h=> crea una gerarchia di directory (mkdirhier)
 
 rmdir=>elimina una directory solo se è vuota
 
@@ -92,6 +96,9 @@ cp -v=>cosa viene copiato e dove
 
 mv=>sposta il file(stessa sintassi move MSDOS),puoi anche rinominare il file
 
+*=> carattere jolly che sostiusce una stringa
+
+?=> carattere jolly che sostituisce un carattere
 
 Nella iso delle Guest Additions ci sono alcuni eseguibili dell'ambiente Win e ci sono dei pkg riservati a dei sistemi Solaris e Darwin (kernel XNU) (creati da Oracle) 
 
@@ -99,3 +106,34 @@ I file da eseguire sono quelli .run
 
 sudo adduser pippo vboxsf diamo i permessi a pippo per poter accedere alla virtual box shared folders
 
+date=> visualizza la data e l'ora corrente
+
+date -r=> visualizza la data e l'ora dell'ultima modificaa effettuata ad un file
+
+cal=> mostra il calendario (sudo apt install ncal)
+
+head=> visualizza le prime 10 righe di un file
+
+head -N=> visualizza le prime N righe di un file
+
+tail=> visualizza le ultime 10 righe
+
+tail -N=> visualizza le ultime N righe di un file
+
+find=> cerca un elemento che sia un file in un percorso resituendo la directory per trovare il file
+
+sort=> ordina il contenuto di un file
+
+sort -r=> ordina inversamente il contenuto di un file (reverse)
+
+sort -R=> ordina in modo random il contenuto di un file (Random)
+
+grep=> ricerca una determinata stringa all'interno di un file o di una strinag stessa
+
+chmod=> (change mode [mode = permesso applicato al file]) :
+	+r : aggiungo permessi di lettura 
+	-w : rimuovo permessi di scrittura
+	-x : rimuovo permessi di esecuzione 
+
+		+: aggiungo permessi
+		-: rimuovo permessi
