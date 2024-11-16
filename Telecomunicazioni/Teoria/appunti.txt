@@ -10,3 +10,36 @@ tensioni rimangono le stesse
 Potenza è il prodotto tra la tensione e l'intensità di corrente
 
 P=V*i   Unità di misura: Watt (W)
+
+Giunzione NP
+principio base dei semi-conduttori
+
+Ci sono elettroni e lacune (atomo nel quale manca un elettrone per completare il guscio elettronico) che viaggiano in direzioni opposte. 
+Quando sottopongo il diodo in tensione muovo elettroni o lacune in parallelo e gli elettroni si muovono liberamente solo
+quando la differenza di potenziale tra anodo e catodo è superiore ad una certa soglia
+
+Le correnti girano solo quando le tensioni sono di un certo tipo
+
+Transistor: sono due giunzioni NP 
+
+I transistor (oggetto che fa passare corrente solo quando lo decido io) si possono classificare in base alle giunzioni
+
+.NPN (si gioca sulla P per fare passare corrente)
+
+.PNP (si gioca sulla N per fare passare corrente)
+
+Funzione caratteristica del diodo
+
+Il diodo si comporta in maniera diversa in funzione alla tensione applicata, esiste una tensione minima al di sotto della
+quale il diodo non funziona non facendo passare corrente (0.7 V), nel momento in cui viene superata questa soglia la corrente
+diventa molto elevata al punto che il diodo si può fondere almeno che io non metta una resistenza di protezione necessaria a 
+preservare il diodo. Se la tensione viene applicata in senso opposto e viene fatta aumentare avviene un breakdown, il diodo si
+rompe e si brucia il circuito. (guarda pag 37 figura 6).
+
+If = 15 mA
+V = 5V
+Led rosso = 1.8 V (tensione favorita)
+R?
+
+Per avere una caduta di potenziale dobbiamo far si che la resistenza assorba 3.2 V per garantire 1.8 V necessari al funzionamento
+del led
