@@ -7,10 +7,7 @@ public class GestoreNumeri {
     private int lastNumero;
 
 
-
-
-
-
+    //METODI
     public int findMAXorMin(int num){
         int number= this.numeri[0];
         if(num==1){
@@ -61,7 +58,8 @@ public class GestoreNumeri {
 
     //COSTRUTTORI
 
-    public GestoreNumeri(){
+    public
+    GestoreNumeri(){
        setVmin(0);
        setVmax(200);
        setPari(true);
