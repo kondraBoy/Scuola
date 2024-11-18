@@ -1,0 +1,24 @@
+La classe Cc serve per gestire dei conti correnti sottoforma di oggetti astratti e che presenta i seguenti attributi, da me riconosciuti come
+fondamentali per poter descrivere con naturalezza l'oggetto:
+	
+	.- nome: Stringa che memorizza il nome dell'intestatario del conto corrente
+	.- cognome: Stringa che memorizza il cognome dell'intestatario del conto corrente
+	.- saldo: Double che memorizza il saldo del conto corrente
+
+La classe presenta i seguenti metodi pubblici:
+
+1)void addSaldo(double add)
+Aggiunge un importo specificato al saldo corrente dell'oggetto, a condizione che l'importo sia positivo.
+
+Parametri:
+
+add (double): Importo da aggiungere al saldo. Deve essere maggiore di 0.
+
+2)void removeSaldo(double rem)
+Rimuove un importo specificato dal saldo corrente, a condizione che l'importo sia positivo e non ecceda il saldo disponibile.
+
+Parametri:
+
+rem (double): Importo da rimuovere dal saldo. Deve essere maggiore di 0 e inferiore o uguale al saldo corrente.
+
+Il resto sono getter e setter degli attributi della classe

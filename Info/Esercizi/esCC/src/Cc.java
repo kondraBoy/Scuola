@@ -1,17 +1,21 @@
 public class Cc {
-    private float saldo;
+    private double saldo;
     private String nome;
     private String cognome;
 
 
 
-    public Double addSaldo(double add){
-
+    public void addSaldo(double add){
         if(checkPositivoDouble(add)){
-
+            this.saldo=this.saldo+add;
         }
     }
 
+    public void removeSaldo(double rem){
+        if(checkPositivoDouble(rem) && rem<=this.saldo){
+            this.saldo=this.saldo-rem;
+        }
+    }
 
 
 
@@ -48,7 +52,7 @@ public class Cc {
         }
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         if(checkPositivoDouble(saldo)){
             this.saldo = saldo;
         }
@@ -56,7 +60,7 @@ public class Cc {
     //GETTER
 
 
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabella potenze</title>
+</head>
+<body>
+    <script>
+        document.write("<table border='1'>"); 
+        document.write("<tr><th>n</th><th>n^2</th><th>n^3</th></tr>"); 
+
+        for (let n = 1; n <= 15; n++) {
+            document.write("<tr>"); // Inizio riga
+            document.write("<td>" + n + "</td>");         // Colonna n
+            document.write("<td>" + (n * n) + "</td>");   // Colonna n^2
+            document.write("<td>" + (n * n * n) + "</td>"); // Colonna n^3
+            document.write("</tr>"); // Fine riga
+        }
+
+        document.write("</table>"); // Chiusura della tabella
+
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>

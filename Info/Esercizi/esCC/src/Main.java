@@ -51,6 +51,19 @@ public class Main {
     }
 
     public static void prelievo(Cc conto){
+        double rem,saldo;
+        saldo = conto.getSaldo();
+        rem = Input.leggiDouble(0,saldo,"Inserire la quantità di soldi da prelevare");
+        conto.removeSaldo(rem);
+    }
 
+    public static void versamento(Cc conto){
+        double add = Input.leggiDouble(0,Float.MAX_VALUE,"Inserire la quantità di soldi da aggiungere");
+        conto.addSaldo(add);
+    }
+
+    public static void mostraSaldo(Cc conto){
+        double saldo = conto.getSaldo();
+        System.out.println("Il saldo attuale è: " + saldo);
     }
 }
