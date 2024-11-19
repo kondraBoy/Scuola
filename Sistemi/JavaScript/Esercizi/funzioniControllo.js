@@ -12,3 +12,14 @@ function controllaStr(str){
 	}
 	return check;
 }
+
+function leggiNum(msg){
+	let num;
+	do{
+		num=prompt(msg,1);
+		if(!controllaNum(num)){
+			alert("Il numero è minore di 0 oppure non è stato inserito un numero");
+		}
+	}while(!controllaNum(num));
+	return num;
+}
