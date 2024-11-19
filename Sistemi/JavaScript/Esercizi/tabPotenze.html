@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Tabella potenze</title>
+	<script type="text/javascript" src="funzioniControllo.js"></script>
 </head>
 <body>
+	<table border='1'>
+	<tr>
+		<th>n</th>
+		<th>n^2</th>
+		<th>n^3</th>
+	</tr>
     <script>
-        document.write("<table border='1'>"); 
-        document.write("<tr><th>n</th><th>n^2</th><th>n^3</th></tr>"); 
-
-        for (let n = 1; n <= 15; n++) {
+        let n,max,check;
+		do{
+			max = prompt("Di quanti numeri vuoi sapere le potenze?",1);
+			check = controllaNum(max);
+			if(!check){
+				alert("Errore");
+			}
+        }while(!check);
+		for (let n = 1; n <= max; n++) {
             document.write("<tr>"); 
             document.write("<td>" + n + "</td>");         
-            document.write("<td>" + (n * n) + "</td>");   
-            document.write("<td>" + (n * n * n) + "</td>"); 
+            document.write("<td>" + Math.pow(n,2) + "</td>");   
+            document.write("<td>" + Math.pow(n,3) + "</td>"); 
             document.write("</tr>"); 
         }
 
