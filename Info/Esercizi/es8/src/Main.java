@@ -64,7 +64,7 @@ public class Main {
         int num,max;
         max= gestoreNumeri1.getVmax();
         num = Input.leggiInt(0,max,"Inserire numero da posizionare nella sequenza di numeri");
-        if(gestoreNumeri1.addNumber(num)==false){
+        if(!gestoreNumeri1.addNumber(num)){
             System.out.println("Numero non divisibile per due");
         }else
             System.out.println("Numero inserito con successo");

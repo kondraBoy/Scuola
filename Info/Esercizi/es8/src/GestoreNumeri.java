@@ -1,10 +1,12 @@
 public class GestoreNumeri {
-    private int NMAX;
+    private final int NMAX = 100;
     private int vmin;
     private int vmax;
     private int numeri[];
     private boolean pari;
     private int lastNumero;
+
+
 
 
     //METODI
@@ -33,13 +35,13 @@ public class GestoreNumeri {
         for(int i=0;i<this.lastNumero;i++){
             somma=+this.numeri[i];
         }
-        media=somma/this.lastNumero;
+        media=(double)somma/this.lastNumero;
         return media;
     }
 
     public String csvStringNumbers(){
-        String csvString = this.numeri[0] + ";";
-        for(int i=1;i<this.lastNumero;i++){
+        String csvString = "";
+        for(int i=0;i<this.lastNumero;i++){
             csvString += this.numeri[i] + ";";
         }
         return csvString;
@@ -47,7 +49,7 @@ public class GestoreNumeri {
 
     public boolean addNumber(int num){
         boolean check=false;
-        if(this.pari==true && num%2==0){
+        if(this.pari==true && num%2==0 && num>=this.vmin && num<=this.vmax){
             this.numeri[this.lastNumero]=num;
             check=true;
             this.lastNumero++;
@@ -58,8 +60,7 @@ public class GestoreNumeri {
 
     //COSTRUTTORI
 
-    public
-    GestoreNumeri(){
+    public GestoreNumeri(){
        setVmin(0);
        setVmax(200);
        setPari(true);
@@ -81,32 +82,21 @@ public class GestoreNumeri {
 
     //SETTER
 
-    public int setNMAX(int NMAX) {
-        if(!checkNMAX(NMAX)){
-            return -1;
-        }else
-            this.NMAX=NMAX;
+
+
+
+    public void setVmin(int vmin){
+        if(vmin>this.vmax)
+            this.vmin = 0;
+        else
+            this.vmin = vmin;
     }
 
-
-    public boolean setVmin(int vmin){
-        boolean check = true;
-        if(vmin>this.vmax){
-            check=false;
-        }else{
-            this.vmin=vmin;
-        }
-        return check;
-    }
-
-    public boolean setVmax(int vmax) {
-        boolean check = true;
-        if(vmax<0){
-            check=false;
-        }else{
-            this.vmax=vmax;
-        }
-        return check;
+    public void setVmax(int vmax) {
+        if(vmax < this.vmin)
+            this.vmax = 200;
+        else
+            this.vmax = vmax;
     }
 
     public void setPari(boolean pari) {
@@ -125,13 +115,5 @@ public class GestoreNumeri {
 
     public boolean getPari(){
         return pari;
-    }
-
-    //CHECKER
-    private boolean checkNMAX(int NMAX){
-        boolean check;
-        if(NMAX<0){
-            check = false;
-        return check;
     }
 }

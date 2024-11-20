@@ -1,9 +1,5 @@
-La classe Cc serve per gestire dei conti correnti sottoforma di oggetti astratti e che presenta i seguenti attributi, da me riconosciuti come
-fondamentali per poter descrivere con naturalezza l'oggetto:
-	
-	.- nome: Stringa che memorizza il nome dell'intestatario del conto corrente
-	.- cognome: Stringa che memorizza il cognome dell'intestatario del conto corrente
-	.- saldo: Double che memorizza il saldo del conto corrente
+La classe Cc serve per gestire dei conti correnti sottoforma di oggetti astratti e che permette di operare con il saldo del conto corrente
+attraverso le operazioni di prelievo e di versamento
 
 La classe presenta i seguenti metodi pubblici:
 
@@ -22,3 +18,35 @@ Parametri:
 rem (double): Importo da rimuovere dal saldo. Deve essere maggiore di 0 e inferiore o uguale al saldo corrente.
 
 Il resto sono getter e setter degli attributi della classe
+
+3)public Cc()
+Costruttore di default della classe che inizializza il conto intestato a Mario Rossi e con saldo 0
+
+4)public Cc(double saldo,String nome,String cognome)
+Costruttore della classe che inizializza il conto sulla base dei parametri 
+
+Parametri:
+
+saldo (double):saldo del conto corrente
+nome (String): nome dell'intestatario del conto
+cognome(String): cognome dell'intestatario del conto
+
+5)public Cc(Cc a)
+Costruttore della classe che inizializza il conto copiando gli attributi di un conto passato come parametro
+
+Parametri:
+
+a(Cc): oggetto di classe Cc dal quale copiare gli attributi
+
+6)void setCognome(String cognome)
+Imposta il cognome dell'intestatario del conto usando la stringa passata come parametro. La stringa non deve essere vuota
+
+Parametri:
+
+cognome(String): cognome dell'intestatario del conto
+
+6)void getCognome()
+Restituisce il cognome dell'intestario del conto
+
+
+7)
