@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="funzioniControllo.js"></script>
+    <title>Indovina il numero</title>
+</head>
+<body>
+    <h1>Indovina il numero!</h1>
+    <script>
+        function indovinaNumero() {
+            let basso = 1;
+            let alto = 1000;
+            let tentativi = 0;
+            let numeroIndovinato;
+            alert("Pensa a un numero tra 1 e 1000 e io cercherò di indovinarlo!");
+            
+            while (basso <= alto) {
+                tentativi++;
+                numeroIndovinato = Math.floor((basso + alto) / 2);  
+                let risposta = confirm("Il numero pensato è " + numeroIndovinato + "? Clicca OK se è maggiore, Annulla se è minore.");
+                
+                if (risposta) {
+                    alert("Ho indovinato! Il numero è " + numeroIndovinato + " in " + tentativi + " tentativi.");
+                    break;
+                } else {
+                    let maggiore = confirm("Il numero pensato è maggiore di " + numeroIndovinato + "?");
+                    if (maggiore) {
+                        basso = numeroIndovinato + 1;  
+                    } else {
+                        alto = numeroIndovinato - 1;  
+                    }
+                }
+            }
+ 
+		}
+
+        indovinaNumero();
+    </script>
+</body>
+</html>
