@@ -43,3 +43,87 @@ R?
 
 Per avere una caduta di potenziale dobbiamo far si che la resistenza assorba 3.2 V per garantire 1.8 V necessari al funzionamento
 del led
+
+Reti logiche
+Si basano sulle porte logiche.Non prevedono la variabile tempo ed esistono le variabili logiche, può assumere solo i valori 0 e 1
+In qualche modo deve essere descritta
+
+1° forma canonica  y=ABC+ABC+ABC (il + indica OR mentre * indica AND) somma di prodotti
+2° forma canonica  y=(A+B+C)*(A+B+C) prodotti di somme
+A,B,C ingressi
+
+x,y uscite
+
+000 mintermine 0 con 3 ingressi ci sono 8 mintermini
+111 mintermine 7
+
+P1, P2, P3 ingressi
+0   0   0
+0   0   1 ----
+0   1	0 ----
+0   1   1
+1   0   0 ----
+1   0   1 
+1   1   0
+1   1   1
+
+y=ABC + ABC + ABC 
+  nnn   n n    nn
+
+Mappe di Karnaugh
+Richiedono una sequenza di passaggi identica per ogni rete logica. 
+
+.Compilazione
+Si mettono in tabella tutti gli ingressi e tutti i valori. I bordi della tabella non delimitano la mappa bensì c'è l'effetto
+Pacman. Si cambia solo un bit alla volta nella configurazione
+	       A     B
+	    +--+--+--+--+
+	    |00|01|11|10|     //FA RIFERIMENTO ALLA TABELLA SOTTO
+	 +--+--+--+--+--+
+	 |00|0 |0 |1 |1 |
+	C+--+--+--+--+--+
+	 |01|0 |1 |1 |1 |
+	 +--+--+--+--+--+
+	 |11|0 |1 |1 |1 |
+	D+--+--+--+--+--+
+	 |10|0 |0 |0 |0 |
+	 +--+--+--+--+--+
+
+Esempio
+A B C D | y			
+0 0 0 0 | 0
+0 0 0 1 | 0	      
+0 0 1 0 | 0
+0 0 1 1 | 0
+0 1 0 0 | 0
+0 1 0 1 | 1
+0 1 1 0 | 0
+0 1 1 1 | 1
+1 0 0 0 | 1
+1 0 0 1 | 1
+1 0 1 0 | 0
+1 0 1 1 | 1
+1 1 0 0 | 1
+1 1 0 1 | 1
+1 1 1 1 | 1
+
+.Raggruppamento
+Si raggruppano gli 1 secondo queste regole:
+
+1)Devono essere 1 adiacenti tra di loro
+2)Il numero di 1 deve essere una potenza di 2
+3)Devo ottenere un quadrato o un rettangolo
+4)Deve essere il minimo numero di quadrati o rettangoli
+5)I gruppi devono essere i più grandi possibili
+6)Tutti gli 1 devono essere coperti
+7)I gruppi possono sovrapporsi, anzi devono
+
+.Sintesi (Produco la formulazione della mia rete logica con ottimizzazione sui componenti utilizzati)
+Si sintetizza usando la 1°forma canonica delle reti logiche, per ogni raggruppamento userò un termine per indicarlo.
+Bisogna controllare che le variabili che hanno generato la tabella non cambino valore (A,B 00 01 11 10)
+Una variabile viene inserita in forma diretta se ha valore 1 o in forma complementare se vale 0.
+Quando il valore è 0 ed è fisso la variabile viene segnata negata.
+Quando il valore cambia la variabile non si segna quindi ininfluente
+
+
+y = Gruppo 1 + ...
