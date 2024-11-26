@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="it-IT">
-<head>
-    <meta charset="UTF-8">
-    <title>Tabella potenze</title>
-	<script type="text/javascript" src="funzioniControllo.js"></script>
-</head>
-<body>
-	<table border='1'>
-	<tr>
-		<th>n</th>
-		<th>n^2</th>
-		<th>n^3</th>
-	</tr>
-    <script>
-        let n,max,check;
-		do{
-			max = prompt("Di quanti numeri vuoi sapere le potenze?",1);
-			check = controllaNum(max);
-			if(!check){
-				alert("Errore");
-			}
-        }while(!check);
-		for (let n = 1; n <= max; n++) {
-            document.write("<tr>"); 
-            document.write("<td>" + n + "</td>");         
-            document.write("<td>" + Math.pow(n,2) + "</td>");   
-            document.write("<td>" + Math.pow(n,3) + "</td>"); 
-            document.write("</tr>"); 
-        }
-
-        document.write("</table>"); 
-
-    </script>
-</body>
-</html>
-
-    </script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tabella potenze</title>
+		<script type="text/javascript" src="funzioniControllo.js"></script>
+		<script type="text/javascript" src="ext.js"></script>
+	</head>
+	<body>
+		<script>
+			let n1,n2;
+			do{
+				n1=leggiNum("Inserire il primo numero");
+				n2=leggiNum("Inserire il primo numero");
+					if(n2<n1){
+						alert("Il numero inserito è più piccolo del primo numero");
+					}
+			}while(n2<n1);
+		</script>
+		<table border='1'>
+			<thead>
+				<tr>
+					<th>n</th>
+					<th>n^2</th>
+					<th>n^3</th>
+				</tr>			
+			</thead>
+			<tbody id="lollo">
+			</tbody>
+		<script>
+			document.getElementById("lollo").innerHTML = createTab(n1,n2);
+		</script>
+	</body>
 </html>
