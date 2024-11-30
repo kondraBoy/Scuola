@@ -127,3 +127,7 @@ Quando il valore cambia la variabile non si segna quindi ininfluente
 
 
 y = Gruppo 1 + ...
+
+Transistor
+La corrente di uscita rispetto alla corrente in ingresso in un transistor si mostra in una funzione che varia in base alla corrente 
+data al collettore e al voltaggio tra collettore ed emettitore. Può avere comportamento lineare (circuiti analogici) e saturazione (circuiti digitali)
