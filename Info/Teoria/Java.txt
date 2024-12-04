@@ -89,3 +89,25 @@ Abbiamo la possiblità di utlizzare l'attributo lenght (.length) che ci permette
 Try,catch,finally
 
 Si usano quando c'è un interrupt dovuto ad un eccezione che porterebbe alla terminazione forzata del processo
+
+Interface Comparable
+
+Interfaccia che permette di poter accedere a dei metodi di cui sono predefiniti solamente i prototipi(in questo caso il compareTo), e ciò permette di avere un effetto simile all'ereditarietà multipla.
+
+public class GeneralClass implements Comparable <GeneralClass>
+
+ArrayList
+
+ArrayList<String> nomi = new ArrayList<>();
+nomi.add("pippo");
+nomi.add("pluto");
+nomi.add("pinco");
+//Iterazione classica
+for(int i = 0;i<nomi.size();i++){
+	System.out.println(nomi.get(i));
+}
+Si può iterare su tutti gli elementi con foreach
+for (String s: nomi){
+
+}
+L'oggetto deve essere della stessa classe degli oggetti dell'ArrayList, rispetto all'iterazione classica con il ciclo tradizionale il foreach obbliga ad iterare su tutti gli elementi della struttura

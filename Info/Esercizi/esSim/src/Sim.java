@@ -1,5 +1,6 @@
-public class Sim {
+public class Sim implements Comparable<Sim> {
     private String nome;
+    private String operatore;
     private String iccId;
     private String numero;
     private float credito;
@@ -16,24 +17,33 @@ public class Sim {
         setMinuti(0);
     }
 
-    public Sim(boolean active,float credito,String nome,String numero,String iccId,int minuti){
-        setActive(active);
-        setCredito(credito);
+    public Sim(String nome,String numero,String iccId){
+        setOperatore("Postemobile");
+        setActive(false);
+        setCredito(0);
         setNome(nome);
         setNumero(numero);
         setIccId(iccId);
-        setMinuti(minuti);
+        setMinuti(0);
     }
 
     public Sim(Sim a){
-        setActive(a.isActive);
-        setCredito(a.credito);
-        setNome(a.nome);
-        setNumero(a.numero);
-        setIccId(a.iccId);
-        setMinuti(a.minuti);
+        setActive(a.isActive());
+        setCredito(a.getCredito());
+        setNome(a.getNome());
+        setNumero(a.getNumero());
+        setIccId(a.getIccId());
+        setMinuti(a.getMinuti());
     }
     //SETTER
+
+    public void setOperatore(String operatore) {
+        if (!(operatore.trim().isEmpty())) {
+            this.operatore = operatore;
+        } else
+            this.operatore = "Mario Rossi";
+    }
+
     public void setActive(boolean active) {
         this.isActive = active;
     }
@@ -135,6 +145,17 @@ public class Sim {
                 '}';
     }
 
-
-
+    @Override
+    public int compareTo(Sim o) {
+        int n;
+        if(o.getIccId().compareTo(this.iccId)==0){
+            n = 0;
+        }
+        if(o.getIccId().compareTo(this.iccId)>0){
+            n = 1;
+        }else
+            n = -1;
+        return n;
+    }
+    
 }
