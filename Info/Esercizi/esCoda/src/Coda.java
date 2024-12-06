@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Coda<Ticket> {
+public class Coda {
     private LinkedList<Ticket> coda;
     private int maxSize;
 
@@ -8,19 +8,25 @@ public class Coda<Ticket> {
         this.coda = new LinkedList<>();
         this.maxSize = maxSize;
     }
+    public Coda(){
+        this.coda = new LinkedList<>();
+        this.maxSize = 5;
+    }
 
-    public void push(Ticket ticket) {
+    public void push() {
         if (isFull()) {
-            System.out.println("La coda è piena, non posso aggiungere un altro ticket.");
+            throw new IllegalStateException("Coda piena");
         } else {
-            coda.addLast(ticket);
+            if(this.coda.isEmpty())
+                this.coda.add(new Ticket(1));
+            else
+                this.coda.addLast(new Ticket(getLast().getNum() + 1));
         }
     }
 
     public Ticket pop() {
         if (isEmpty()) {
-            System.out.println("La coda è vuota, non posso rimuovere un ticket.");
-            return null;
+            throw new IllegalStateException("Coda vuota");
         } else {
             return coda.removeFirst();
         }

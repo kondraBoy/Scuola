@@ -8,19 +8,46 @@ b) accesso di una persona allo sportello (visualizzare numero ticket)
 public class Main {
     public static void main(String[] args) {
         Coda coda = new Coda();
-        do{
+        char sc;
+        do {
             menu();
-            char sc = Input.leggiChar('a','c',"Scelta :");
-            switch(sc){
-                case 'a':{
-
+            sc = Input.leggiChar('a', 'c', "Scelta :");
+            switch (sc) {
+                case 'a': {
+                    arrivo(coda);
                     break;
                 }
-                case 'b':{
-
+                case 'b': {
+                    accesso(coda);
                     break;
                 }
-        }while(sc!='c');
+            }
+        }while (sc != 'c') ;
     }
+
+    public static void arrivo(Coda coda) {
+        try{
+            coda.push();
+        }
+        catch(IllegalStateException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void accesso(Coda coda) {
+        try{
+            System.out.println("Numero: " + coda.pop().getNum());
+        }
+        catch(IllegalStateException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void menu(){
+        System.out.println("a) Nuovo arrivo persona");
+        System.out.println("b) Accesso persona allo sportello");
+        System.out.println("c) Termine esecuzione");
+    }
+
 
 }
