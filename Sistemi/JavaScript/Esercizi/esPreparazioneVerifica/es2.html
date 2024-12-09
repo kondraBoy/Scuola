@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+	<head>
+		<!--Guarino Andrea 4BI es2.html
+		permettere all'utente di inserire i valori giorno compreso tra 1 e 31, mese tra 1 e 12 e anno tra 1600 e 3000 di una data, 
+		fare tutti i controlli per verificare che la data sia plausibile e poi dire all'utente se l'anno è bisestile o meno
+		-->
+		<meta charset="UTF-8">
+		<title>Esercizio 2</title>
+		<script src="funzioniControllo.js"></script>
+	</head>
+	<body>
+		<script>
+				function checkData(giorno,mese,anno){
+					let check;
+					let bise = checkBisestile(anno);
+					if(mese === 01 || mese === 03 || mese === 05 || mese === 07 || mese === 08 || mese === 10 || mese === 12 && (giorno>=1 && giorno<=31)){
+							check = true;
+					}else{
+						if(mese === 02){
+							if(bise){
+								if(giorno>=1 && giorno<=29)
+									check = true;
+							}else{
+								if(giorno>=1 && giorno<=28)
+									check = true;
+							}
+						}else{
+							if(giorno>=1 && giorno <=30)
+								check = true;
+						}
+					}  
+					return check;
+				}
+				
+				function checkAnno(anno){
+					let check = false;
+					if(anno>=1600 && anno <=3000){
+							check = true;
+					}
+					return check;
+				}
+				
+				function checkBisestile(anno){
+					let check = false;
+					if(anno % 4 === 0 && (anno % 100 !== 0 || anno % 400 === 0))
+						check = true;
+					return check;
+				}
+				function insData(){
+					let giorno,mese,anno;
+					giorno = parseInt(prompt("Inserire il giorno"));
+					mese = parseInt(prompt("Inserire il numero del mese"));
+					anno = parseInt(prompt("Inserire il anno"));
+					if(checkData(giorno,mese,anno)){
+						alert("La data è corretta");
+					}else
+						alert("La data è sbagliata");
+					if(checkBisestile(anno)){
+						alert("L'anno è bisestile");
+					}else{
+						alert("L'anno non è bisestile");
+					}
+				}
+				insData();
+		</script>
+	</body>
+	
+</html>

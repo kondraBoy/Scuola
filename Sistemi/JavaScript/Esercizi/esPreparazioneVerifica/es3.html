@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+	<head>
+		<!-- Guarino Andrea 4BI es3.html
+		Creare una tabella dei caratteri ASCII dal numero 32 al tipo 100 e qualcosa
+		Il numero di colonne della tabella è scelto dall'utente e deve essere un valore compreso tra 1 e 8 -->
+		<meta charset="UTF-8">
+		<title>Esercizio 3</title>
+		<script>
+			// Funzione per creare la tabella ASCII
+			function createTab() {
+				let righe = parseInt(prompt("Inserire il numero di righe", 3));
+				let colonne = parseInt(prompt("Inserire il numero di colonne", 3));
+
+				// Verifica se le colonne sono tra 1 e 8
+				if (colonne < 1 || colonne > 8) {
+					alert("Il numero di colonne deve essere tra 1 e 8.");
+					return;
+				}
+
+				// Creazione della tabella
+				let table = "<table border='1' style='border-collapse: collapse;'>"; 
+				let asciiValue = 32; // Partiamo dal valore ASCII 32
+
+				// Generazione delle righe e colonne
+				for (let r = 0; r < righe; r++) {
+					table += "<tr>";
+					for (let c = 0; c < colonne; c++) {
+						if (asciiValue <= 127) {
+							table += `<td>${String.fromCharCode(asciiValue)} (${asciiValue})</td>`;
+							asciiValue++;
+						} else {
+							break;
+						}
+					}
+					table += "</tr>";
+				}
+
+				table += "</table>";
+
+				// Aggiungi la tabella al corpo della pagina
+				document.getElementById("asciiTable").innerHTML = table;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Tabella dei caratteri ASCII</h1>
+		<p><button onclick="createTab()">Crea Tabella ASCII</button></p>
+		<div id="asciiTable"></div>
+	</body>
+</html>

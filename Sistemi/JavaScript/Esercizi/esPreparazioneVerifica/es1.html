@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+	<head>
+		<!--Guarino Andrea 4BI es1.html
+		 esercizio 1: permettere all'utente di inserire una sequenza di voti compresi tra 1 e 10 con controllo nel file esterno
+		 fargli terminare l'inserimento quando inserisce 0 e calcolare poi media aritmetica e media geometrica.
+		-->
+		<meta charset="UTF-8">
+		<script src="funzioniControllo.js"></script>
+		<title>Esercizio 1</title>
+	</head>
+	<body>
+		<script>
+			function insVoti(){
+				let somma = 0,prodotto = 1,i = 0,num;
+				do{
+					num = parseInt(prompt("Inserire i voti dello studente da 1 a 10",6));
+					if(checkVoto(num)){
+						somma += num;
+						prodotto = prodotto * num;
+						i++;
+					}else
+						if(num!=0)
+							alert("Il voto non è del range indicato");
+				}while(num!=0);
+				if(i>0){
+					let mediaArit = Math.floor(somma / i);
+					let mediaGeom = Math.pow(prodotto, 1/i);
+					document.write("La media aritmetica è: " + mediaArit + "<br>");
+					document.write("La media geometrica è: " + mediaGeom);
+				}else{
+					alert("Impossibile eseguire le medie, non sono stati inseriti voti");
+				}
+			}
+			insVoti();
+			
+			
+		</script>
+	</body>
+</html>
