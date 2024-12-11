@@ -11,7 +11,7 @@ public class Sim implements Comparable<Sim> {
     public Sim(){
         setActive(false);
         setCredito(5);
-        setNome("Mario Rossi");
+        setNome("NULL");
         setNumero("1235468790");
         setIccId("12345678901234567890");
         setMinuti(0);
@@ -59,7 +59,7 @@ public class Sim implements Comparable<Sim> {
         if (!(nome.trim().isEmpty())) {
             this.nome = nome;
         } else
-            this.nome = "Mario Rossi";
+            throw new IllegalArgumentException("Errore - nome intestatario errato - SIM NON ATTIVA");
     }
     public void setNumero(String numero) {
         if (!(numero.trim().isEmpty())) {

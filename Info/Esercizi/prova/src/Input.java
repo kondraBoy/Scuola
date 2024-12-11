@@ -1,5 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 public class Input {
     public static int leggiInt (int vmin, int vmax,String msg){
         int n=0;
