@@ -10,6 +10,7 @@ public class Sim implements Comparable<Sim> {
     //COSTRUTTORI
     public Sim(){
         setActive(false);
+        setOperatore("Tim");
         setCredito(5);
         setNome("NULL");
         setNumero("1235468790");
@@ -17,7 +18,7 @@ public class Sim implements Comparable<Sim> {
         setMinuti(0);
     }
 
-    public Sim(String nome,String numero,String iccId){
+    public Sim(String nome,String operatore,String numero,String iccId){
         setOperatore("Postemobile");
         setActive(false);
         setCredito(0);
@@ -41,7 +42,7 @@ public class Sim implements Comparable<Sim> {
         if (!(operatore.trim().isEmpty())) {
             this.operatore = operatore;
         } else
-            this.operatore = "Mario Rossi";
+            this.operatore = "NULL";
     }
 
     public void setActive(boolean active) {
@@ -87,6 +88,8 @@ public class Sim implements Comparable<Sim> {
     public float getCredito() {
         return credito;
     }
+
+    public String getOperatore() { return operatore; }
 
     public boolean isActive() {
         return isActive;

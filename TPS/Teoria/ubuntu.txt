@@ -1,4 +1,6 @@
-﻿Linux non è un sistema operativo bensì un kernel, l'ultimo modulo del sistema operativo che si trova a stretto contatto con l'hardware.
+﻿
+
+Linux non è un sistema operativo bensì un kernel, l'ultimo modulo del sistema operativo che si trova a stretto contatto con l'hardware.
 Il creatore voleva che il codice di Linux fosse open source, poichè Unix (sistema operativo degli anni 70 su cui basa) era coperto da diritti d'autore e lui voleva che il kernel fosse accessibile a tutti.
 
 Differenze tra Windows e le varie distro:

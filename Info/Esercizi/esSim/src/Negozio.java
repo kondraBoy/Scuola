@@ -59,6 +59,16 @@ public class Negozio {
            return check;
     }
 
+    public boolean addSimToSold(Sim sim){
+        boolean check = false;
+        if(checkIccid(sim.getIccId()) == null && checkNumero(sim.getNumero()) == null)
+        {
+            check = true;
+            this.simSold.add(sim);
+        }
+        return check;
+    }
+
     private Sim checkIccid(String iccid,LinkedList<Sim> lista){
         Sim find = null;
         for(int i=0; i<lista.size() && find==null;i++){
@@ -110,9 +120,49 @@ public class Negozio {
         return deleted;
     }
 
+    public Sim findNumeroOperatore(String numero,String operatore){
+        Sim find = null;
+        for(int i=0; i<this.simSold.size() && find==null;i++){
+            Sim sim =this.simSold.get(i);
+            if(sim.getNumero().equals(numero) && sim.getOperatore().equals(operatore)){
+                find = sim;
+            }
+        }
+        return find;
+    }
+
+    public Sim findNumeroOperatoreIccid(String numero,String operatore,String iccid){
+        Sim find = null;
+        for(int i=0; i<this.simSold.size() && find==null;i++){
+            Sim sim =this.simSold.get(i);
+            if(sim.getNumero().equals(numero) && sim.getOperatore().equals(operatore)){
+                find = sim;
+            }
+        }
+        return find;
+    }
+
+    public LinkedList<Sim> getSimToVisualize(boolean attive) {
+        LinkedList<Sim> simsToDisplay = new LinkedList<>();
+        if (attive) {
+            for (Sim sim : simSold) {
+                if (sim.isActive()) {
+                    simsToDisplay.add(sim);
+                }
+            }
+        } else {
+            for (Sim sim : simBuy) {
+                simsToDisplay.add(sim);
+            }
+        }
+        return simsToDisplay;
+    }
 
 
-   
+}
 
-    
+
+
+
+
 }

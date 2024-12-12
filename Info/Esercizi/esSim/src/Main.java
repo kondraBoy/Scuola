@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /*
 1. Attivare una SIM
 
@@ -32,15 +34,15 @@ public class Main {
                     break;
                 }
                 case 'd': {
-                    showOre(sim);
+                    ricaricaSim(negozio);
                     break;
                 }
                 case 'e': {
-                    disattivaSim(sim);
+                    portabilitaSim(negozio);
                     break;
                 }
                 case 'f':{
-                    statoSim(sim);
+
                     break;
                 }
             }
@@ -51,8 +53,10 @@ public class Main {
         int num = Input.leggiInt(0,Integer.MAX_VALUE,"Inserire il numero di Sim con il quale rifornirsi");
         Sim sim;
         for(int i=0;i<num;i++){
-            String operator = Input.leggiStr("Inserire nome operatore");
-
+            String operatore = Input.leggiStr("Inserire nome operatore");
+            String Iccid = Input.leggiStr("Inserire Iccid");
+            String numero = Input.leggiStr("Inserire numero");
+            sim = new Sim("NULL",operatore,numero,Iccid);
             negozio.addSimToStorage(sim);
         }
     }
@@ -71,39 +75,90 @@ public class Main {
         msg = negozio.sellSim(nome);
         System.out.println(msg);
     }
-    public static void ricaricaSim(Sim sim){
+    public static void ricaricaSim(Negozio negozio){
         char sc;
-        System.out.println("Scegliere il taglio della ricarica");
-        System.out.println("a) 5 €");
-        System.out.println("b) 10 €");
-        System.out.println("c) 20 €");
-        sc = Input.leggiChar('a','c',"Scelta:");
-        switch (sc){
-            case 'a':{
-                sim.addCredito(5f);
-                break;
+        String numero = Input.leggiStr("Inserisci il numero di cui effettuare la ricarica");
+        String operatore = Input.leggiStr("Inserisci l'operatore del numero telefonico");
+        Sim sim = negozio.findNumeroOperatore(numero,operatore);
+        if(sim == null){
+            System.out.println("Scegliere il taglio della ricarica");
+            System.out.println("a) 5 €");
+            System.out.println("b) 10 €");
+            System.out.println("c) 20 €");
+            sc = Input.leggiChar('a','c',"Scelta:");
+            switch (sc){
+                case 'a':{
+                    sim.addCredito(5f);
+                    break;
+                }
+                case 'b':{
+                    sim.addCredito(10f);
+                    break;
+                }
+                case 'c':{
+                    sim.addCredito(20f);
+                    break;
+                }
             }
-            case 'b':{
-                sim.addCredito(10f);
-                break;
-            }
-            case 'c':{
-                sim.addCredito(20f);
-                break;
-            }
-
+        }else{
+            System.out.println("Il numero inserito è inesistente, quindi è impossibile effettuare la ricarica");
         }
-
     }
+
+    private static void portabilitaSim(Negozio negozio) {
+        String iccid = Input.leggiStr("Inserisci iccid scheda sim");
+        String numero = Input.leggiStr("Inserisci numero di telefono da portare");
+        String operatoreAttuale = Input.leggiStr("Inserisci l'operatore attuale");
+        String nuovoOperatore = Input.leggiStr("Inserire Il nuovo operatore");
+        Sim sim = negozio.findNumeroOperatoreIccid(numero, operatoreAttuale,iccid);
+        Sim newSim;
+        if(sim!=null){
+            int sc = Input.leggiInt(0,1,"Vuoi trasferire il credito (1 si/0 no)");
+            switch (sc){
+                case 0:{
+                    newSim = new Sim(sim);
+                    newSim.setOperatore(nuovoOperatore);
+                    newSim.setCredito(0);
+                    negozio.addSimToSold(newSim);
+                }
+                case 1:{
+                    newSim = new Sim(sim);
+                    newSim.setOperatore(nuovoOperatore);
+                    negozio.addSimToSold(newSim);
+                }
+            }
+        }else
+            System.out.println("Non è stata trovata la sim");
+    }
+
+
+    public static void visualizzaSim(Negozio negozio) {
+        char scelta = Input.leggiChar('a', 'b', "a) Visualizza SIM attive\nb) Visualizza SIM disattive\nScelta: ");
+
+        LinkedList<Sim> simsDaVisualizzare = negozio.getSimToVisualize(scelta == 'a');
+
+        if (simsDaVisualizzare.isEmpty()) {
+            System.out.println("Nessuna SIM trovata.");
+        } else {
+            for (Sim sim : simsDaVisualizzare) {
+                System.out.println(sim);
+            }
+        }
+    }
+
+
+
+
+
+
     public static void menu(){
-        System.out.println("a)Attiva SIM");
-        System.out.println("b)Ricarica SIM");
-        System.out.println("c)Chiama");
-        System.out.println("d)Mostra minuti");
-        System.out.println("e)Disattiva SIM");
-        System.out.println("f)Mostra status SIM");
+        System.out.println("a) Attiva SIM");
+        System.out.println("b) Disattiva SIM");
+        System.out.println("c) Aggiungi SIM a magazzino");
+        System.out.println("d) Ricarica SIM");
+        System.out.println("e) Richiedi portabilità numero");
+        System.out.println("f) Visualizza SIM attive/disattive");
         System.out.println("g) Termina programma");
     }
 
-    }
 }
