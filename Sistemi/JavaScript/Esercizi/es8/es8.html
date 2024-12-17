@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--Guarino Andrea 4BI index.html-->
+
+  <title>Document</title>
+  <script src="funzioniControllo.js"></script>
+  <script>
+	let n1, n2;
+	do{
+		n1 = parseInt(prompt("Inserire il primo numero"),10);
+		if(!ctrlNum(0,Number.MAX_VALUE,n1))
+			alert("Numero errato");
+	}while(!ctrlNum(0,Number.MAX_VALUE,n1));
+	do{
+		n2 = parseInt(prompt("Inserire il secondo numero"),10);
+		if(!ctrlNum(0,Number.MAX_VALUE,n2))
+			alert("Numero errato");
+	}while(!ctrlNum(0,Number.MAX_VALUE,n2));
+	do{
+		n3 = parseInt(prompt("Inserire il terzo numero"),10);
+		if(!ctrlNum(0,Number.MAX_VALUE,n3))
+			alert("Numero errato");
+	}while(!ctrlNum(0,Number.MAX_VALUE,n3));
+	function ctrlTri(n1, n2, n3){
+	let cor = true;
+	if(n1>n2+n3||n2>n1+n3||n3>n1+n2)
+		cor = false;
+	return cor;
+}
+
+function calcP(n1,n2,n3) {
+	return n1+n2+n3;
+}
+
+function ctrlTipo(n1,n2,n3) {
+	let str;
+	if(n1==n2&&n2==n3)
+		str = "Equilatero";
+	else if(n1==n2||n2==n3||n1==n3)
+		str = "Isoscele";
+	else
+		str = "Scaleno";
+	return str;
+}
+
+function ctrlNum(vmin, vmax, n) {
+  cor = true;
+  if (n < vmin || n > vmax || isNaN(n)) {
+	cor = false;
+  }
+  return cor;
+}
+
+  </script>
+</head>
+
+<body>
+	<h2 id="esiste"></h2>
+	<h3 id="perimetro"></h3>
+	<h3 id="tipo"></h3>
+	<script>
+		if(ctrlTri(n1,n2,n3)){
+			document.getElementById("esiste").innerHTML = "Quello inserito e un triangolo";
+			document.getElementById("perimetro").innerHTML = "Il perimetro del triangolo e " + calcP(n1,n2,n3);
+			document.getElementById("tipo").innerHTML = "Il tipo di triangolo e " + ctrlTipo(n1,n2,n3);
+		}
+		else
+			document.getElementById("esiste").innerHTML = "Quello inserito non e un triangolo";
+	</script>
+</body>
+
+</html>
