@@ -81,10 +81,6 @@ public class GestoreNumeri {
     }
 
     //SETTER
-
-
-
-
     public void setVmin(int vmin){
         if(vmin>this.vmax)
             this.vmin = 0;
