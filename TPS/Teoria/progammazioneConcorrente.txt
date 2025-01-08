@@ -1,0 +1,37 @@
+quando richiamo la int fork() può restituire tre valori:
+
+<0: non creato a causa di un errore, generalmente un'operazione illegale avvenuta in memoria
+=0: è stato creato un processo figlio e la risorsa viene assegnato al processo figlio stesso
+>0: è stato creato il processo figlio ma la risorsa viene assegnato al processo padre (il valore è il PID [Process Identifier] del figlio)
+
+Esempio in C
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+    int pid;
+    printf("Prima della fork: 1 processo MAIN/n");
+    pid = fork();
+    if(pid < 0)
+    	printf("Errore: processo figlio non creato\n");
+    else if(pid == 0){
+	//ramo del processo figlio
+	printf("Ciao sono il processo figlio");
+    }
+    else{
+	printf("Ciao sono il processo padre");
+    }
+    return 0;
+}
+
+Una volta che il processo è terminato viene rimosso, può terminare in due modi:
+. involontariamente: per via di operazioni illegali (es: n/0)
+. volontariamente: perchè ha finito tutte le istruzioni o perchè avviene l'utilizzo di exit()
+
+void exit(int status);
+int status è lo stato mediante il quale il processo che termina può comunicare al padre informazioni sul suo stato di terminazione:generalmente è un intero a 16 bit 
+
+per avere il PID dei vari processi si usano due funzioni:
+. int getpid(): restituisce il pid del figlio
+. int getppid(): restituisce il pid del processo padre del processo figlio
