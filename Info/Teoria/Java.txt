@@ -111,3 +111,19 @@ for (String s: nomi){
 
 }
 L'oggetto deve essere della stessa classe degli oggetti dell'ArrayList, rispetto all'iterazione classica con il ciclo tradizionale il foreach obbliga ad iterare su tutti gli elementi della struttura
+
+Ereditarietà e Polimorfismo
+
+Ereditarietà:Da una classe padre deriva una o più classi figlie, per ereditare si intende che la classe figlia contiene tutti i metodi definiti nella classe padre, vede solo ciò che è public o protected quindi il private rimane cmq il livello di visibilità ristretto solo alla classe di appartenenza
+
+Per ereditare da una classe all'altra si usa la keyword extends
+
+class NomeClasseFiglia extends NomeClassePadre
+
+Per overriding si intende che la classe figlia ridefinisce una funzione identica per prototipo della classe padre modificandone il comportamento
+
+super(): è una keyword che permette di utilizzare i costruttori della classe padre all'interno della classe figlia (in base ai parametri che si inseriscono in super, verrà abbinato al costruttore corrispondente) 
+
+Polimorfismo:Lo stesso metodo in nome e parametri assume comportamenti diversi anche se è definito nella classe padre 
+
+ex: metodo disegno definito sia in padre che in figlio ma in base al tipo di riferimento utilizzerò il metodo disegno direttamente corrispondente alla classe di appartenenza dell'oggetto                      
