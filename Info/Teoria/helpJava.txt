@@ -1,0 +1,149 @@
+Andrea Guarino 4BI 
+LINKEDLIST
+
+E = la  classe di oggetti con il quale la lista andrà ad interagire (String o Integer per esempio)
+
+boolean add(E e)
+Aggiunge l'elemento specificato alla fine di questa lista.
+
+void add(int index, E element)
+Inserisce l'elemento specificato nella posizione specificata di questa lista.
+
+void addFirst(E e)
+Inserisce l'elemento specificato all'inizio di questa lista.
+
+void addLast(E e)
+Aggiunge l'elemento specificato alla fine di questa lista.
+
+void clear()
+Rimuove tutti gli elementi da questa lista.
+
+boolean contains(Object o)
+Restituisce true se questa lista contiene l'elemento specificato.
+
+Iterator<E> descendingIterator()
+Restituisce un iteratore sugli elementi di questa lista in ordine sequenziale inverso.
+
+E element()
+Recupera, ma non rimuove, la testa (primo elemento) di questa lista.
+
+E get(int index)
+Restituisce l'elemento nella posizione specificata di questa lista.
+
+E getFirst()
+Restituisce il primo elemento in questa lista.
+
+E getLast()
+Restituisce l'ultimo elemento in questa lista.
+
+int indexOf(Object o)
+Restituisce l'indice della prima occorrenza dell'elemento specificato in questa lista, oppure -1 se l'elemento non è presente.
+
+int lastIndexOf(Object o)
+Restituisce l'indice dell'ultima occorrenza dell'elemento specificato in questa lista, oppure -1 se l'elemento non è presente.
+
+ListIterator<E> listIterator(int index)
+Restituisce un iteratore della lista a partire dalla posizione specificata.
+
+boolean offer(E e)
+Aggiunge l'elemento specificato come coda (ultimo elemento) di questa lista.
+
+boolean offerFirst(E e)
+Inserisce l'elemento specificato all'inizio di questa lista.
+
+boolean offerLast(E e)
+Inserisce l'elemento specificato alla fine di questa lista.
+
+E peek()
+Recupera, ma non rimuove, la testa (primo elemento) di questa lista.
+
+E peekFirst()
+Recupera, ma non rimuove, il primo elemento di questa lista o restituisce null se la lista è vuota.
+
+E peekLast()
+Recupera, ma non rimuove, l'ultimo elemento di questa lista o restituisce null se la lista è vuota.
+
+E poll()
+Recupera e rimuove la testa (primo elemento) di questa lista.
+
+E pollFirst()
+Recupera e rimuove il primo elemento di questa lista o restituisce null se la lista è vuota.
+
+E pollLast()
+Recupera e rimuove l'ultimo elemento di questa lista o restituisce null se la lista è vuota.
+
+E pop()
+Estrae un elemento dallo stack rappresentato da questa lista.
+
+void push(E e)
+Inserisce un elemento nello stack rappresentato da questa lista.
+
+E remove()
+Recupera e rimuove la testa (primo elemento) di questa lista.
+
+E remove(int index)
+Rimuove l'elemento nella posizione specificata di questa lista.
+
+boolean remove(Object o)
+Rimuove la prima occorrenza dell'elemento specificato da questa lista, se presente.
+
+E removeFirst()
+Rimuove e restituisce il primo elemento di questa lista.
+
+E removeLast()
+Rimuove e restituisce l'ultimo elemento di questa lista.
+
+boolean removeLastOccurrence(Object o)
+Rimuove l'ultima occorrenza dell'elemento specificato in questa lista (attraversandola dalla testa alla coda).
+
+E set(int index, E element)
+Sostituisce l'elemento nella posizione specificata con l'elemento specificato.
+
+int size()
+Restituisce il numero di elementi in questa lista.
+
+ARRAYLIST
+
+E = la  classe di oggetti con il quale la lista andrà ad interagire (String o Integer per esempio)
+
+boolean add(E e)
+Aggiunge l'elemento specificato alla fine di questa lista.
+
+void add(int index, E element)
+Inserisce l'elemento specificato nella posizione specificata in questa lista.
+
+void clear()
+Rimuove tutti gli elementi da questa lista.
+
+boolean contains(Object o)
+Restituisce true se questa lista contiene l'elemento specificato.
+
+E get(int index)
+Restituisce l'elemento nella posizione specificata in questa lista.
+
+int indexOf(Object o)
+Restituisce l'indice della prima occorrenza dell'elemento specificato in questa lista, oppure -1 se l'elemento non è presente.
+
+boolean isEmpty()
+Restituisce true se questa lista non contiene elementi.
+
+Iterator<E> iterator()
+Restituisce un iteratore sugli elementi di questa lista nell'ordine corretto.
+
+int lastIndexOf(Object o)
+Restituisce l'indice dell'ultima occorrenza dell'elemento specificato in questa lista, oppure -1 se l'elemento non è presente.
+
+E remove(int index)
+Rimuove l'elemento nella posizione specificata in questa lista.
+
+boolean remove(Object o)
+Rimuove la prima occorrenza dell'elemento specificato da questa lista, se presente.
+
+protected void removeRange(int fromIndex, int toIndex)
+Rimuove da questa lista tutti gli elementi il cui indice è compreso tra fromIndex (incluso) e toIndex (escluso).
+
+E set(int index, E element)
+Sostituisce l'elemento nella posizione specificata in questa lista con l'elemento specificato.
+
+int size()
+Restituisce il numero di elementi in questa lista.
