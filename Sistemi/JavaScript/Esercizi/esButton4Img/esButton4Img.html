@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Galleria Immagini</title>
+</head>
+<body>
+    <h1>Galleria di Immagini</h1>
+    <p>Clicca i pulsanti per cambiare immagine!</p>
+    <div>
+        <button onclick="prevImage()">Indietro</button>
+		<img id="slider-image" src="image1.jpg" alt="Immagine 1" width="300" height="300">
+        <button onclick="nextImage()">Avanti</button>
+    </div>
+
+    <script>
+        let currentIndex = 1;
+        function showImage(index) {
+            const img = document.getElementById("slider-image");
+            img.src = "image" + index + ".jpg";
+            img.alt = "Immagine " + index;
+        }
+
+        function prevImage() {
+            if (currentIndex === 1) {
+                currentIndex = 4; 
+            } else {
+                currentIndex--;
+            }
+            showImage(currentIndex);
+        }
+
+       
+        function nextImage() {
+            if (currentIndex === 4) {
+                currentIndex = 1; 
+            } else {
+                currentIndex++; 
+            }
+            showImage(currentIndex);
+        }
+    </script>
+</body>
+</html>

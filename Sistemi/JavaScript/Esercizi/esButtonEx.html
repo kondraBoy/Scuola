@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>    
+		<meta charset="UTF-8">    
+		<script>        
+			let stato=false;              
+			function Img(){            
+				alert(stato);      
+				const l=document.getElementById("lamp");      
+				alert(l.src);      
+				if(stato){        
+					stato=false;        
+					l.src="./img/pic_bulboff.gif";      
+				}      
+				else{        
+					stato=true;        
+					l.src="./img/pic_bulbon.gif";      
+				}         
+			}    
+		</script>    
+		<title>Document</title>
+	</head>
+	<body>
+		<img id="lamp" src="./img/pic_bulboff.gif" alt="lampadina">    
+		<button onClick='Img();'>ON/OFF</button>
+	</body>
+</html>
