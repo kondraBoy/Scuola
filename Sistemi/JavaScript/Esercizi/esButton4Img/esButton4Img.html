@@ -6,15 +6,13 @@
 </head>
 <body>
     <h1>Galleria di Immagini</h1>
-    <p>Clicca i pulsanti per cambiare immagine!</p>
     <div>
         <button onclick="prevImage()">Indietro</button>
 		<img id="slider-image" src="image1.jpg" alt="Immagine 1" width="300" height="300">
         <button onclick="nextImage()">Avanti</button>
     </div>
-
     <script>
-        let currentIndex = 1;
+        let indiceImg = 1;
         function showImage(index) {
             const img = document.getElementById("slider-image");
             img.src = "image" + index + ".jpg";
@@ -22,23 +20,22 @@
         }
 
         function prevImage() {
-            if (currentIndex === 1) {
-                currentIndex = 4; 
+            if (indiceImg === 1) {
+                indiceImg = 4; 
             } else {
-                currentIndex--;
+                indiceImg--;
             }
-            showImage(currentIndex);
+            showImage(indiceImg);
         }
 
-       
-        function nextImage() {
-            if (currentIndex === 4) {
-                currentIndex = 1; 
-            } else {
-                currentIndex++; 
-            }
-            showImage(currentIndex);
-        }
+		function nextImage() {
+			if (indiceImg === 4) {
+				indiceImg = 1; 
+			} else {
+				indiceImg++; 
+			}
+			showImage(indiceImg);
+		}
     </script>
 </body>
 </html>
