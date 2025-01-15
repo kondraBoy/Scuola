@@ -1,3 +1,8 @@
+Il programma è un entita statica perchè non evolve ed è memorizzato su memoria di massa, il programma diventa processo quando viene caricato in memoria centrale.
+Il processo è un entita dinamica che evolve con l'utilizzo delle risorse, quando la CPU viene assegnata al processo quest'ultimo evolve. Essendo dotati di una sola
+CPU possiamo eseguire solamente un processo, e qui la programmazione concorrente permette di deifinire vari processi che concorrono per l'utilizzo della risorsa, e
+si ha quindi l'impressione che i processi vengano eseguiti contemporaneamente. Per fare ciò abbiamo bisogno di una macchina concorrente, che può eseguire più processi
+sequenziali.
 quando richiamo la int fork() può restituire tre valori:
 
 <0: non creato a causa di un errore, generalmente un'operazione illegale avvenuta in memoria
@@ -30,8 +35,12 @@ Una volta che il processo è terminato viene rimosso, può terminare in due modi
 . volontariamente: perchè ha finito tutte le istruzioni o perchè avviene l'utilizzo di exit()
 
 void exit(int status);
-int status è lo stato mediante il quale il processo che termina può comunicare al padre informazioni sul suo stato di terminazione:generalmente è un intero a 16 bit 
+int status: è lo stato mediante il quale il processo che termina può comunicare al padre informazioni sul suo stato di terminazione:generalmente è un intero a 16 bit 
 
 per avere il PID dei vari processi si usano due funzioni:
 . int getpid(): restituisce il pid del figlio
 . int getppid(): restituisce il pid del processo padre del processo figlio
+
+La funzione fork() ritorna un'int, ma per una corretta assegnazione bisognerebbe usare pid_t
+
+sleep(int ..): come parametro prende un numero di secondi intero nel quale sospende il processo per quel numero di secondi
