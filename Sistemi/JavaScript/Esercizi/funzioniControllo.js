@@ -18,9 +18,8 @@ function leggiNum(vmin, vmax, msg){
 	let num;
 	do{
 		num = prompt(msg,1);
-		if(!controllaNum(num) && (num < vmin || num > vmax){
+		if(!controllaNum(num) && (num < vmin || num > vmax))
 			alert("Errore, inserisci un numero che sia maggiore di " + min + " e minore di " + max);
-		}
 	}while(!controllaNum(num) && (num < vmin || num > vmax));
 	return num;
 }
