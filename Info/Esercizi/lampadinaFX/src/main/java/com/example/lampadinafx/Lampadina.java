@@ -1,3 +1,5 @@
+package com.example.lampadinafx;
+
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 

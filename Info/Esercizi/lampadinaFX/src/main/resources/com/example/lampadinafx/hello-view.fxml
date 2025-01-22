@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane minHeight="-Infinity" prefHeight="473.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lampadinafx.HelloController">
+   <children>
+      <Circle fx:id="crcLamp" disable="true" layoutX="466.0" layoutY="96.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextField fx:id="txtNameLamp" layoutX="389.0" layoutY="159.0" prefHeight="25.0" prefWidth="102.0" promptText="Nome Lampadina" />
+      <Button fx:id="btnNewLamp" layoutX="501.0" layoutY="159.0" mnemonicParsing="false" onAction="#onBtnNewLampClick" text="Crea" />
+      <TextField fx:id="txtR" disable="true" layoutX="383.0" layoutY="228.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtG" disable="true" layoutX="383.0" layoutY="260.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtB" disable="true" layoutX="383.0" layoutY="292.0" prefHeight="25.0" prefWidth="40.0" />
+      <Label fx:id="lblR" disable="true" layoutX="338.0" layoutY="232.0" text="R" />
+      <Label fx:id="lblG" disable="true" layoutX="338.0" layoutY="264.0" text="G" />
+      <Label fx:id="lblB" disable="true" layoutX="338.0" layoutY="296.0" text="B" />
+      <Line fx:id="line" disable="true" endX="-100.0" endY="132.0" layoutX="565.0" layoutY="260.0" startX="-100.0" startY="-45.29998779296875" />
+      <TextField fx:id="txtLum" disable="true" layoutX="513.0" layoutY="260.0" prefHeight="25.0" prefWidth="40.0" />
+      <Label fx:id="lblLum" disable="true" layoutX="504.0" layoutY="232.0" text="Luminosità" />
+      <Button fx:id="btnSetRGB" disable="true" layoutX="377.0" layoutY="332.0" mnemonicParsing="false" text="Invio" />
+      <Button fx:id="btnSetLum" disable="true" layoutX="512.0" layoutY="332.0" mnemonicParsing="false" onAction="#onBtnSetLumClick" text="Invio" />
+      <Label fx:id="lblExc" layoutX="262.0" layoutY="14.0" prefHeight="20.0" prefWidth="408.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnTurnOff" disable="true" layoutX="351.0" layoutY="84.0" mnemonicParsing="false" text="OFF" />
+      <Button fx:id="btnTurnOn" disable="true" layoutX="536.0" layoutY="84.0" mnemonicParsing="false" text="ON" />
+   </children>
+</Pane>
