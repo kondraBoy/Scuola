@@ -63,6 +63,8 @@ public class HelloController {
     @FXML
     private TextField txtR;
 
+    ArrayList<Integer> rgb = new ArrayList<>(3);
+
     public void onBtnNewLampClick(){
         ArrayList<Integer> rgb = new ArrayList<>(3);
         rgb.add(0,0);
@@ -101,7 +103,7 @@ public class HelloController {
             int lum = Integer.parseInt(txtLum.getText());
             Lampadina lampadina = new Lampadina(txtNameLamp.getText());
             lampadina.setLum(lum);
-            lblLum.setText(String.valueOf(lampadina.getLum()));
+            crcLamp.setFill(Color.rgb(rgb.get(0),rgb.get(1),rgb.get(2),lum / 0.2));
         }catch (IllegalArgumentException | NullPointerException e){
             String s = "Luminosità non valida (tra 1 e 5)";
             setLblExc(s);
@@ -109,7 +111,6 @@ public class HelloController {
     }
     public void onBtnSetRGBClick(){
         try{
-            ArrayList<Integer> rgb = new ArrayList<>(3);
             rgb.add(0,Integer.parseInt(txtR.getText()));
             rgb.add(1,Integer.parseInt(txtG.getText()));
             rgb.add(2,Integer.parseInt(txtB.getText()));
@@ -121,16 +122,18 @@ public class HelloController {
             setLblExc(s);
         }
     }
+
     public void onBtnTurnOnClick(){
         Lampadina lampadina = new Lampadina(txtNameLamp.getText());
         lampadina.setStatus(true);
-        crcLamp.setFill(Color.rgb(lampadina.getRgb().get(0), lampadina.getRgb().get(1),lampadina.getRgb().get(2)));
+        crcLamp.setFill(Color.rgb(lampadina.getRgb()
+                .get(0), lampadina.getRgb().get(1),lampadina.getRgb().get(2)));
     }
 
     public void onBtnTurnOffClick(){
         Lampadina lampadina = new Lampadina(txtNameLamp.getText());
         lampadina.setStatus(false);
-        crcLamp.setFill(Color.rgb(0, 0,0);
+        crcLamp.setFill(Color.rgb(0, 0,0));
     }
-    public void
+
 }

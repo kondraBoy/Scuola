@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 public class Quadrilateri extends Figura{
     private float l1,l2;
     public Quadrilateri(){
@@ -26,29 +28,41 @@ public class Quadrilateri extends Figura{
     }
 
     public void setL2(float l2) {
-        if(l2>0)
+        if (l2 > 0)
             this.l2 = l2;
-        else if(l2==0 || l2 < 0)
+        else if (l2 == 0 || l2 < 0)
             throw new IllegalArgumentException("Non si può avere un lato con misura 0");
     }
 
+    @Override
     public float area() {
-        super.area = this.l1*this.l2;
-        return super.area;
+        return l1 * l2;
     }
 
+    @Override
     public float perimetro() {
-        super.perimetro = (this.l1 + this.l2) * 2;
-        return super.perimetro;
+        return 2 * (l1 + l2);      }
+
+    @Override
+    public String toCsv() {
+        return "quadrilatero;" + l1 + ";" + l2 + ";\n";
+    }
+
+    @Override
+    public void fromCsv(String csv) {
+        StringTokenizer tokenizer = new StringTokenizer(csv, ";");
+        if (tokenizer.countTokens() == 3 && tokenizer.nextToken().equals("quadrilatero")) {
+            setL1(Float.parseFloat(tokenizer.nextToken()));
+            setL2(Float.parseFloat(tokenizer.nextToken()));
+        } else {
+            throw new IllegalArgumentException("Formato CSV non valido per Quadrilateri.");
+        }
     }
 
     @Override
     public String toString() {
-        return "Quadrilatero{" +
-                "lato1=" + l1 +
-                ", lato2=" + l2 +
-                ", area=" + area() +
-                ", perimetro=" + perimetro() +
-                '}';
+        return "Quadrilatero: lato1=" + l1 + ", lato2=" + l2 + ", area=" + area() + ", perimetro=" + perimetro();
     }
+
 }
+

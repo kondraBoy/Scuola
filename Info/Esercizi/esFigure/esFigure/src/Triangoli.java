@@ -1,3 +1,4 @@
+import java.util.StringTokenizer;
 public class Triangoli extends Figura{
     private float l1, l2, l3;
 
@@ -69,16 +70,29 @@ public class Triangoli extends Figura{
         return true;
     }
 
-    // Metodo toString per stampare i dettagli del triangolo
+    @Override
+    public void fromCsv(String csv) {
+        StringTokenizer tokenizer = new StringTokenizer(csv, ",");
+        if (tokenizer.countTokens() == 4 && tokenizer.nextToken().equals("triangolo")) {
+            setL1(Float.parseFloat(tokenizer.nextToken()));
+            setL2(Float.parseFloat(tokenizer.nextToken()));
+            setL3(Float.parseFloat(tokenizer.nextToken()));
+            if (!doExist(l1, l2, l3)) {
+                throw new IllegalArgumentException("I lati non possono formare un triangolo.");
+            }
+        } else {
+            throw new IllegalArgumentException("Formato CSV non valido per Triangolo.");
+        }
+    }
+
+    @Override
+    public String toCsv() {
+        return "triangolo;" + l1 + ";" + l2 + ";" + l3 + ";\n";
+    }
+
     @Override
     public String toString() {
-        return "Triangolo{" +
-                "lato1=" + l1 +
-                ", lato2=" + l2 +
-                ", lato3=" + l3 +
-                ", area=" + area() +
-                ", perimetro=" + perimetro() +
-                '}';
+        return "Triangolo: lato1=" + l1 + ", lato2=" + l2 + ", lato3=" + l3 + ", area=" + area() + ", perimetro=" + perimetro();
     }
 }
 
