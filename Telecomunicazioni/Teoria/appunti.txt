@@ -132,3 +132,8 @@ y = Gruppo 1 + ...
 Transistor
 La corrente di uscita rispetto alla corrente in ingresso in un transistor si mostra in una funzione che varia in base alla corrente 
 data al collettore e al voltaggio tra collettore ed emettitore. Può avere comportamento lineare (circuiti analogici) e saturazione (circuiti digitali)
+
+Isteresi
+è quando ho due soglie, una di attivazione ed una di spegnimento, quindi tra questi due valori c'è una fascia nel quale non accade nulla
+
+_Sensore che prende un'informazione e la traduce in un segnale elettrico che viene elaborato e poi c'è un attuatore che esegue una specifica azione
