@@ -137,3 +137,30 @@ Isteresi
 è quando ho due soglie, una di attivazione ed una di spegnimento, quindi tra questi due valori c'è una fascia nel quale non accade nulla
 
 _Sensore che prende un'informazione e la traduce in un segnale elettrico che viene elaborato e poi c'è un attuatore che esegue una specifica azione
+
+Decibel
+È un decimo di Bel ed è adimensionale ed è un numero puro perché gli posso mettere alcun valore senza cambiarne la natura.
+
+33 dB
+
+10 x 10 x 10 x 2 (3 db vuol dire moltiplicare per 2 il segnale) = il segnale viene amplificato 2000 volte
+
+
+Valori amplificazione
+1 1.25
+2 1.6
+3 2  //IMPORTANTE
+4 2.5
+5 3 //IMPORTANTE
+6 4
+7 5
+8 6.7
+9 8
+10 10
+
+Come si comporta un amplificatore operazionale in funzione della frequenza?	
+L'amplificatore operazionale si comporta come un filtro passa basso
+
+Ci sono passa basso passa alto elimina banda passa banda, essendo di primo grado scendono di 20dB per decade. Questo tipo di filtro è di tipo Analogico ed ha dei set predefiniti di tagli.
+Con i filtri digitali si può fare tutto ciò che si vuole
+			
