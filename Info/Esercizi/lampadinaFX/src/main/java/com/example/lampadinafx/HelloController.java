@@ -70,6 +70,7 @@ public class HelloController {
             lampadina = new Lampadina(txtNameLamp.getText());
             lampadina.setRgb(0,0,0);
             crcLamp.setDisable(false);
+            crcLamp.setVisible(true);
             txtR.setDisable(false);
             txtG.setDisable(false);
             txtB.setDisable(false);
@@ -130,5 +131,30 @@ public class HelloController {
         Lampadina lampadina = new Lampadina(txtNameLamp.getText());
         lampadina.setStatus(false);
         crcLamp.setFill(Color.rgb(0, 0,0));
+    }
+
+    public void onBtnResetLampClick(){
+        lampadina = null;
+        txtR.setText("");
+        txtG.setText("");
+        txtB.setText("");
+        txtLum.setText("");
+        crcLamp.setVisible(false);
+        crcLamp.setDisable(false);
+        txtR.setDisable(true);
+        txtG.setDisable(true);
+        txtB.setDisable(true);
+        txtLum.setDisable(true);
+        btnSetLum.setDisable(true);
+        line.setDisable(true);
+        btnSetRGB.setDisable(true);
+        btnTurnOff.setDisable(true);
+        btnTurnOn.setDisable(true);
+        lblR.setDisable(true);
+        lblG.setDisable(true);
+        lblB.setDisable(true);
+        lblLum.setDisable(true);
+        lblExc.setText("");
+        txtNameLamp.setText("");
     }
 }

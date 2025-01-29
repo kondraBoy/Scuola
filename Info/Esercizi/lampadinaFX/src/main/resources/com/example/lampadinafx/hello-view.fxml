@@ -13,14 +13,14 @@
       <Circle fx:id="crcLamp" disable="true" layoutX="339.0" layoutY="107.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
       <TextField fx:id="txtNameLamp" layoutX="262.0" layoutY="170.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="102.0" promptText="Nome Lampadina" />
       <Button fx:id="btnNewLamp" layoutX="374.0" layoutY="170.0" mnemonicParsing="false" onAction="#onBtnNewLampClick" text="Crea" />
-      <TextField fx:id="txtR" disable="true" layoutX="256.0" layoutY="239.0" prefHeight="25.0" prefWidth="40.0" />
-      <TextField fx:id="txtG" disable="true" layoutX="256.0" layoutY="271.0" prefHeight="25.0" prefWidth="40.0" />
-      <TextField fx:id="txtB" disable="true" layoutX="256.0" layoutY="303.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtR" disable="true" layoutX="256.0" layoutY="239.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtG" disable="true" layoutX="256.0" layoutY="271.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtB" disable="true" layoutX="256.0" layoutY="303.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="40.0" />
       <Label fx:id="lblR" disable="true" layoutX="211.0" layoutY="243.0" text="R" />
       <Label fx:id="lblG" disable="true" layoutX="211.0" layoutY="275.0" text="G" />
       <Label fx:id="lblB" disable="true" layoutX="211.0" layoutY="307.0" text="B" />
       <Line fx:id="line" disable="true" endX="-100.0" endY="132.0" layoutX="438.0" layoutY="271.0" startX="-100.0" startY="-45.29998779296875" />
-      <TextField fx:id="txtLum" disable="true" layoutX="386.0" layoutY="271.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="txtLum" disable="true" layoutX="386.0" layoutY="271.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="40.0" />
       <Label fx:id="lblLum" disable="true" layoutX="377.0" layoutY="243.0" text="Luminosità" />
       <Button fx:id="btnSetRGB" disable="true" layoutX="250.0" layoutY="343.0" mnemonicParsing="false" onAction="#onBtnSetRGBClick" text="Invio" />
       <Button fx:id="btnSetLum" disable="true" layoutX="385.0" layoutY="343.0" mnemonicParsing="false" onAction="#onBtnSetLumClick" text="Invio" />
@@ -31,6 +31,7 @@
       </Label>
       <Button fx:id="btnTurnOff" disable="true" layoutX="224.0" layoutY="95.0" mnemonicParsing="false" onAction="#onBtnTurnOffClick" text="OFF" />
       <Button fx:id="btnTurnOn" disable="true" layoutX="409.0" layoutY="95.0" mnemonicParsing="false" onAction="#onBtnTurnOnClick" text="ON" />
+      <Button layoutX="543.0" layoutY="415.0" mnemonicParsing="false" onAction="#onBtnResetLampClick" text="Reset" />
    </children>
 
 </Pane>
