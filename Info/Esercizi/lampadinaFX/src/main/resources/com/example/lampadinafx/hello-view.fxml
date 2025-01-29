@@ -11,7 +11,7 @@
 <Pane minHeight="-Infinity" prefHeight="473.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lampadinafx.HelloController">
    <children>
       <Circle fx:id="crcLamp" disable="true" layoutX="339.0" layoutY="107.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="txtNameLamp" layoutX="262.0" layoutY="170.0" prefHeight="25.0" prefWidth="102.0" promptText="Nome Lampadina" />
+      <TextField fx:id="txtNameLamp" layoutX="262.0" layoutY="170.0" onKeyPressed="#setLblExcEmpty" prefHeight="25.0" prefWidth="102.0" promptText="Nome Lampadina" />
       <Button fx:id="btnNewLamp" layoutX="374.0" layoutY="170.0" mnemonicParsing="false" onAction="#onBtnNewLampClick" text="Crea" />
       <TextField fx:id="txtR" disable="true" layoutX="256.0" layoutY="239.0" prefHeight="25.0" prefWidth="40.0" />
       <TextField fx:id="txtG" disable="true" layoutX="256.0" layoutY="271.0" prefHeight="25.0" prefWidth="40.0" />
@@ -29,7 +29,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnTurnOff" disable="true" layoutX="224.0" layoutY="95.0" mnemonicParsing="false" onAction="#onBtnTurnOnClick" text="OFF" />
+      <Button fx:id="btnTurnOff" disable="true" layoutX="224.0" layoutY="95.0" mnemonicParsing="false" onAction="#onBtnTurnOffClick" text="OFF" />
       <Button fx:id="btnTurnOn" disable="true" layoutX="409.0" layoutY="95.0" mnemonicParsing="false" onAction="#onBtnTurnOnClick" text="ON" />
    </children>
 

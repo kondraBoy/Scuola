@@ -8,9 +8,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
-import java.util.ArrayList;
-
 public class HelloController {
+
+    Lampadina lampadina;
+
 
     @FXML
     private Button btnNewLamp;
@@ -63,15 +64,11 @@ public class HelloController {
     @FXML
     private TextField txtR;
 
-    ArrayList<Integer> rgb = new ArrayList<>(3);
 
     public void onBtnNewLampClick(){
-        ArrayList<Integer> rgb = new ArrayList<>(3);
-        rgb.add(0,0);
-        rgb.add(1,0);
-        rgb.add(2,0);
         try{
-            Lampadina lampadina = new Lampadina(txtNameLamp.getText());
+            lampadina = new Lampadina(txtNameLamp.getText());
+            lampadina.setRgb(0,0,0);
             crcLamp.setDisable(false);
             txtR.setDisable(false);
             txtG.setDisable(false);
@@ -86,7 +83,7 @@ public class HelloController {
             lblG.setDisable(false);
             lblB.setDisable(false);
             lblLum.setDisable(false);
-            crcLamp.setFill(Color.rgb(rgb.get(0), rgb.get(1),rgb.get(2)));
+            crcLamp.setFill(Color.rgb(0,0 ,0));
         }catch (IllegalArgumentException | NullPointerException e){
             String s = "Nome non valido";
             setLblExc(s);
@@ -100,34 +97,33 @@ public class HelloController {
 
     public void onBtnSetLumClick(){
         try{
-            int lum = Integer.parseInt(txtLum.getText());
-            Lampadina lampadina = new Lampadina(txtNameLamp.getText());
+            float lum = (Integer.parseInt(txtLum.getText()));
             lampadina.setLum(lum);
-            crcLamp.setFill(Color.rgb(rgb.get(0),rgb.get(1),rgb.get(2),lum / 0.2));
+            crcLamp.setFill(Color.rgb(lampadina.getR(), lampadina.getG(), lampadina.getB(),(lum/5)));
         }catch (IllegalArgumentException | NullPointerException e){
             String s = "Luminosità non valida (tra 1 e 5)";
             setLblExc(s);
         }
     }
+
+    public void setLblExcEmpty(){
+        lblExc.setText("");
+    }
+
     public void onBtnSetRGBClick(){
         try{
-            rgb.add(0,Integer.parseInt(txtR.getText()));
-            rgb.add(1,Integer.parseInt(txtG.getText()));
-            rgb.add(2,Integer.parseInt(txtB.getText()));
-            Lampadina lampadina = new Lampadina(txtNameLamp.getText());
-            lampadina.setRgb(rgb);
-            crcLamp.setFill(Color.rgb(rgb.get(0), rgb.get(1),rgb.get(2)));
+            lampadina.setRgb(Integer.parseInt(txtR.getText()),Integer.parseInt(txtG.getText()),Integer.parseInt(txtB.getText()));
+            crcLamp.setFill(Color.rgb(lampadina.getR(), lampadina.getG(), lampadina.getB()));
         }catch (IllegalArgumentException | NullPointerException e){
             String s = "Valori RGB non validi (tra 0 e 255)";
             setLblExc(s);
         }
     }
 
+
     public void onBtnTurnOnClick(){
-        Lampadina lampadina = new Lampadina(txtNameLamp.getText());
         lampadina.setStatus(true);
-        crcLamp.setFill(Color.rgb(lampadina.getRgb()
-                .get(0), lampadina.getRgb().get(1),lampadina.getRgb().get(2)));
+        crcLamp.setFill(Color.rgb(lampadina.getR(), lampadina.getG(), lampadina.getB()));
     }
 
     public void onBtnTurnOffClick(){
@@ -135,5 +131,4 @@ public class HelloController {
         lampadina.setStatus(false);
         crcLamp.setFill(Color.rgb(0, 0,0));
     }
-
 }

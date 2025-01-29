@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 public class Lampadina {
     private String nome;
     private boolean status;
-    private int lum;
+    private float lum;
     private ArrayList<Integer> rgb;
 
     public Lampadina(String nome){
@@ -27,7 +27,7 @@ public class Lampadina {
         }
     }
 
-    public void setLum(int lum) {
+    public void setLum(float lum) {
         if(lum >= 1 && lum <= 5) {
             this.lum = lum;
         } else {
@@ -35,12 +35,11 @@ public class Lampadina {
         }
     }
 
-    public void setRgb(ArrayList<Integer> rgb) {
-        if(rgb.get(0) >= 0 && rgb.get(0) <= 255 && rgb.get(1)>= 0 && rgb.get(1) <= 255 && rgb.get(2) >= 0 && rgb.get(2) <= 255) {
-            rgb.clear();
-            this.rgb.add(0,rgb.get(0));
-            this.rgb.add(1,rgb.get(1));
-            this.rgb.add(2,rgb.get(2));
+    public void setRgb(int r, int g, int b) {
+        if(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255) {
+            rgb.set(0, r);
+            rgb.set(1, g);
+            rgb.set(2, b);
         } else {
             throw new IllegalArgumentException("I valori RGB devono essere tra 0 e 255");
         }
@@ -55,7 +54,7 @@ public class Lampadina {
         while(strtok.hasMoreTokens()){
             setNome(strtok.nextToken());
             setStatus(Boolean.parseBoolean(strtok.nextToken()));
-            setLum(Integer.parseInt(strtok.nextToken()));
+            setLum(Float.parseFloat(strtok.nextToken()));
             int rgb0 = (Integer.parseInt(strtok.nextToken(",")));
             int rgb1 = (Integer.parseInt(strtok.nextToken(",")));
             int rgb2 = (Integer.parseInt(strtok.nextToken(",")));
@@ -78,12 +77,19 @@ public class Lampadina {
         return this.status;
     }
 
-    public int getLum() {
+    public float getLum() {
         return this.lum;
     }
 
-    public ArrayList<Integer> getRgb() {
-        return new ArrayList<>(this.rgb);
+    public int getR() {
+        return this.rgb.get(0);
+    }
+    public int getG() {
+        return this.rgb.get(1);
+    }
+
+    public int getB() {
+        return this.rgb.get(2);
     }
 
     public String getNome() {
