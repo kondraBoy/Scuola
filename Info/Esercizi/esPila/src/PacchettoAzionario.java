@@ -7,9 +7,16 @@ public class PacchettoAzionario implements FileCSV {
     private int quantita;
     private Date data;
 
-    public PacchettoAzionario(String nome, double prezzo, int quantita, Date data) {
+    public PacchettoAzionario() {
+        this.nome = "";
+        this.prezzo = 0;
+        this.quantita = 0;
+        this.data = new Date();
+    }
+
+    PacchettoAzionario(String nome, double prezzo, int quantita, Date data) {
         setNome(nome);
-        setPrezzo(prezzo)
+        setPrezzo(prezzo);
         setQuantita(quantita);
         setData(data);
     }
@@ -78,4 +85,5 @@ public class PacchettoAzionario implements FileCSV {
     public String toCSV() {
         return nome + ";" + prezzo + ";" + quantita + ";" + data.getDate();
     }
+
 }

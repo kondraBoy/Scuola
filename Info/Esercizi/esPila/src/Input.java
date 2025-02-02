@@ -36,7 +36,7 @@ import java.util.Scanner;
             return n;
         }
 
-        public static double leggidouble (double vmin, double vmax,String msg){
+        public static double leggiDouble (double vmin, double vmax,String msg){
             double n;
             Scanner input = new Scanner(System.in);
             System.out.println(msg);
