@@ -1,0 +1,57 @@
+<!--Bisogna gestire un form con tre caselle di testo (nome, cognome, età) dei radio buttons (genere), una select (colore preferito) e un checkbox (consenso) e poi l'invio di tipo submit
+
+1) Realizzare il form secondo le indicazioni
+2) Quando si clicca sull'invio devono comparire due alert (tutto apposto oppure no, manca qualcosa)
+3) Gestione degli errori localizzati sulla base dell'input nelle caselle
+4) L'evento che che gestirà tutto è onSubmit che va nel form (anche se collegato al tag form)
+-->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo di esempio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Aggiungi il link al file CSS -->
+</head>
+<body>
+
+    <form id="myForm" onsubmit="return validateForm(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <span id="nomeError" class="error"></span><br><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome">
+        <span id="cognomeError" class="error"></span><br><br>
+
+        <label for="eta">Età:</label>
+        <input type="number" id="eta" name="eta">
+        <span id="etaError" class="error"></span><br><br>
+
+        <label>Genere:</label>
+        <input type="radio" id="genereM" name="genere" value="M">
+        <label for="genereM">Maschio</label>
+        <input type="radio" id="genereF" name="genere" value="F">
+        <label for="genereF">Femmina</label>
+        <span id="genereError" class="error"></span><br><br>
+
+        <label for="colore">Colore preferito:</label>
+        <select id="colore" name="colore">
+            <option value="">Seleziona...</option>
+            <option value="rosso">Rosso</option>
+            <option value="verde">Verde</option>
+            <option value="blu">Blu</option>
+        </select>
+        <span id="coloreError" class="error"></span><br><br>
+
+        <label for="consenso">Acconsento al trattamento dei dati:</label>
+        <input type="checkbox" id="consenso" name="consenso">
+        <span id="consensoError" class="error"></span><br><br>
+
+        <input type="submit" value="Invia">
+    </form>
+
+    <script src="script.js"></script> <!-- Aggiungi il link al file JavaScript -->
+</body>
+</html>
+
