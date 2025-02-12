@@ -1,0 +1,4 @@
+1)IP Address
+2)Subnet mask	
+3)Gateway	
+4)DNS 

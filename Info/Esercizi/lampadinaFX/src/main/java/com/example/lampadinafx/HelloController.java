@@ -10,8 +10,7 @@ import javafx.scene.shape.Line;
 
 public class HelloController {
 
-    Lampadina lampadina;
-
+    private Lampadina lampadina;
 
     @FXML
     private Button btnNewLamp;
@@ -88,7 +87,6 @@ public class HelloController {
         }catch (IllegalArgumentException | NullPointerException e){
             String s = "Nome non valido";
             setLblExc(s);
-
         }
     }
 
