@@ -1,4 +1,7 @@
-Filesystem,modello a processi, risorse e condivisionePer Filesystem si intende quel modulo del sistema operativo che si occupa di della memorizzazione dei dati e dei programmi su
+Filesystem,modello a processi, risorse e condivisione
+File system
+
+Si intende quel modulo del sistema operativo che si occupa di della memorizzazione dei dati e dei programmi su
 dispositivi di memoria permanente e mette a disposizione i programmi e i meccanismi necessari alla loro gestione.
 
 File (User): è un insieme di dati correlati tra loro che sono associati ad un nome univoco che lo identifica ed è memorizzato all'interno di un dispositivo di memoria secondaria
@@ -23,11 +26,79 @@ Operazioni sui file
 	.ricerca: tramite il nome simbolico l'OS ricerca il file individuando dove è localizzato caricando in memoria il suo descrittore
 	.struttura: il file viene individuato attraverso l'opzione di ricerca e poi vengono passate le informazioni che devono essere scritte all'interno di quest'ultimo
 	.lettura: così come la scrittura, il file viene individuato attraverso l'opzione di ricerca 
-	.posizionamento:
-	.cancellazione:
-	.troncamento:
-	.accodamento:
-	.rinomina:
-	.spostamento:
-	.copia:
+	.posizionamento: consiste nel posizionare un puntatore all'interno di un file nella posizione desiderata (quest'operazione prende il nome di seek)	
+	.cancellazione: per cancellare un file basta cancellare il suo descrittore per far sì che venga rilasciato lo spazio su disco per poterlo utilizzare per altri file
+	.troncamento: è simile alla cancellazione solo che viene lasciato intatto il descrittore del file del quale verrano modificati solamente dimensione e indirizzo iniziale
+	.accodamento: consiste nell'operazione di scrivere nuovi dati alla fine di un file già presente in memoria, infatti si può vedere come seek + write (append)
+	.rinomina: consiste nel modificare il nome presente nel descrittore
+	.spostamento: il file viene spostato in nuovo supporto di memoria aggiornando il contenuto del suo descrittore
+	.copia: consiste nel creare un nuovo file identico a quello esistente ma se si vuole assegnare un nome già presente nella directory bisogna cambiarlo, perchè il nome di ogni file in una directory deve essere univoco
+
+Metodi di accesso
 	
+	C'è ne sono di due tipi:
+		.sequenziale: quel tipo di accesso nel quale le informazioni vengono elaborate in ordine dentro un file,un record dopo l'altro. Ammette le seguenti operazioni:
+			_reset: posizionati all'inizio
+			_read/write next: leggi/scrivi il prossimo record
+			_skip +/- n: avanza di +/- record			
+		.diretto: quel tipo di accesso che è possibile fare solamente quando sul file ci sono record logici di lunghezza fissa, utilizzato per analizzare grandi quantità di dati (database). Ammette le seguenti operazioni:
+			_read n: leggi il record di posizione n
+			_write n: scrivi il record in posizione n
+			_position to n: posiziona il puntatore del record in posizione n (seek)
+			_read/write next: leggi/scrivi il prossimo record	
+
+Struttura della directory
+
+È possibile dividere un disco in più partizioni per fornire una prima divisione logica dei file che si andranno a mettere al loro interno. Ogni partizione ospita un file system differente dall'altro
+Il primo settore del disco contiene il master boot record (MBR) utilizzato per fare il boot del sistema e che contiene la partition table, una tabella dove viene indicata la partizione attiva tra tutte quelle presenti
+A ogni partizione viene assegnato un nome simbolico oltre ad un identificatore univoco. Ogni partizione ha una tabella, la directory del dispositivo nella quale sono contenute tutte le informazioni sui file in essa memorizzati
+All'interno di ogni volume i file sono organizzati in cartelle che possono essere create dagli utenti per raggruppare file tra loro affini. Nel file system per ogni file è possibile definire:
+	.percorso assoluto: inizia dalla root attraversando tutte le sottodirectory fino al file specificato
+	.percorso relativo: che parte dalla directory corrente (quella nella quale attualmente si trova l'utente) e comprende solo le sottodirectory
+
+La directory può essere vista come una tabella che permette di tradurre i nomi dei file nei corrispondenti descrittori, è possibile:
+	.ricercare un file
+	.creare e cancellare
+	.elencare i file contenuti al suo interno
+	.rinominare un file
+	.spostarsi su un'altra cartella
+
+File nei sistemi multiutente
+
+Nei sistemi multiutente è necessario che per ogni file e cartella vengano memorizzati alcuni attributi aggiuntivi che possano permettere la condivisione e la protezione dei file, si introduce il concetto di proprietario e di gruppo:
+	.proprietario: è l'utente che ha creato il file e può modificarne gli attributi e garantire l'accesso
+	.gruppo: è un insieme di utenti che hanno gli stessi diritti su un particolare file e che sono accomunati proprio per questo motivvo
+
+L'OS associa al file l'identificatore dell'utente che lo ha creato come indicatore del proprietario
+
+Modello a processi
+
+Un processo è un entità logica (programma) in evoluzione
+
+Ogni processo è caratterizzato da:
+	.codice
+	.dati
+	.program counter
+	.registri della CPU
+	.stack
+
+È composto da una parte statica (area codice, area dati globali) ed una parte dinamica (stack,heap) e ad esso possono essere associate altre risorse da parte dell'OS come i file aperti sui quali sta lavorando, la rete, i dispositivi di I/O
+
+Nel modello a processi tutto è organizzato in un certo numero di processi sequenziali che vanno gestiti con degli algoritimi di scheduling, perchè si disponde di un unico processore e quest'ultimo va condiviso con tutti i processi e con
+questi algoritmi si sceglie quando togliere la risorsa per far evolvere un processo per assegnarla ad un altro
+
+Questa tecnica prende nome di multiprogrammazione e richiede la presenza in memoria di più programmi, permette l'evoluzione contemporanea di più processi limitando al minimo i tempi morti (es. I/O) e sfruttando appieno le potenzialità di calcolo del
+processore
+
+I processi in esecuzione possono essere di due tipi:
+	.indipendenti: il processo evolve in modo autonomo senza il bisogno di altri processi con i quali scambiare informazioni
+	.cooperanti: i processi per evolvere hanno bisogno dello scambio di informazioni gli uni con gli altri
+
+Avere processi che cooperano è utile per i seguenti motivi:
+	.parallelizzazione dell'esecuzione
+	.replicazione di un servizio
+	.modularità di diversi processi per funzioni diverse di una stessa applicazione
+	.condivisione delle informazioni
+
+Oltre alla cooperazione esiste un altro tipo di interazione tra processi, la competizione dovuta alla necessità di utilizzare una stessa risorsa che generalmente è presente in quantità limitata nel sistema e può portare a situazioni indesiderate (blocco individuale o critico)
+
