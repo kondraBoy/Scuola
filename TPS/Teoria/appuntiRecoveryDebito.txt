@@ -1,0 +1,33 @@
+Filesystem,modello a processi, risorse e condivisionePer Filesystem si intende quel modulo del sistema operativo che si occupa di della memorizzazione dei dati e dei programmi su
+dispositivi di memoria permanente e mette a disposizione i programmi e i meccanismi necessari alla loro gestione.
+
+File (User): è un insieme di dati correlati tra loro che sono associati ad un nome univoco che lo identifica ed è memorizzato all'interno di un dispositivo di memoria secondaria
+
+File (OS):è un insieme di byte eventualmente strutturato
+
+Per ogni file l' OS raccoglie una serie di informazioni e le racchiude in un record noto come descrittore del file che contiene le seguenti informazioni:
+    .nome: è una stringa di lunghezza variabile che fornisce un nome simbolico al file
+    .identificatore: un valore numerico univoco utilizzato dall' OS per identificare il file all'interno del file system
+    .tipo: informazione necessaria per sistemi che gestiscono file di tipo diverso, generalmente indicato dall'estensione di un file
+    .locazione: il puntatore al dispositivo e alla locazione fisica del file nel dispositivo
+    .dimensione: espressa in byte, word o blocchi
+    .data e ora: informazioni sulla data della sua creazione, ultimo accesso e modifica
+
+Per i sistemi multiutente:
+    .utente proprietario: l'utente che ha creato il file e che ne ha i massimi diritti
+    .permessi: flag che mantengono il controllo per chi può accedere ad un file, leggerlo o modificarlo
+
+Operazioni sui file
+
+	.creazione: individua la posizione in cui memorizzarlo, creando il suo descrittore nella directory dove sarà registrando il nome, la locazione ed il resto degli attributi
+	.ricerca: tramite il nome simbolico l'OS ricerca il file individuando dove è localizzato caricando in memoria il suo descrittore
+	.struttura: il file viene individuato attraverso l'opzione di ricerca e poi vengono passate le informazioni che devono essere scritte all'interno di quest'ultimo
+	.lettura: così come la scrittura, il file viene individuato attraverso l'opzione di ricerca 
+	.posizionamento:
+	.cancellazione:
+	.troncamento:
+	.accodamento:
+	.rinomina:
+	.spostamento:
+	.copia:
+	
