@@ -1,4 +1,5 @@
-package com.example.mylistview;
+package com.example.myli
+stview;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

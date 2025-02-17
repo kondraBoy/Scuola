@@ -24,7 +24,7 @@ Operazioni sui file
 
 	.creazione: individua la posizione in cui memorizzarlo, creando il suo descrittore nella directory dove sarà registrando il nome, la locazione ed il resto degli attributi
 	.ricerca: tramite il nome simbolico l'OS ricerca il file individuando dove è localizzato caricando in memoria il suo descrittore
-	.struttura: il file viene individuato attraverso l'opzione di ricerca e poi vengono passate le informazioni che devono essere scritte all'interno di quest'ultimo
+	.scrittura: il file viene individuato attraverso l'opzione di ricerca e poi vengono passate le informazioni che devono essere scritte all'interno di quest'ultimo
 	.lettura: così come la scrittura, il file viene individuato attraverso l'opzione di ricerca 
 	.posizionamento: consiste nel posizionare un puntatore all'interno di un file nella posizione desiderata (quest'operazione prende il nome di seek)	
 	.cancellazione: per cancellare un file basta cancellare il suo descrittore per far sì che venga rilasciato lo spazio su disco per poterlo utilizzare per altri file

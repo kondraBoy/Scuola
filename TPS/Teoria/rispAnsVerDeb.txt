@@ -1,0 +1,45 @@
+1) Il file system è quel modulo del sistema operativo che si occupa di gestire la memorizzazione di dati su supporti permanenti di memoria secondaria ed offre tutta una serie di programmi e meccanismi utili alla gestione dei file. Per file si intende una serie di dati correlati tra loro che sono associati ad un nome univoco e sono memorizzati all'interno della memoria di massa.
+
+2)Il file system offre una serie di operazioni per poter lavorare con i file e sono le seguenti:
+	.creazione
+	.ricerca
+	.scrittura
+	.lettura
+	.posizionamento: questa modalità permette di posizionarsi all'interno di un file, posizionando un puntatore nella zona desiderata, 	quest'operazione prende anche il nome di seek
+	.troncamento
+	.accodamento:questa modalità permette di scrivere nuovi dati alla fine di un file già presente in memoria, si può vedere come seek 	+ write e prende il nome più comune di append
+	.copia
+	.spostamento
+	.rinomina
+
+3)Esistono due tipi di modalità d'accesso per poter recuperare informazioni all'interno di un file:	
+	.Sequenziale:nella modalità sequenziale le informazioni vengono elaborate in ordine all'interno di un file come record che si 	susseguono uno dopo l'altro e presentano le seguenti funzioni:
+		-reset: posizionati all'inizio del file
+		-read/write next: leggi/scrivi il prossimo record
+		-skip +/- n: avanza di +/- n record
+	.Diretto: nella modalità ad accesso diretto le informazioni sono gestite come record logici di lunghezza fissa ed è utilizzato 	per gestire grandi quantità di dati (database) e presentano le seguenti funzioni:
+		-read/write n: leggi/scrivi in posizione n	
+		-read/write next: leggi/scrivi il prossimo record
+		-position to n: posiziona il puntatore del file in posizione n (Seek)
+
+4).Indipendenti: Sono quei processi che evolvono in modo autonomo senza il bisogno di scambiare informazioni
+  .Cooperanti: sono quei processi che per evolvere hanno bisogno dello scambio di informazioni gli uni con gli altri
+  .Concorrenti: sono quei processi che per evolvere in modo autonomo concorrono all'accesso ad una risorsa comune della quale hanno 
+  bisogno
+
+5).Risorsa: è una qualsiasi componente, hardware o software, necessaria al processo o al sistema	
+  .Classe: è il tipo di risorse che si va ad utilizzare e le risorse appartenenti alla stessa classe sono equivalenti (es. blocchi di memoria della stessa dimensione)
+  .Istanza: è la singola realizzazione della risorsa (es. il core 1 della CPU, pagina 0 di memoria)
+
+La gestione delle risorse, suddivise in classi permette di allocare e controllare in modo efficiente l'accesso alle istanze
+
+6)Le richieste possono essere:
+	.Bloccanti: il caso in cui il processo necessita di quella risorsa e nel caso non gli viene assegnata si sospende e passa nello stato di attesa e la richiesta viene riconsiderata ogni volta che il gestore della risorsa la rilascia
+	.Non bloccanti: in questo caso il processo può evolvere ugualmente e nel caso di mancanza della risorsa gli viene effettuata una notifica ma la sua esecuzione non viene interrotta
+	.Statiche: l'assegnazione avviene al momento della creazione del processo stesso e quest'ultima rimane a esso dedicata fino alla sua terminazione
+	.Dinamiche: l'assegnazione avviene solamente in caso di necessità e la risorsa viene rilasciata quando non risulta più utile all'evoluzione del processo
+	.Seriali: è il caso nel quale la risorsa in questione non può essere assegnata a più processi contemporaneamente e i vari processi che la richiedono si mettono in coda aspettando 	il loro turno, questo tipo di risorsa si dice che ha accesso mutuamente esclusivo
+	.Non seriali: ammettono l'accesso contemporaneo di più processi e quindi possono considerarsi risorse di molteplicità infinita
+	.Preemptive: quel tipo di risorsa che può essere sottratta al processo prima che quest'ultimo abbia finito di utilizzarla
+	.Non preemptive: quel tipo di risorsa che non è possibile sottrarre ad un processo senza provocare errori al compito che sta eseguendo, con il rischio di dover ripetere dall'inizio 	la sua esecuzione
+	
