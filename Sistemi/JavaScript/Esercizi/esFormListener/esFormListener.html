@@ -13,24 +13,24 @@
 </head>
 <body>
     <h2>Compila il form</h2>
-    <form id="form">
+    <form id="form" onsubmit="return validateForm(this)">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"><br><br>
+        <input type="text" name="nome"><br><br>
 
         <label for="cognome">Cognome:</label>
-        <input type="text" id="cognome" name="cognome"><br><br>
+        <input type="text" name="cognome"><br><br>
 
         <label for="eta">Età:</label>
-        <input type="text" id="eta" name="eta"><br><br>
+        <input type="text" name="eta"><br><br>
 
         <label>Genere:</label>
-        <input type="radio" id="maschio" name="genere" value="Maschio">
+        <input type="radio" name="genere" value="Maschio">
         <label for="maschio">Maschio</label>
-        <input type="radio" id="femmina" name="genere" value="Femmina">
+        <input type="radio" name="genere" value="Femmina">
         <label for="femmina">Femmina</label><br><br>
 
         <label for="colore">Colore preferito:</label>
-        <select id="colore" name="colore">
+        <select name="colore">
             <option value="">Seleziona un colore</option>
             <option value="Rosso">Rosso</option>
             <option value="Blu">Blu</option>
@@ -38,7 +38,7 @@
         </select><br><br>
 
         <label for="consenso">
-            <input type="checkbox" id="consenso" name="consenso"> Do il mio consenso
+            <input type="checkbox" name="consenso"> Do il mio consenso
         </label><br><br>
 
         <input type="submit" value="Invia">

@@ -1,52 +1,38 @@
-function validateForm(event) {
-            let errors = [];
-            let nome = document.getElementById('nome').value;
-            let cognome = document.getElementById('cognome').value;
-            let eta = document.getElementById('eta').value;
-            let genereMaschio = document.getElementById('maschio').checked;
-            let genereFemmina = document.getElementById('femmina').checked;
-            let colore = document.getElementById('colore').value;
-            let consenso = document.getElementById('consenso').checked;
+function validateForm(frm) {
+    const frmValid = false; 
+    const errors = [];
+    const nome = frm.nome;
+    const cognome = frm.cognome;
+    const eta = frm.eta;
+    const genere = frm.genere;
+    const colore = frm.colore;
+    const consenso = frm.consenso;
+	
+    if (nome.value === '') {
+        alert("Il nome è obbligatorio.");
+        nome.focus();
+    }
+	else if (cognome.value === '') {
+        alert("Il cognome è obbligatorio.");
+        frm.cognome.focus();
+    }else if (eta.value === '' || eta < 0 || isNan(eta.value)) {
+        alert("L'età è obbligatoria e deve essere un numero valido.");
+        frm.eta.focus();
+    }else if (!genere) {
+        alert("Seleziona un genere.");
+        frm.maschio.focus(); 
+    }else if (colore.value === '') {
+        alert("Seleziona un colore preferito.");
+        frm.colore.focus();
+    }else if (!consenso) {
+        alert("Devi dare il tuo consenso.");
+        frm.consenso.focus();
+    }
+	else
+	{
+		frmValid=true;
+        alert("Tutto ok! Il frm è stato inviato.");
+    }
+	return frmValid;
+}
 
-            
-            if (nome === '') {
-                errors.push("Il nome è obbligatorio.");
-            }
-
-            
-            if (cognome === '') {
-                errors.push("Il cognome è obbligatorio.");
-            }
-
-            
-            if (eta === '') {
-                errors.push("L'età è obbligatoria.");
-            }
-
-            
-            if (!genereMaschio && !genereFemmina) {
-                errors.push("Seleziona un genere.");
-            }
-
-            
-            if (colore === '') {
-                errors.push("Seleziona un colore preferito.");
-            }
-
-            
-            if (!consenso) {
-                errors.push("Devi dare il tuo consenso.");
-            }
-
-            
-            if (errors.length > 0) {
-                alert("Errore: " + errors.join(", "));
-                event.preventDefault();  
-            } else {
-                alert("Tutto ok! Il form è stato inviato.");
-            }
-        }
-
-        
-        let form = document.getElementById('form');
-        form.addEventListener('submit', validateForm);
