@@ -1,0 +1,64 @@
+pid_t fork(void); //crea un processo figlio a partire da un processo padre
+
+Ritorna due valori:
+	>0: è il PID del figlio ed indica che è stato creato correttamente (pov genitore)
+	0: è il processo figlio stesso (pov figlio)
+
+/////////////////////////////////////////////////////////////////////////////
+
+void exit(int status); //effettua la terminazione volontaria di un processo
+
+Prevede come parametro un int status, che rappresenta lo status di terminazione
+
+status = 0: si utilizza per chiudere il processo indicando che è terminato correttamente
+
+status != 0: si utilizza per indicare che il processo si è chiuso in caso di un anomalia
+
+/////////////////////////////////////////////////////////////////////////////
+
++---------------------+---------------------------------------+---------------------------------------------+
+| Caratteristica      | wait()                                | sleep()                                     |
++---------------------+---------------------------------------+---------------------------------------------+
+| Scopo               | Attendere che un processo figlio      | Sospendere l'esecuzione del processo per    |
+|                     | termini.                              | un tempo specificato.                       |
++---------------------+---------------------------------------+---------------------------------------------+
+| Contesto            | Usato in un contesto multi-processo,  | Usato per fare una pausa temporale nel      |
+|                     | per la sincronizzazione tra il        | programma corrente. Non dipende dal contesto|
+|                     | processo genitore e i suoi figli.     |                                             |
++---------------------+---------------------------------------+---------------------------------------------+
+| Sincronizzazione    | Sincronizza i processi (genitore e    | Non sincronizza i processi, sospende solo   |
+|                     | figli).                               | l'esecuzione del processo corrente.         |
++---------------------+---------------------------------------+---------------------------------------------+
+| Valore di ritorno   | Restituisce l'ID del processo figlio  | Restituisce 0 quando il tempo è trascorso,  |
+|                     | che è terminato, o -1 in caso di error| o il numero di secondi rimanenti se         |
+|                     |                                       | è stato interrotto prima del termine del    |
+|                     |                                       | tempo specificato.                          |
++---------------------+---------------------------------------+---------------------------------------------+
+| Utilizzo            | Utile quando il genitore deve aspettare| Utile quando si desidera introdurre un     |
+|                     | che uno o più figli finiscano l'esecuzione. | ritardo nel programma (ad esempio per |
+|                     |                                       | timer o per la gestione del flusso temporale|
++---------------------+---------------------------------------+---------------------------------------------+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
++---------------------+---------------------------------------+--------------------------------------------+
+| Caratteristica      | getpid()                              | getppid()                                  |
++---------------------+---------------------------------------+--------------------------------------------+
+| Scopo               | Restituire l'ID del processo corrente | Restituire l'ID del processo genitore      |
++---------------------+---------------------------------------+--------------------------------------------+
+| Contesto            | Utilizzato per ottenere il PID del    | Utilizzato per ottenere il PID del processo|
+|                     | processo che chiama la funzione.      | che ha creato il processo corrente (genitore).|
++---------------------+---------------------------------------+--------------------------------------------+
+| Restituzione        | Restituisce l'ID del processo corrente| Restituisce l'ID del processo genitore     |
++---------------------+---------------------------------------+--------------------------------------------+
+| Tipo di ritorno     | Tipo `pid_t`, che è un intero         | Tipo `pid_t`, che è un intero              |
++---------------------+---------------------------------------+--------------------------------------------+
+| Utilizzo            | Utile per ottenere l'ID del processo  | Utile per ottenere l'ID del processo       |
+|                     | corrente, per esempio per monitorare  | genitore, specialmente dopo un `fork()`    |
+|                     | un processo specifico.                | per identificare il processo che ha creato |
+|                     |                                       | il processo corrente.                      |
++---------------------+---------------------------------------+--------------------------------------------+
+| Funzione correlata  | N/A                                   | Solitamente usato insieme a `fork()` per   |
+|                     |                                       | tracciare la gerarchia dei processi.       |
++---------------------+---------------------------------------+--------------------------------------------+
