@@ -38,7 +38,7 @@ status != 0: si utilizza per indicare che il processo si è chiuso in caso di un
 |                     | che uno o più figli finiscano l'esecuzione. | ritardo nel programma (ad esempio per |
 |                     |                                       | timer o per la gestione del flusso temporale|
 +---------------------+---------------------------------------+---------------------------------------------+
-
+						
 
 /////////////////////////////////////////////////////////////////////////////
 
