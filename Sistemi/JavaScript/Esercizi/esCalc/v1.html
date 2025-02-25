@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <script src="funzioniControllo.js"></script>
+    <title>Calcolatrice</title>
+    <style>
+        /* Stile generale della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Contenitore principale */
+        .calculator-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        /* Campi di input */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Pulsante Calcola */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input, button {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Calcolatrice</h2>
+		<h3>Numero 1</h3>
+        <input type="text" id="n1"><br><br>
+        <h3>Operatori</h3>
+        <input type="text" id="op"><br><br>
+        <h3>Numero 2</h3>
+		<input type="text" id="n2"><br><br>
+		<h3>Risultato</h3>
+		<input type="text" id="ris" readonly><br><br>
+        <button onclick="Calcola()">Calcola</button>
+    </div>
+</body>
+</html>
+
