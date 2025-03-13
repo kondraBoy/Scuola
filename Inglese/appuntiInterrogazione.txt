@@ -1,30 +1,49 @@
-Used to, Be used to, Get used to
+Forma passiva
 
-Used to = seguito da forma base, si usa quando si esprime una azione alla quale si era solita "I used to work in weekends"
+L'unico verbo che bisogna avere è il verbo "be" che si adegua in base al tempo verbale
 
-Be used to = seguiro da forma -ing, si usa per esprimere un azione alla si è abituati "I'm used to listening to music while I get home"
+.The parts are imported from China  //Present simple
 
-Get used to = seguito da forma -ing, si usa per esprimere un azione alla quale ci si sta abituando "I'mm getting used to university"
+.A new product was launched  //Past simple
 
-2nd conditional
+.Our business plan [is] being implemented //[Present] continuos
 
-If + past simple + soggetto + would + forma base
+.Market research [was] being conducted //[Past] continuos
 
-Si usa per esprimere un'ipotesi che si potrebbe realizzare ma è probabile che accada "If I was the USA President, I would destroy Italy"
+.The stockist [has not] been contacted // [Present] perfect
 
-Could, Managed to, Be able to
+.The latest sales figures [had not] been published //[Past] perfect
 
-Could = past simple di can ed indica un abilità in generale "I could run faster when I was four"
+.The invoices are going to be sent today //Be going to
 
-Managed to = parlare di una capacità in una situazione specifica del passato , maggior parte delle volte qualcosa di difficile 
-"Bob managed to give up smoking"
+.The goods will be made hand by hand //Will
 
-Be able to = parlare di qualcosa di cui si è in grado di fare "I was able to swim during summer"
+.Our market share may be increased //Modal
 
-Past perfect
 
-Soggetto + had + participio passato
+Reported speech
 
-Si usa per parlare di un'azione che è successa prima di un'altra azione che è successa nel passato
+Quando si trascrive qualcosa che viene detto da qualche persona (reported speech) la cosa importante è utilizzare il reporting verb più consono (dipende dal contesto del discorso) e ricordarsi di fare il backshifting del verbo, ovvero effettuare un passo all'indietro nella linea temporale.Non c'è da dimenticare cambiare i pronomi e gli avverbi di tempo e luogo nelle frasi.
 
-He had gone to the gym the week before the race 
+.Con le 5 W questions si riportano le 5 W nella frase riportata
+	
+	D:Where do you live
+	R:He asked where I lived
+
+.Per le questions in generale per riportarle si usa la keyword "if"
+
+	D:Do you like coffee
+	R:She has asked if I liked coffee
+
+
+Testo sull'esploratore 
+
+Marco Polo was a Venetian explorer who traveled to China via the Silk Road and serevd in an Oriental kingdom for many years. The travels of Marco Polo, his book, introduced Europe to chinese innovations like paper money and gunpowder, inspiring future explorers like Christopher Columbus.
+
+Testo su Edumnd Hillary
+
+Edmund Hillary was born in New Zealand in 1919 and he's famous for being the first man to climb the Everest successfully in 1953 with the sherpa Tenzing Norgay.He wasn't really talented but after a school trip he discovered a talent and a love for mountain climbing. Due to his job he was freee very winter and after Nepal in 1949 opened its borders to foreigners the access to Everest became easier.He joined a British expedition in 1953 and after meeting with a local Sherpa group including Tenzing Norgay they accompanied them to the mountain. They climbed till the summit of Everest but they could stay up there only for 15 minutes because the air was too rarefied but that time was enough for Hillary to take photos. After Everest Hillary continued to climb mountains and he founded a charity foundation (Himalayan Trust) to help Sherpa groups of Nepal.
+
+Testo su International Rescue Team
+
+Is a team of volunteers that is involved in helping people when happen natural disasters. The fact that the team is composed by volunteers that not mean that they aren't prepared, because before joining the team they get trained for 3 years to manage all factors that could create a situation like a natural disaster. One of biggest disasters they faced with was an earthquake in Pakistan in 2005 where a school collapsed where they found near a half of the kids that got trapped that day. They are really efficient because in 24h they have to be ready to go on action and in this cases speed is necessary to save the most increasing possible number of people.
