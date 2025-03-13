@@ -26,14 +26,15 @@ public class MyList<T> {
     }
 
     public boolean contains(T obj) {
+        boolean exists = false;
         Nodo<T> current = first;
         while (current != null) {
             if (current.getDato().equals(obj)) {
-                return true;
+                exists = true;
             }
             current = current.getNext();
         }
-        return false;
+        return exists;
     }
 
     public void addFirst(T obj) {
@@ -54,17 +55,11 @@ public class MyList<T> {
         first = null;
     }
 
-    public T element(int index) {
-        Nodo<T> current = first;
-        int count = 0;
-        while (current != null) {
-            if (count == index) {
-                return current.getDato();
-            }
-            count++;
-            current = current.getNext();
+    public T element() {
+        if (first == null) {
+            throw new NoSuchElementException("List is empty");
         }
-        throw new IndexOutOfBoundsException("Index out of bounds");
+        return first.getDato();
     }
 
     public T getFirst() {
