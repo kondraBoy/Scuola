@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.StringTokenizer;
-public class Macchina implements IOFileRandom{
+public class Macchina implements IOFileRandom, Comparable{
         private final int LENSTR = 70;
         private String targa, marca, modello;
         private char alim;
@@ -76,7 +76,6 @@ public class Macchina implements IOFileRandom{
                 throw new IllegalArgumentException("Targa non valida");
         }
 
-        /// COSTRUTTORI
         public Macchina(){
             setAlim('B');
             setCc(100);
@@ -130,5 +129,11 @@ public class Macchina implements IOFileRandom{
         setCc(raf.readDouble());
         setPrezzo(raf.readDouble());
         setAnno(raf.readInt());
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Macchina m = (Macchina) o;
+        return this.getTarga().compareTo(m.getTarga());
     }
 }

@@ -28,4 +28,8 @@ public class Node <T extends Comparable<T>> {
     public Node<T> getRight(){
         return right;
     }
+
+    public long getAddress() {
+        return address;
+    }
 }
