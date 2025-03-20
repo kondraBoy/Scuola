@@ -14,6 +14,7 @@ L'unico verbo che bisogna avere è il verbo "be" che si adegua in base al tempo 
 
 .The latest sales figures [had not] been published //[Past] perfect
 
+
 .The invoices are going to be sent today //Be going to
 
 .The goods will be made hand by hand //Will
