@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.NoSuchElementException;
 
 public class MyList<T> {
@@ -39,12 +40,10 @@ public class MyList<T> {
 
     public void addFirst(T obj) {
         Nodo<T> newNode = new Nodo<>(obj);
-        if (first == null) {
-            first = newNode;
-        } else {
+        if (first != null) {
             newNode.setNext(first);
-            first = newNode;
         }
+        first = newNode;
     }
 
     public void addLast(T obj) {
@@ -98,6 +97,7 @@ public class MyList<T> {
             first = null;
             return removedElement;
         }
+
         Nodo<T> current = first;
         while (current.getNext().getNext() != null) {
             current = current.getNext();

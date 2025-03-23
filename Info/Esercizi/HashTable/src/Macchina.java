@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.StringTokenizer;
+
 
 public class Macchina implements IOFileRandom, Comparable{
     private final int LENSTR = 70;
