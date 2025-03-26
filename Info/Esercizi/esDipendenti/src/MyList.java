@@ -1,28 +1,47 @@
 import java.util.NoSuchElementException;
-
-public class MyList<T extends Comparable<T> FileCSV> {
+@SuppressWarnings("all")
+public class MyList<T extends Comparable<T> & FileCSV> {
     private Nodo<T> first;
 
     public MyList() {
         this.first = null;
     }
 
-    public boolean add(T obj) {
-        if (obj == null) {
-            throw new NullPointerException("Not accepted null object");
-        } else {
-            Nodo<T> newNode = new Nodo<>(obj);
-            if (first == null) {
-                this.first = newNode;
-            } else {
-                Nodo<T> current = first;
-                while (current.getNext() != null) {
-                    current = current.getNext();
+    public void add(T obj)
+    {
+        if(obj != null){
+            Nodo<T> toAdd = new Nodo<>(obj);
+            if(first== null)
+                this.first = toAdd;
+            else{
+                Nodo<T> aus = first;
+                Nodo<T> prec = null;
+                boolean tro = false;
+                while(aus != null && !tro){
+                    if (obj.compareTo(aus.getDato()) < 0)
+                        tro = true;
+                    else{
+                        prec = aus;
+                        aus = aus.getNext();
+                    }
                 }
-                current.setNext(newNode);
+                if(prec == null){
+                    Nodo<T> exFirst = first;
+                    first = toAdd;
+                    toAdd.setNext(exFirst);
+                }
+                else if(aus == null){
+                    prec.setNext(toAdd);
+                    toAdd.setNext(null);
+                }
+                else{
+                    toAdd.setNext(aus);
+                    prec.setNext(toAdd);
+                }
             }
         }
-        return true;
+        else
+            throw new NullPointerException("Oggetto null non consentito");
     }
 
     public boolean contains(T obj) {
@@ -37,14 +56,21 @@ public class MyList<T extends Comparable<T> FileCSV> {
         return exists;
     }
 
+    public int size() {
+        int size = 0;
+        Nodo<T> current = first;
+        while (current != null) {
+            size++;
+            current = current.getNext();
+        }
+        return size;
+    }
     public void addFirst(T obj) {
         Nodo<T> newNode = new Nodo<>(obj);
-        if (first == null) {
-            first = newNode;
-        } else {
+        if (first != null) {
             newNode.setNext(first);
-            first = newNode;
         }
+        first = newNode;
     }
 
     public void addLast(T obj) {
@@ -125,4 +151,20 @@ public class MyList<T extends Comparable<T> FileCSV> {
         }
     }
 
+    public T get(int index) {
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Index is negative");
+        }
+        Nodo<T> current = first;
+        for (int i = 0; i < index; i++) {
+            if (current == null) {
+                throw new IndexOutOfBoundsException("Index is greater than list size");
+            }
+            current = current.getNext();
+        }
+        if (current == null) {
+            throw new IndexOutOfBoundsException("Index is greater than list size");
+        }
+        return current.getDato();
+    }
 }

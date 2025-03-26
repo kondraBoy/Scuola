@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /*Un’azienda è caratterizzata da un nome, un responsabile, un indirizzo, una e-mail ed un sito web. In tale azienda lavorano dipendenti di tipo diverso: Impiegati e Operai.
 
 Tutti i dipendenti sono caratterizzati da:
@@ -58,23 +60,23 @@ public class Main {
                     break;
                 }
                 case 'b': {
-
+                    stampaDipendenti(azienda);
                     break;
                 }
                 case 'c': {
-
+                    stampaPerSalario(azienda);
                     break;
                 }
                 case 'd': {
-
+                    licenziaDipendente(azienda);
                     break;
                 }
                 case 'e': {
-
+                    stampaTotaleStipendi(azienda);
                     break;
                 }
                 case 'f': {
-
+                    esportaOrdinato(azienda);
                     break;
                 }
             }
@@ -100,7 +102,7 @@ public class Main {
             sc = Input.leggiChar('a','c',"Scelta: ");
             switch (sc){
                 case '1': {
-                    String mat=Input.leggiStr("Matricola: ");
+                    int mat=Integer.parseInt(Input.leggiStr("Matricola: "));
                     String nome=Input.leggiStr("Nome: ");
                     String cog=Input.leggiStr("Cognome: ");
                     String data=Input.leggiStr("Data di nascita: ");
@@ -115,7 +117,7 @@ public class Main {
                     break;
                 }
                 case '2': {
-                    String mat=Input.leggiStr("Matricola: ");
+                    int mat=Integer.parseInt(Input.leggiStr("Matricola: "));
                     String nome=Input.leggiStr("Nome: ");
                     String cog=Input.leggiStr("Cognome: ");
                     String data=Input.leggiStr("Data di nascita: ");
@@ -149,5 +151,32 @@ public class Main {
 
     public static void stampaTotaleStipendi(Azienda azienda){
         System.out.println(azienda.calcolaStipendi());
+    }
+
+    public static void esportaOrdinato(Azienda azienda){
+        char sc;
+        do{
+            System.out.println("a. Esporta Impiegati");
+            System.out.println("b. Esporta Operai");
+            System.out.println("c. Esci");
+            sc = Input.leggiChar('a','c',"Scelta: ");
+            switch (sc){
+                case 'a': {
+                    try{azienda.esportaOrdinato("impiegati.csv","Impiegato");
+                    }catch (IOException e){
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                }
+                case 'b': {
+                    try {
+                        azienda.esportaOrdinato("operai.csv","Operaio");
+                    }catch (IOException e){
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                }
+            }
+        }while(sc!='c');
     }
 }
