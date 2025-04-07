@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-
+@SuppressWarnings("all")
 public class Macchina implements IOFileRandom, Comparable{
     private final int LENSTR = 70;
     private String targa, marca, modello;

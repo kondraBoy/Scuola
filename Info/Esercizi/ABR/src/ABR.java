@@ -69,7 +69,6 @@ public class ABR<T extends Comparable<T>> {
         while (raf.getFilePointer() < raf.length()) {
                 T key = (T) raf.read(T); //Non so come fare, T non permette di ottenere il peso in byte
                 long address = raf.readLong();
-                add(key, address);
             }
         }
     }

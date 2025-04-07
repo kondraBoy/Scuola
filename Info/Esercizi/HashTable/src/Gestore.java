@@ -1,7 +1,6 @@
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.util.Map;
-
+@SuppressWarnings("all")
 public class Gestore {
     RandomAccessFile raf;
     Map<String, Long> hashtable;
@@ -20,14 +19,7 @@ public class Gestore {
             raf.seek(0);
             while (raf.getFilePointer() < raf.length()) {
                 Macchina m = new Macchina();
-                m.setTarga(raf.readUTF());
-                m.setMarca(raf.readUTF());
-                m.setModello(raf.readUTF());
-                m.setAlim(raf.readChar());
-                m.setCc(raf.readDouble());
-                m.setAnno(raf.readInt());
-                m.setPrezzo(raf.readDouble());
-                hashtable.put(m.getTarga(), raf.getFilePointer());
+                m.read(raf);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,5 +86,17 @@ public class Gestore {
             s = s.concat(targa + "\n");
         }
         return s;
+    }
+
+    public void salvaHashtable(String nomeFile) throws IOException {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nomeFile, false));
+            oos.writeObject(hashtable);
+            oos.close();
+    }
+
+    public void caricaHashtable(String nomeFile) throws IOException, ClassNotFoundException {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeFile));
+            hashtable = (Map<String, Long>) ois.readObject();
+            ois.close();
     }
 }

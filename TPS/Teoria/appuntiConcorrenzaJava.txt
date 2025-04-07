@@ -1,0 +1,40 @@
+Per effettuare la concorrenza in Java bisogna basarsi sui tipi di Thread che è possibile trovarsi, ne esistono di due tipi:
+	.Daemon: Sono thread istanziati dalla JVM la cui terminazione non è di importanza vitale per il programma (GarbageCollector)
+	.User: Sono thread che determinano il ciclo vitale dell'esecuzione, al termine dell'ultimo user thread esistente il programma cessa di esistere
+
+Si può usare ereditare la classe Thread o implementare l'interfaccia Runnable e ciò dipende in base al tipo di situazione. Se mi trovo a dover creare una classe che deve già ereditare da una classe padre, userò l'interfaccia Runnable.
+
+Per creare un'oggetto che estende la classe thread bisogna istanziare l'oggetto come segue:
+	
+	Thread t1 = new ThreadPari();
+			   |
+			   v
+			La classe che 
+			eredita
+
+
+In entrambi i casi bisognerà creare il metodo void run che conterrà le istruzioni che dovranno essere eseguite quando il thread sarà mandato in esecuzione. Per far partire il thread non si chiama direttamente il metodo run ma si utilizza start
+
+t1.start();
+
+Nel caso si voglia lavorare su una risorsa condivisa qualsiasi, quest'ultima dovrà essere fornita di metodi che siano synchronised, ovvero quei metodi che possono essere accessibili solo da un thread per volta.
+
+Prendendo come esempio un buffer come risorsa condivisa e come processi produttore e consumatore due thread, i due thread dovranno avere in comune lo stesso oggetto sul quale lavorare
+
+	Buffer buffer = new Buffer();
+        Thread t1 = new ThreadPari(buffer);
+        Thread t2 = new ThreadDispari(buffer);
+
+I metodi della risorsa condivisa hanno le seguenti caratteristiche:
+	
+wait()
+Il metodo wait() rilascia il lock e mette in pausa il thread finché un altro thread chiama notify() o notifyAll() sullo stesso oggetto.
+
+Quando il thread viene "risvegliato", riprova a ottenere il lock prima di continuare l'esecuzione.
+
+notifyAll()
+Risveglia tutti i thread in attesa su quell'oggetto.
+
+Uno (o più) thread risvegliati proveranno a riottenere il lock, e uno di essi potrà proseguire.
+
+Dopo che la risorsa è stata usata da un thread, viene chiamato notifyAll() per risvegliare gli altri thread che stanno aspettando che la risorsa diventi libera.

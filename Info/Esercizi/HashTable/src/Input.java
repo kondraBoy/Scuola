@@ -2,8 +2,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+@SuppressWarnings("all")
 public class Input {
     public static int leggiInt (int vmin, int vmax,String msg){
         int n=0;
@@ -111,7 +110,7 @@ public class Input {
         raf.writeChars(buf.toString());
     }
     public static String readString(RandomAccessFile raf, int len) throws IOException{
-        char str[] = new char[len];
+        char[] str = new char[len];
         for(int k = 0; k < len; k++)
             str[k] = raf.readChar();
 

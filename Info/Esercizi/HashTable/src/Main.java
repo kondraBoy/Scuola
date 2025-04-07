@@ -1,5 +1,4 @@
-import java.sql.SQLOutput;
-
+@SuppressWarnings("all")
 public class Main {
     public static void main(String[] args) {
         Gestore g = new Gestore("car.bin");
@@ -52,8 +51,6 @@ public class Main {
 
     public static void remove(Gestore g) {
         try {
-
-
             String targa = Input.leggiStr("Inserisci la targa");
             g.remove(targa);
         } catch (Exception e) {
