@@ -35,13 +35,15 @@ public class ABR {
     }
 
     private Node searchRec(Node root, int key) {
+        Node nodo;
         if(root == null || root.getKey() == key){
-            return root;
+            nodo = root;
         }
         if(key < root.getKey()){
-            return searchRec(root.getLeft(), key);
+            nodo = searchRec(root.getLeft(), key);
         }
-        return searchRec(root.getRight(), key);
+        nodo =  searchRec(root.getRight(), key);
+        return nodo;
     }
 
 }

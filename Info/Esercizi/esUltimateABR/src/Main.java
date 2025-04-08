@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /*Realizzare applicazione che permetta di inserire e ricercare un prodotto venduto per la modifica del prezzo per il magazzino da una grande azienda di distribuzione.
 Nell'inserimento si deve controllare che il codice sia univoco, mentre la ricerca avviene tramite conoscenza del codice.
 Produrre grafo UML e codice java delle classi interessate.
@@ -9,7 +11,12 @@ L’indice dovrà essere salvato su disco al termine del programma e ricaricato 
  */
 public class Main{
     public static void main(String[] args){
-        Gestore gestore = new Gestore();
+        Gestore gestore = null;
+        try {
+            gestore = new Gestore();
+        } catch (IOException e) {
+            System.out.println("Errore nel caricamento del gestore");
+        }
         char sc;
         do{
             menu();
@@ -34,10 +41,26 @@ public class Main{
     }
 
     public static void inserimento(Gestore gestore){
-
+        int key = Input.leggiInt(0,Integer.MAX_VALUE,"Inserire il codice del nuovo prodotto");
+        try {
+            if(gestore.add(key) == -1)
+                System.out.println("Il codice prodotto è già presente");
+            else
+                System.out.println("Prodotto aggiunto correttamente");
+        } catch (IOException e) {
+            System.out.println("Problemi nell'aggiunta del prodotto");
+        }
     }
 
     public static void ricerca(Gestore gestore){
-
+        int key = Input.leggiInt(0,Integer.MAX_VALUE,"Inserire il codice del nuovo prodotto");
+        try {
+            if(gestore.search(key) == -1)
+                System.out.println("Il codice prodotto è presente");
+            else
+                System.out.println("Il codice prodotto risulta inesistente");
+        } catch (IOException e) {
+            System.out.println("Problemi nella ricerca del codice prodotto");
+        }
     }
 }

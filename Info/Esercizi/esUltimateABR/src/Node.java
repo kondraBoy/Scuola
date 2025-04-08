@@ -3,9 +3,8 @@ public class Node {
     private long address;
     private Node left, right;
 
-    public Node(int key, long address) {
+    public Node(int key) {
         this.key = key;
-        this.address = address;
         this.left = null;
         this.right = null;
     }
@@ -18,7 +17,7 @@ public class Node {
         this.left = left;
     }
 
-    public Node<int> getLeft(){
+    public Node getLeft(){
         return left;
     }
 
