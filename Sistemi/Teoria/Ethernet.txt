@@ -1,0 +1,11 @@
+Cosa serve per la ricerca:
+	.Ricerca sui mezzi trasmissivi elettromagnetici, in particolare modo del cavo Ethernet
+	.Definizione generale cavo ethernet ed utilizzo principale
+	.Definizione e spiegazione doppino (twisted pair) e dalle diverse tipologie di cavi (UTP,FTP, STP)
+	.Classificazione dei doppini (non la schermatura perché rientra sopra)
+	.differenza che c'è tra cavo dritto,incrociato (crossover) e rollover
+	.PARLARE DI EIA/TIA E IN PARTICOLARE LA DIFFERENZA TRA 568A E 568B
+	.Caratteristiche elettriche (impedenza,attenuazione,rumore e diafonia)
+	.Illustrare i passaggi di costruzione del cavo
+
+Della ricerca bisogna fare una presentazione
