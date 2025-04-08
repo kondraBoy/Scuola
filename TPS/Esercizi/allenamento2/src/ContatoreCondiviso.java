@@ -2,7 +2,7 @@ public class ContatoreCondiviso {
     private int contatore = 0;
     private final int MAX = 20;
 
-    public synchronized int stampaPari() throws InterruptedException {
+    public int stampaPari() throws InterruptedException {
         while (contatore < MAX && contatore % 2 != 0) {
             wait();
         }
@@ -14,7 +14,7 @@ public class ContatoreCondiviso {
         return valore;
     }
 
-    public synchronized int stampaDispari() throws InterruptedException {
+    public int stampaDispari() throws InterruptedException {
         while (contatore < MAX && contatore % 2 == 0) {
             wait();
         }

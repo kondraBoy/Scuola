@@ -5,5 +5,12 @@ public class Main {
         Thread t2 = new ThreadDispari(contatore);
         t1.start();
         t2.start();
+        try{
+            t1.join();
+            t2.join();
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
+

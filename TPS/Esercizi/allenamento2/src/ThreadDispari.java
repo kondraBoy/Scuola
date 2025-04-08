@@ -7,15 +7,17 @@ public class ThreadDispari extends Thread {
 
     @Override
     public void run() {
-        try {
-            while (true) {
-                int valore = contatore.stampaDispari();
-                if (valore == -1) break;
-                System.out.println("Thread B (Dispari): " + valore);
-                Thread.sleep(300);
+        synchronized (contatore){
+            try {
+                while (true) {
+                    int valore = contatore.stampaDispari();
+                    if (valore == -1) break;
+                    System.out.println("Thread B (Dispari): " + valore);
+                    Thread.sleep(300);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
