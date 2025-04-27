@@ -1,0 +1,77 @@
+Un cavo ethernet è un cavo utilizzato per connettere dispositivi in una rete locale (LAN). È un cavo a coppia intrecciata che trasmette dati in modo fisico, offrendo una connessione stabile e veloce rispetto alla connessione wireless. 
+
+Doppino: è costituito da una o più coppie di conduttori di rame attorcigliati tra loro (twisted pair) per ridurre gli effetti di disturbi originati dai campi magnetici e dalla corrente che circola nei conduttori stessi. 
+
+I doppini si suddividono nelle seguenti categorie:
+	.UTP: Unshielded Twisted Pair, il cavo principale che racchiude le coppie presenta una guaina protettiva, non è presente per ogni coppia
+	
+	.FTP: Foiled Twisted Pair, il cavo principale oltre a presentare una guaina protettiva, il cavo presenta anche un foglio di alluminio all'interno
+	      di quest'ultima con un impedenza sui 100 ohm
+	
+	.STP: Shielded Twisted Pair, insieme di quattro coppie di fili attorcigliati e schermati sia per ogni singola coppia sia tutti insieme, avvolti da 	      una guaina isolante. Impedenza 150 ohm e la max distanza è 100m. Più costoso di UTP e FTP ma la quantità di rumore ridotto è maggiore
+
+
+Per quanto riguarda i doppini, possono essere classificati sulla base di alcuni parametri:
+	.Cat 1: telefonia analogica
+
+	.Cat 2: telefonia digitale e trasmissione dati a bassa velocità
+	
+	.Cat 3: reti locali con frequenza non superiore a 12.5 MHz, fino a 10 Mb/s
+	
+	.Cat 4: reti locali con frequenza che non supera 20 MHz
+	
+	.Cat 5: reti locali con frequenza che non supera 32 MHz, fino a 100 Mb/s su max 100 m
+	
+	.Cat 6: reti locali con banda passante fino 200 MHz, fino a 1 Gb/s con cavi 100 m
+	
+	.Cat 7: reti locali con banda passante fino 600 MHz, fino a 10 Gb/s con cavi 100 m
+
+
+Cavo dritto, incrociato e rollover
+	.Dritto: per il collegamento di dispositivi di tipo diverso, quali:
+		_switch e router
+		_switch e PC o server
+		_hub e PC o server
+
+	.Incrociato: il collegamento tra dispositivi dello stesso tipo:
+		_hub e hub
+		_switch e switch
+		_router e router
+		...
+		_router e PC
+
+	.Rollover: cavo che collega l'RJ45 posto sulla porta seriale del computer alla porta console di un router o uno switch, presenta i pin 	 	           invertiti tra i due RJ
+
+
+
+EIA/TIA 568 A/B
+
+EIA e TIA sono enti leader dello sviluppo di standard di ingegneria. Le specifiche di EIA/TIA 568B riguardano gli standard per il cablaggio
+dei sistemi di comunicazione per gli edifici commerciali e prevede due insiemi di cavi, uno per la voce e uno per i dati
+
+tra 568A e 568B cambia lo schema colori
+
+
+568A
+
+1       Bianco/Verde
+2	Verde
+3	Bianco/Arancio
+4	Blu
+5	Bianco/Blu
+6	Arancio
+7	Bianco/Marrone
+8	Marrone
+
+568B
+
+
+1	Bianco/Arancio
+2	Arancio
+3	Bianco/Verde
+4	Blu
+5	Bianco/Blu
+6	Verde
+7	Bianco/Marrone
+8	Marrone
+
