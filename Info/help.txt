@@ -1,0 +1,56 @@
+RandomAccessFile
+
+Costruttori:
+	RandomAccessFile(nome file, modalità di lettura); rw per lettura e scrittura
+
+Metodi:
+
+readInt()     writeInt(int num)
+readChar()    writeChar(char c)
+readDouble()  writeDouble(double d)
+
+Per le stringhe metodi della classe Input readStr(RandomAccessFile raf, int len) e writeStr(String s,RandomAccessFile raf, int len)
+
+Il costruttore genera eccezioni, quindi vanno gestite durante la creazione
+
+
+ObjectInputStream
+
+Serve per leggere da un file binario un oggetto
+
+Costruttori:
+	ObjectInputStream(new FileInputStream("nome file");
+	
+Metodi;
+
+readObject() con cast
+
+
+HashTable
+
+Costruttori:
+		Map<Key,Value> hashTable, Map(int dimensione,float loading factor);
+		
+Metodi:
+
+boolean	contains(Object value)			 
+	Controlla se il valore inserito esiste nella hashTable
+boolean	containsKey(Object key)			 
+	Controlla se la chiave primaria esiste nella hashTable
+V get(Object key)         		 
+	Ritorna value o null
+boolean isEmpty				
+	Controlla se è vuota
+V remove(Object key)
+	Rimuove il set chiave-valore associato alla chiave e ritorna value
+boolean remove(Object key,Object value)
+	Rimmuove la voce (coppia chiave-valore) associata alla chiave specificata solo se è attualmente associata al valore specificato.
+V replace(K key, V value)
+	Sostituisce il valore associato alla chiave specificata solo se è attualmente associata a qualche valore (cioè esiste già una mappatura per quella chiave).
+	Restituisce valore precedente o null
+int size
+	restituisce il numero di coppie
+Collection<V> values
+	Restituisce una collection dei valori contenuti 
+	
+	
