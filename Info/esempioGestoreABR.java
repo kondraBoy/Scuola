@@ -130,9 +130,6 @@ public class Prodotto{
 	private double prz;
 	public static STRLEN = 20; 
 	
-	public void write(){
-		
-	}
 	
 	public void read(RandomAccessFile raf){
 		raf.writeInt(cod);
