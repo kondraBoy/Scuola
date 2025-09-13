@@ -1,0 +1,22 @@
+1) Voce narrante
+È l'emittente (narratore) che costruisce il tempo e lo spazio della narrazione. Si differenzia dall'autore allo stesso modo in cui il destinatario del racconto (narratario [destinatario dei testi]) può essere diverso dal lettore.
+Distanza: il modo di narrare si inserisce su una linea che per estremi:
+	.Narrazione diegetica: Il narratore descrive gesti e situazioni, enuncia in forma diretta il contenuto dei discorsi
+	.Narrazione mimetica: Il narratore ripete i discorsi dei personaggi, senza verbalizzare fatti non verbali
+	(Testi teatrali con deroghe: didascalie, prologo etc)
+
+2)Punto di Vista
+Indica il punto di osservazione da cui vengono descritti i personaggi e presentati i fatti. Il narratore si può collocare:
+	.All'esterno della storia che riguarda altre persone vere o fittizie (narratore eterodiegetico)
+	.All'interno del racconto raccontando la propria storia di cui anch'egli è parte attante (qualcuno che partecipa alle vicende 	narrate) o di cui è solo testimone (narratore omodiegetico)
+
+Narratore esterno: racconta in terza persona e ci sono tre tipi:
+	.Onnisciente: Sa più dei personaggi e del lettore e può fornire informazioni più dettagliate anche sui pensieri dei personaggi
+	.Impersonale: In posizione di osservatore registra solamente i fatti accaduti non può spostarsi avanti/indietro nel tempo e non 
+	ha informazioni sui pensieri dei personaggi
+	.Relativizzato: Pur usando la terza persona, sceglie di usare il punto di vista di un personaggio, per cui sa quanto il 	personaggio stesso. Sa più del lettore e può entrare nell'interiorità del personaggio scelto
+
+Narratore interno: narra sempre in prima persona e ci sono tre tipi:
+	.Onnisciente: Segue il punto di vista di uno dei personaggi, parla in prima persona e sappiamo che è onnisciente con segni di 	preveggenza a posteriori
+	.Testimone oculare: descrive ma non interpreta, non può approfondire i pensieri dei personaggi ne ha visione d'insieme
+	
