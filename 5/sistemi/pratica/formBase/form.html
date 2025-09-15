@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Dati personali</legend>
+        <form action ="http://andreabonardi.altervista.org/ricevidati.php" method="POST">
+            <label>Nome:</label>
+            <input type="text" name="nome" required>
+            <label>Cognome:</label>
+            <input type="text" name="cognome" required>
+            <label>Colore:</label>
+            <input type="color" name="colore">
+            <label>Sesso:</label>
+                <label><input type="radio" name="sesso" value="maschio" required> Maschio</label>
+                <label><input type="radio" name="sesso" value="femmina"> Femmina</label>
+            <input type="submit" value="invia">
+        </form>
+    </fieldset>
+</body>
+</html>

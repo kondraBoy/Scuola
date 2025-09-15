@@ -1,0 +1,88 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stile del fieldset */
+fieldset {
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #ffffffdd;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+legend {
+    font-size: 1.4em;
+    color: #4a90e2;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Etichette e input */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="color"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="color"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Checkbox stile */
+input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+    accent-color: #4a90e2;
+}
+
+/* Raggruppamento dei checkbox */
+label[for="sesso"] {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ABD;
+}
