@@ -19,4 +19,26 @@ Narratore esterno: racconta in terza persona e ci sono tre tipi:
 Narratore interno: narra sempre in prima persona e ci sono tre tipi:
 	.Onnisciente: Segue il punto di vista di uno dei personaggi, parla in prima persona e sappiamo che è onnisciente con segni di 	preveggenza a posteriori
 	.Testimone oculare: descrive ma non interpreta, non può approfondire i pensieri dei personaggi ne ha visione d'insieme
+
+FABULA E INTRECCIO
+
+Fabula: Gli avvenimenti della trama avvengono nell'ordine cronologico delle sequenze
+Intreccio: Viene manipolato l'ordine cronologico degli eventi attraverso l'utilizzo di anticipazioni (prolessi), flashback (analessi) o anacronia (intreccio non basato su relazione di tempo ma su altri tipi di associazioni [temporale, spaziale ecc..])
+
+Il narratore non solo può cambiare l'ordine degli avvenimenti ma anche la durata con il rapporto fra il tempo della storia [TS] (in cui si suppone avvengano le vicende narrate) e il tempo della narrazione [TN] (in cui la voce narrante va riferendole)
+
+TN < TS = Riassunto (Racconto di 19 anni durato in 2 ore)
+TN = TS = Scena (Racconto di 3 giorni in 3 giorni)
+TN > TS = Estensione (Ad esempio scena dello sparo western che avviene in pochi secondi ma estesa per vari minuti
+TN = 0  = Ellissi (Ad esempio quando la storia continua ma non viene raccontata tagliandola )
+TS = 0  = Pausa (Quando il narratore smette di raccontare i fatti ma si metti a fare considerazioni, commenti ecc..)
+
+TECNICHE DI RIPORTO DI PAROLE E PENSIERI DEI PERSONAGGI
+Discorso diretto, indiretto, monologo interiore, flusso di coscienza e indiretto libero
+
+CARATTERISTICHE STILISTICHE
+.Registri (aulico, formale, medio, colloquiale)ù
+.Struttura dei periodi
+.Uso di figure retoriche
+
 	

@@ -1,1 +1,68 @@
-appunti di tps
+Processi
+
+Pesanti: Insieme di immagine (Pid,Program Counter,Stack,Codice,Dati) e risore (file,processi figli,I/O)
+
+Leggeri (Thread): La parte del processo alla quale viene assegnata la CPU 
+		  Segmento di codice eseguito in modo sequenziale di un processo
+		  pesante,condividono le risorse,accesso a spazio di reindirizzamento
+		  e dati
+
+Multithreading: Molteplicità di flussi di esecuzione all'interno di un processo pesante che condividono 
+		spazio di reindirizzamento,strutture dati e variabili
+
+User-level vs Kernel-level
+
+User: implementati grazie a delle librerie apposite che contengono funzioni per la gestione più completa del comportamento dei thread, grazie a questa 
+      loro natura possono essere implementati in ogni OS garantendo un alto grado di portabilità tra macchine e OS diversi e hanno tempi di switching 
+      minori perchè non effettuano chiamate al kernel.Come svantaggi presentano problemi legate alle sys call che sospende se stesso,padre e fratelli
+
+Kernel:vengono gestiti tramite sys call quindi vengono tratti come tutti gli altri processi. I vantaggi sono l'indipendenza dei thread in caso di sospensione,
+       si può sfruttare il parallelismo fisico, kernel può essere descritto come sistema multithread.Gli svantaggi sono collegati all'efficienza del sistema
+       per il cambio di contesto durante la schedulazione che risulta molto più complessa
+
+Programmazione concorrente
+
+Si indicano le tecniche e gli strumenti impiegati per descrivere il comportamento di più attività o processi che che si intende far eseguire contemporaneamente
+in un sistema di calcolo
+
+Sistema concorrente
+
+Sistema software che porta avanti una molteplicità di attività diverse tra di loro correlate che possono cooperare per un obiettivo comune oppure competere per
+utilizzare risorse condivise
+
+Fork-Join
+
+Fork: corrisponde alla biforcazione di un nodo in due rami: l'esecuzione di questa istruzione coincide con la creazione di un processo che inizia la propria
+      esecuzione in parallelo con quella del processo chiamante
+
+Join: quando il processo generato dalla fork termina si sincronizza col processo che lo ha generato e termina la sua esecuzione
+
+Cobegin-Coend
+
+È un costrutto che permette di indicare il numero in cui N processi iniziano contemporaneamente la loro esecuzione (cobegin) e il punto in cui la terminano fluendo
+nel processo principale (coend)
+
+È sempre possibile trasformare un programma parallelo descritto con istruzioni cobegin-coend in istruzioni fork-join, ma non il contrario che si può fare solamente
+se il grafo delle precedenze è strutturato
+
+Grafo strutturato: tutti i cammini paralleli che iniziano in un nodo X terminano con Y e viceversa così che ogni sottografo è del tipo one-in one-out 
+
+Semafori
+
+Servono per regolare l'accesso alla regione critica (blocco di codice che accede a risorse condivise) per risolvere il problema della mutua esclusione, necessaria affinchè la competizione tra processi non porti alla creazione di situazioni inaccettabili.Ne esistono di tre tipi:
+	.Spinlock (binari)
+	.Dijkstra
+	.monitor
+
+Spinlock
+A ogni risorsa associa una variabile x che con un flag binario 
+	x = 0: la risorsa è occupata da un processo
+	x = 1: la risorsa è libera, quindi vi è possibile accedervi
+
+Dijkstra
+Usa due primitive
+	.P(S): Riceve in ingresso un numero int S non negativo che viene utilizzata per accedere alla risorsa
+	.V(S): Riceve in ingresso un numero int S non negativo che viene utilizzata per rilasciare la risorsa
+
+Si introduce un nuovo dato di tipo semaphore, una variabile intera non negativa cui è possibile accedere solo tramite queste primitive
+L'idea di Dijkstra era quella di disciplinare l'accesso alle risorse mediante code nelle quali vengono posizionati tutti i processi che attendo che la primitiva V(S)
