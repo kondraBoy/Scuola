@@ -1,0 +1,7 @@
+1) concetto di thread
+2) deamon thread
+2) terminazione dei processi
+4) attesa dei processi
+5) fork-join
+6) creazione dei thread in java (Thread/Runnable)
+7) gestione di thread con risorse condivise (synchronized o nella risorsa condivisa o nei metodi che accedono)

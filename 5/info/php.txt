@@ -1,2 +1,4 @@
-
-Php è un linguaggio di programmazione lato server
+Validazione lato client
+È il controllo che tutti i dati del form siano correttamente in modo da non caricare questo lavoro. Può essere facilmente aggirabile pertanto non deve sostituire la validazione lato server.
+Può essere fatta in html 5 (required,max,min,minlength,maxlegnth,step) anche con i pattern che uso per specificare un'espressione regolare [0-9] {10}
+La validazione può essere fatta anche con javaScript, nei form con l'attributo onsubmit con il quale scatenare l'evento alla pressione del tasto invio

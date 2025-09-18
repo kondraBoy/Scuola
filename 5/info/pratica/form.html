@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Form</title>
 </head>
 <body>
     <fieldset>
         <legend>Dati personali</legend>
-        <form action ="http://andreabonardi.altervista.org/ricevidati.php" method="POST">
-            <label>Nome:</label>
-            <input type="text" name="nome" required>
+        <form action ="http://andreabonardi.altervista.org/ricevidati.php" method="POST" onsubmit="return convalida(this)">
+            <label>Nome:</label> 
+            <input type="text" name="nome">
             <label>Cognome:</label>
-            <input type="text" name="cognome" required>
+            <input type="text" name="cognome">
             <label>Colore:</label>
             <input type="color" name="colore">
             <label>Sesso:</label>
