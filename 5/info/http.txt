@@ -1,0 +1,79 @@
+Hyper Text Transfer Protocol sviluppato da Tim Berners Lee nel 1989-1981, è un protocollo testuale (ASCII standard) a livello applicativo del TCP/IP o ISO/OSI (5,6,7). 
+
+Protocollo stateless, ovvero senza memoria, perchè ogni richiesta è indipendente. Ogni richiesta HTTP non sa nulla di quelle precedenti.
+
+Con le versioni 1 e 2 per comunicare si utilizzano sessioni che si basano su TCP:
+	.Il client genera casualmente un numero casuale X (Initial Sequence Number) SYN=1 (Quando vogliono iniziare la sincronizzazione), ACK=0, SeqNumber=X
+	.Il server genera casualmente Y e calcola X+1 (Acknowledgement Number) SYN=1, ACK=1, SeqNumber=Y, ACKNumber=X+1
+	.Il client calcola Y+1 SYN=0, ACK=1, SeqNumber=X+1, ACKNumber=Y+1
+			||
+			Tutto ciò prende il nome (Three Way Handshake [Triplice stretta di mano])
+
+Dopo ciò avviene l'instaurazione di una connessione sicura TLS (nel caso di HTTPS)
+
+Client invia una richiesta HTTP e il server invia una risposta HTTP e dopo la connessione viene chiusa
+
+Nel dettaglio una richiesta HTTP presenta queste informazioni:
+	.Request line: GET (metodo di trasmissione) /api/users?page=1 (path per la risorsa richiesta + param) HTTP/2 (protocollo e versione)
+	.Header lines: 
+		_Host: www.andreabonardi.it
+		_User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+		_Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*; q=0.8
+		_Accept-Language: it-IT, it, q=0.9, en-US; q=0.8, en; q=0.7
+		_Accept-Encoding: gzip, deflate, br
+		_If-Modified-Since: Wed, 10 Sep 2025 12:00:00 GMT (manda la risorsa solo se modificata dopo la data, altrimenti utilizza la cache)
+		_Connection: keep-alive (Permette di avere più di uno scambio)
+	.Empty line: carriage return (ritorno carrello), line feed
+	.Body: empty
+	
+Metodi HTTP:
+	.GET: 
+		_è di default se non specificato contrariamente
+		_i dati sono visibili nel browser con la sintassi (?key=val)
+		_lunghezza limitata che dipende dal browser
+		_posso inviare solo ASCII
+		_le risposte possono essere memorizzate in cache
+		_l'url dei dati può essere salvato nei segnalibri
+		_ricarica pagina sicura
+	.POST:
+		_method="post"
+		_i dati sono nel body della richiesta HTTP
+		_lunghezza illimitata
+		_qualsiasi formato
+		_le risposte non vengono memorizzate
+		_non si salva l'url con i dati con i segnalibri
+		
+Utilizzo GET quando:
+	.Recuperi dati senza modificare lo status del server
+	.Vuoi che l'url sia condivisibile
+	.L'operazione è sicura e ripetibile
+
+Utilizzo POST quando:
+	.Invio dati sensibili (password, dati personali)
+	.Modifico dati sul server (creazione, aggiornamento)
+	.Ogni invio produce risultati diversi
+	
+	
+Risposta HTTP
+	Status line: HTTP/2 (protocollo/versione) 200 OK (codice di stato + testo esplicativo)
+	Header lines:
+		_Date: Mon, 22 sep 2025 15:45:00 GMT
+		_Server: Apache/2.4.57 (Unix)
+		_Last-Modified: Mon, 15 Sep 2025 10:00:00 GMT
+		_Content-Type: text/html; charset=UTF-8
+		//da finire
+		
+		
+
+Codici di stato
+	100-199: Informational
+	200-299: Successful (200 OK)
+	300-399: Redirection
+	400-499: Client error (404)
+	500-599: Server error (500)
+	
+Versioni HTTP
+	.1996: HTTP/1.0 (connessione TCP separata per ogni richiesta/risorsa)
+	.1999: HTTP/1.1 (connessioni TCP persistenti riutilizzabili per più richieste)
+	.2015: HTTP/2 (invio e ricezione parallela di più richieste/risposte su una singola connessione , compressione degli header)
+	.2022: HTTP/3 (basato su protocollo QUIC: sostituisce TCP con UDP
