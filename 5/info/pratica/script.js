@@ -26,30 +26,33 @@ function leggiNum(vmin, vmax, msg){
 function convalida(form){
     let nome = form.nome.value;
     let cognome = form.cognome.value;
-    let colore = form.colore.value;
+    let eta = form.eta.value;
     let sesso = form.sesso.value;
-    let strErr = "";
-    let esito = true;
+    let user = form.user.value;
+    let pwd = form.pwd.value;
 
-    if(controllaStr(nome) === false){
-        strErr += "Il nome non va bene\n";
-    }
-    if(controllaStr(cognome) === false){
-        strErr += "Il cognome non va bene\n";
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("nome").addEventListener("blur", () => {
+        nome[0] = nome[0] - 32;
+        if(nome.length < 2)
+            document.getElementById(nomeError).innerHTML = "Deve avere minimo 2 caratteri";
+        });
 
-    if(controllaStr(colore) === false){
-        strErr += "Il colore non è stato scelto\n";
-    }
+        document.getElementById("cognome").addEventListener("blur", () => {
+        cognome[0] = cognome[0] - 32;
+        if(cognome.length < 2)
+            document.getElementById(cognomeError).innerHTML = "Deve avere minimo 2 caratteri";
+        });
 
-    if(controllaStr(sesso) === false){
-        strErr += "Il sesso non è stato scelto\n";
-    }
+        document.getElementById("eta").addEventListener("blur", () => {
+            const ogg=document.getElementById(etaError);
+            if(controllaNum(eta) == false){
+                ogg.innerHTML = "Non hai inserito un'età";
+            }
+            if(eta < 13)
+                ogg.innerHTML = "Devi avere minimo 13 anni";
+        });
+    });
 
-    if(controllaStr(strErr) === true){
-        alert(strErr);
-        esito = false;
-    }
-
-    return esito;
 }
+
