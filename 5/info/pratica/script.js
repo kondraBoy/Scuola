@@ -1,4 +1,4 @@
-    //Guarino Andrea 5BI script.js
+//Guarino Andrea 5BI script.js
 function controllaNum(n){
 	let check = true;
 	if (isNaN(n) || n==null)
@@ -23,6 +23,12 @@ function leggiNum(vmin, vmax, msg){
 	return num;
 }
 
+function minChar(text,numChar,id){
+    const obj = document.getElementbyId(id);
+    if(text.length < numChar)
+        obj.innerHTML = "Deve avere minimo ${numChar} caratteri";
+}
+
 function convalida(form){
     let nome = form.nome.value;
     let cognome = form.cognome.value;
@@ -34,25 +40,54 @@ function convalida(form){
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("nome").addEventListener("blur", () => {
         nome[0] = nome[0] - 32;
-        if(nome.length < 2)
-            document.getElementById(nomeError).innerHTML = "Deve avere minimo 2 caratteri";
+        minChar(nome,2,"nome");
         });
 
         document.getElementById("cognome").addEventListener("blur", () => {
         cognome[0] = cognome[0] - 32;
-        if(cognome.length < 2)
-            document.getElementById(cognomeError).innerHTML = "Deve avere minimo 2 caratteri";
-        });
+        minChar(cognome,2,"cognome");
+        }); 
 
         document.getElementById("eta").addEventListener("blur", () => {
-            const ogg=document.getElementById(etaError);
+            const obj =document.getElementById(etaError);
             if(controllaNum(eta) == false){
-                ogg.innerHTML = "Non hai inserito un'età";
+                obj.innerHTML = "Non hai inserito un'età";
             }
             if(eta < 13)
-                ogg.innerHTML = "Devi avere minimo 13 anni";
+                obj.innerHTML = "Devi avere minimo 13 anni";
+        });
+
+        document.getElementById("pwd").addEventListener("blur", () => {
+            const obj = document.getElementById("pwd");
+            let findCharSpec = false;
+            let findUpper = false;
+            let findLower = false;
+            let caratteriSpeciali = "!£$%&/()=?^-_.;,@#+}§*{}[]";
+            minChar(pwd,8,"pwd");
+            for(let i=0;i<pwd.length;i++){
+                if(caratteriSpeciali.includes().pwd[i]
+                    findCharSpec = true;
+                if(pwd[i] >= 'A' && pwd[i] <= 'Z')
+                    findUpper = tru
+                if(pwd[i] >= 'a' && pwd[i] <= 'z')
+                    findLower = true
+            }
+            if(!findUpper)
+                obj.innerHTML = "Manca una maiuscola";
+            if(!findLower)
+                obj.innerHTML = "Manca una minuscola";
+            if(!findCharSpec)
+                obj.innerHTML = "Manca una carattere speciale tra i seguenti:"!£$%&/()=?^-_.;,@#+}§*{}[];"
+        });
+
+        document.getElementById("sesso").addEventListener("blur", () => {
+            const obj = document.getElementById("sesso");
+            if(sesso === null)
+                obj.innerHTML = "Non hai selezionato nulla"
         });
     });
+
+
 
 }
 
