@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Form</title>
-</head>
-<body>
+  </head>
+  <body>
     <fieldset>
         <legend>Dati personali</legend>
-        <form action ="http://andreabonardi.altervista.org/ricevidati.php" method="POST" onsubmit="return convalida(this)">
+        <form action="http://andreabonardi.altervista.org/ricevidati.php" method="POST" onsubmit="return convalida(this)">
             <label>Nome:</label> 
-            <input type="text" name="nome"><span class="error" id="nomeError"></span><br><br>
+            <input type="text" name="nome" id="nome">
+            <span class="error" id="nomeError"></span><br><br>
+
             <label>Cognome:</label>
-            <input type="text" name="cognome"><span class="error" id="cognomeError"></span><br><br>
+            <input type="text" name="cognome" id="cognome">
+            <span class="error" id="cognomeError"></span><br><br>
+
             <label>Username:</label> 
-            <input type="text" name="user"><span class="error" id="userError"></span><br><br>
+            <input type="text" name="user" id="user">
+            <span class="error" id="userError"></span><br><br>
+
             <label>Password:</label>
-            <input type="text" name="pwd"><span class="error" id="pwdError"></span><br><br>
+            <input type="password" name="pwd" id="pwd">
+            <span class="error" id="pwdError"></span><br><br>
+
             <label>Età:</label>
-            <input type="text" name="eta"><span class="error" id="etaError"></span><br><br>
+            <input type="text" name="eta" id="eta">
+            <span class="error" id="etaError"></span><br><br>
+
             <label>Sesso:</label>
-                <label><input type="radio" name="sesso" value="maschio"> Maschio</label>
-                <label><input type="radio" name="sesso" value="femmina"> Femmina</label><span class="error" id=sessoError></span><br> 
-		<br>
-            <input type="submit" value="invia">
+            <label><input type="radio" name="sesso" id="sesso" value="maschio"> Maschio</label>
+            <label><input type="radio" name="sesso" id="sesso" value="femmina"> Femmina</label>
+            <span class="error" id="sessoError"></span><br><br>
+
+            <input type="submit" value="Invia">
         </form>
+    </fieldset>
+  </body>
+</html>
     </fieldset>
 </body>
 </html>
+
