@@ -23,11 +23,16 @@ function leggiNum(vmin, vmax, msg){
 	return num;
 }
 
-function minChar(text,numChar,id){
+function minChar(text, numChar, id) {
     const obj = document.getElementById(id);
-    if(text.length < numChar)
-        obj.innerHTML = 'Deve avere minimo " + numChar +" caratteri';
+    if (text.length < numChar) {
+        obj.innerHTML = `<p>Deve avere minimo ${numChar} caratteri\n</p>`;
+    }
+    else
+        obj.innerHTML = "";
 }
+
+
 document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("nome").addEventListener("blur", () => {
@@ -43,13 +48,16 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.getElementById("eta").addEventListener("blur", () => {
-     const obj = document.getElementById("etaError");
-     let eta = document.getElementById("eta").value;
-     if(controllaNum(eta) == false){
-       obj.innerHTML = "Non hai inserito un'età";
-     }
-     if(eta < 13)
-       obj.innerHTML = "Devi avere minimo 13 anni";
+    const obj = document.getElementById("etaError");
+    let eta = document.getElementById("eta").value;
+    if(controllaNum(eta) == false){
+      obj.innerHTML = "<p>Non hai inserito un'età</p>";
+    }
+    if(eta < 13)
+      obj.innerHTML = "<p>Devi avere almeno 13 anni</p>";
+    else
+      obj.innerHTML = "";
+       
   });
 
     document.getElementById("pwd").addEventListener("blur", () => {
@@ -58,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let findCharSpec = false;
       let findUpper = false;
       let findLower = false;
+      let findNumber = false;
       let caratteriSpeciali = "!£$%&/()=?^-_.;,@#+}§*{}[]";
       minChar(pwd,8,"pwd");
       for(let i=0;i<pwd.length;i++){
@@ -67,30 +76,26 @@ document.addEventListener("DOMContentLoaded", function() {
           findUpper = true;
         if(pwd[i] >= 'a' && pwd[i] <= 'z')
           findLower = true;
+        if(pwd[i] >= 48 && pwd[i] <= 57)
+          findNumber = true;
       }
-        if(!findUpper)
-          obj.innerHTML = "Manca una maiuscola";
-        if(!findLower)
-          obj.innerHTML = "Manca una minuscola";
-        if(!findCharSpec)
-          obj.innerHTML = "Manca una carattere speciale tra i seguenti: !£$%&/()=?^-_.;,@#+}§*{}[];"
-    });
-
-    document.getElementById("sesso").addEventListener("blur", () => {
-      const radios = document.getElementsByName("sesso");
-      let selezionato = false;
-      for (let i = 0; i < radios.length && selezionato = false; i++) {
-        if (radios[i].checked) {
-          selezionato = true;
-        }
+      if (findCharSpec && findUpper && findLower && findNumber){
+          obj.innerHTML = "";  
       }
-      if (!selezionato) {
-        document.getElementById("sessoError").innerText = "Seleziona un'opzione";
+      if (!findCharSpec) {
+          obj.innerHTML += "<p>Manca una carattere speciale tra i seguenti: !£$%&/()=?^-_.;,@#+}§*{}[];\n</p>"     
+      }   
+      if (!findNumber) {
+          obj.innerHTML += "<p>Manca un numero\n</p>";
       }
-            
+      if (!findLower) {
+          obj.innerHTML += "<p>Manca una minuscola\n</p>";
+      }
+      if (!findUpper) {
+          obj.innerHTML += "<p>Manca una maiuscola\n</p>";        
+      }
     });
 });
-
 
 function convalida(form){
   let valid = true;

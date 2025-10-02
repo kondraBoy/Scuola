@@ -1,0 +1,54 @@
+Un archivio è un insieme organizzato di informazioni caratterizzate da alcune proprietà fondamentali:
+	.esiste un nesso logico tra di esse
+	.sono rappresentate secondo un formato che ne rende possibile l'interpretazione
+	.sono registrate su un dispositivo di memoria secondaria
+
+È costituito da un insieme di record che è identificato dalla sua posizione all'interno dell'archivio: indirizzo logico
+
+In un record ci sono più elementi eterogenei logicamente connessi detti campi
+
+Il file è una struttura di memoria in cui andiamo a memorizzare i dati a livello fisico come 0 e 1, è la struttura adatta a 
+implementare un archivio
+
+Ogni record all'interno del file è individuato tramite indirizzo fisico
+
+Un archivio di dati è sempre implementato mediante uno o più file
+
+La creazione di un archivio richiede la definizione preliminare delle seguenti specifiche:
+	.nome dell'archivio
+	.tracciato del record ()
+	.supporto da usare per archiviare i dati
+	.dimensione massima dell'archivio
+	.organizzazione dell'archivio
+
+Dopo averlo creato si possono effettuare le operazioni di:
+	.inserimento
+	.interrogazione
+	.modifica
+
+I dati tra periferica e memoria centrale vengono trasferiti in blocchi (record fisico) che possono essere a multipli di 2
+
+Tre tipi di organizzazione dei dati:
+	.Organizzazione sequenziale
+	.Organizzazione ad accesso diretto
+	.Organizzazione ad indici
+
+Sequenziale
+I record sono uno di seguito all'altro in modo sequenziale intervallati da sequenze di caratteri di fine record. Consente l'uso di
+record a lunghezza variabile
+
+	.Semplice da gestire
+	.record di lunghezza diversa
+	.file di piccole dimensioni
+	.Scrittura solo in coda
+	.Adatto per operazioni batch
+
+Ad accesso diretto
+I record sono di lunghezza fissa con presenza di caratteri di fine record e quindi si può fare un interrogazione mirata dell'archivio
+(accesso random)
+	
+Organizzazione a indici
+Nasce per identificare record non in base alla posizione occupata nel file ma in base a informazioni contenute nel record stesso
+
+Limiti degli archivi tradizionali
+mn
