@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Form con casella di testo</title>
+</head>
+<body>
+  <h2>Inserisci il tuo nome</h2>
+  <form action="" method="">
+    <label for="nome">Nome:</label>
+    <input type="text" name="bit" pattern="[01]{1}"> <!--{1} omittibile --><br>
+    <input type="text" name="byte" pattern="[01]{8}"><br>
+    <input type="text" name="hexa" pattern="[0-9A-F]"><br>
+    <input type="text" name="sesso" pattern="M|F"><br>
+    <input type="text" name="rgb" pattern="#[0-9A-F]{6}"><br>
+    <input type="text" name="data" pattern="((0-9) | ([12/d] | (3[01]\/(0[1-9]) |) | (1[012]))\/\d{4})"> <!--data--><br>
+    <input type="text" name="floatPoint" pattern="[\-\+]?\d+\.\d+"><br>
+    <input type="text" name="Zola" pattern="{a-zA-Z}{3}_[a-zA-Z]{3}_\w{3}_\w_\.\w"><br>
+    <button type="submit">Invia</button>
+  </form>
+</body>
+</html>
+ 

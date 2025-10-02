@@ -1,0 +1,49 @@
+Nota come regex o regexp, è una sequenza di caratteri che identifica un'insieme di stringhe. Consentono di:
+	
+	.ricercare una stringa all'interno di testo
+	.convalidare input
+	.sostituire del testo
+
+#[0-9A-F]{6}
+
+Deve iniziare con cancelletto, una sequenza di 6 caratteri che va da A a F
+
+.il carattere "." indica un qualsiasi carattere tranne newline, per indicare il "." come carattere ASCII si usa "\."
+
+.il carattere "\d" indica una qualsiasi cifra numerica
+
+.il carattere "\w" un carattere alfanumerico o underscore
+
+.il carattere "\s" un carattere di spaziatura (spazio,tab ecc)
+
+.il carattere "[]" indica un insieme di caratteri validi 
+
+es.  [aeiou] corrisponde a una qualsiasi vocale
+
+NB: è CASE SENSITIVE
+
+     [a-z] corrisponde a qualsiasi carattere minuscolo (intervallo ASCII)
+     [^aeiou] sono ammessi tutti i caratteri tranne quelli elencati dopo "^"
+
+Quantificatori
+
+"?" 0 o 1 occorrenza
+
+"*" 0 o più occorrenze
+
+"+" 1 o più occorrenze (funziona con il required perchè bypassa il pattern)
+
+{} per specificare il numero esatto di occorrenze 
+
+es.
+	\d{3} esattamente 3 cifre
+
+	\d{3,5} da 3 a 5 cifre
+	
+	\d{3,} almeno 3 cifre
+
+Gruppi
+
+Si possono usare le "()" per indicare una porzione di espressione regolare
+
+Si può usare "|" per indicare l'alternativa tra due espressioni
