@@ -1,0 +1,23 @@
+È un linguaggio di scripting server side e necessita di un web server e di un motore php.
+
+Php (Hypertext Preprocessor) è un linguaggio interpretato e i file finiscono in ".php" ed è usato per generare dinamicamente le pagine HTML.
+
+Nel codice php potrebbero esserci interazioni con il DB di riferimento. L'interprete produce in output del codice HTML viene posizionato a posto del blocco di codice che avevamo scritto
+
+L'interprete php può essere configurato in modo dettagliato tramite il file php.ini
+
+Per conoscere la configurazione corrente è possibile richiamare la funzione phpinfo()
+
+È un linguaggio C-like
+
+
+
+///////////////
+
+Se la porta è gia occupata (es. porta 80) dal file http.conf è possibile cambiarla, ma poi dal localhost andrebbe messo in ascolto direttamente sulla porta modificata perchè localhost agisce sulle porte default
+
+//////////////
+
+Nella cartella htdocs ci saranno gli esercizi, si consiglia di utilizzare cartelle separate
+
+Il file php messo crudo nel browser client non viene interpretato ed il file viene restituito come testo
