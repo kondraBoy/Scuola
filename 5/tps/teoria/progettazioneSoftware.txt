@@ -1,0 +1,55 @@
+.Quando dobbiamo realizzare un software il committente ci fornirà tutte le specifiche/specifiche del software che andremo a realizzare
+
+.Chi utilizza il software che andiamo a realizzare si chiama attore, non è perforza una persona interna ma un'entità esterna 
+che può essere a sua volta un sistema a parte
+
+	.Attore principale: È colui che porta a termine il caso d'uso e ne beneficia
+	.Attore secondario: È un attore che interagisce col caso d'uso ma non lo porta a termine, partecipando al suo svolgimento
+
+.Tutte le azioni che gli attori possono compiere si chiamano casi d'uso
+
+.Nella relazione tecnica verrà esplicitato come abbiamo risolto i requisiti del cliente e il resoconto della relazione viene fatto attraverso
+il diagramma di contesto che deve essere fedele alla relazione tecnica 
+
+.Dopo ciò viene fatto il diagramma di Jacobson dove si scelgono 1/2 casi d'uso e si descrivono nel dettaglio il loro funzionamento 
+
+.L'insieme di tutto ciò dà vita al manuale d'uso del software
+
+L'attore si rappresenta con uno stickman con un identificativo in basso univoco (utente che acquista un prodotto != cliente) e non si può mettere
+come attore il sistema che stiamo rappresentando
+
+ Titolo
+
+ _______
+|	|  => dentro al rettangolo tratteggiato che rappresenta il sistena vanno degli ovali con le funzioni
+|	|  
+|	|
+|	|
+|	|
+|	|
+|_______|
+
+Funzionalità: è una caratteristica/azione che il sistema offre 
+
+Caso d'uso: è la modalità con la quale l'attore usufruisce di una funzionalità
+
+Scenario: è l'insieme dei passaggi che un attore deve eseguire per portare a termine un caso d'uso
+
+Il collegamento tra attore e caso d'uso è un segmento a linea continua senza frecce 
+
+Le frecce (si usano per differenziare principale da secondario nello stesso caso d'uso) 
+seguono il flusso nel seguente ordine : principale => caso d'uso => secondario
+
+Inclusione: serve per vincolare dei casi d'uso se e solo se ne ho effettuati altri che dipendono da quest'ultimo (acquisto che richiede la login)
+
+Si rappresenta come segmento tratteggiato con freccia piena che punta al caso d'uso necessario, sulla freccia è necessario scrivere "<<include>>"
+
+Estensione: particolare associazione tra due casi d'uso dove indichiamo che un caso d'uso è facoltativo 
+
+Si rappresenta come segmento tratteggiato con freccia piena che punta al caso d'uso necessario, sulla freccia è necessario scrivere "<<extend>>"
+
+Generalizzazione: concetto legato all'ereditarietà vista nell'OOP, può essere applicata anche ai casi d'uso non solo agli attori
+
+Si rappresenta come segmento normale con freccia vuota con le frecce che partono dai figli verso il padre
+
+Diagramma di Jacobson (post-produzione): è una tabella di cui ci verrà fornito il template e si fa per descrivere in modo molto accurato un caso d'uso
