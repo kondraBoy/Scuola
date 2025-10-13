@@ -8,7 +8,7 @@ L'interprete php può essere configurato in modo dettagliato tramite il file php
 
 Per conoscere la configurazione corrente è possibile richiamare la funzione phpinfo()
 
-È un linguaggio C-like
+È un linguaggio C-like (finire con ;)
 
 
 
@@ -21,3 +21,29 @@ Se la porta è gia occupata (es. porta 80) dal file http.conf è possibile cambi
 Nella cartella htdocs ci saranno gli esercizi, si consiglia di utilizzare cartelle separate
 
 Il file php messo crudo nel browser client non viene interpretato ed il file viene restituito come testo
+
+Non è tipizzato e non c'è keyword per le variabili, unica cosa è che bisogna anteporre al nome della variabile "$"
+
+Se si usa " e si mette $pippo stampa il valore
+
+Se si usa ' per stampare il valore bisogna interrompere e concatenare poi il valore con il carattere "."  .$pippo.
+
+Per utilizzare il carattere " in una stringa "" bisogna utilizzare il carattere di escape: \
+
+Per le funzioni: function nomeFunzione(parametri){return per il valore eventuale di ritorno}
+
+valore restituito = nomeFunzione(eventuali parametri)
+
+Si possono utilzzare anche parametri di default es function saluta($nome = "Dear user") ma se do il valore verrà utilizzato quello che posiziono io
+
+C'è passaggio per valore e referenza come C++, con "&" si passa la referenza
+
+Gli array php derivano dal C ma è un elemento più evoluto
+
+con print_r si stampa il contenuto reale dell'array, possono essere associativi (si accede alla cella con chiave/indice stringa) oppure numerici con indice numerico classico
+
+Ci sonon vari metodi per interagire con gli array
+
+Le variabili che iniziano con $_ sono Array globali di sistema e sono $_GET, $_POST e $_REQUEST e si riempiono in automatico quando arriva una richiesta al server nella coppia chiave valore (name/value in html)
+
+$_REQUEST contiene sia le richieste in GET che in POST
