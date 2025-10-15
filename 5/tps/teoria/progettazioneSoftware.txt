@@ -53,3 +53,14 @@ Generalizzazione: concetto legato all'ereditarietà vista nell'OOP, può essere 
 Si rappresenta come segmento normale con freccia vuota con le frecce che partono dai figli verso il padre
 
 Diagramma di Jacobson (post-produzione): è una tabella di cui ci verrà fornito il template e si fa per descrivere in modo molto accurato un caso d'uso
+
+Esempio di relazione su un supermercato
+
+Il prodotto che andrò a realizzare conterrà un catalogo di prodotti inseriti e modificati da un amministratore che con nome utente e password fornite da me
+potrà accedere al sistema e modificare, inserire e aggiornare i prodotti in catalogo.
+L'utente accedendo al sistema potrà solo visionare i prodotti presenti nel catalogo e qualora decidesse di acquistare qualcosa dovrà registrarsi (utente registrato)
+inserendo (nome, cognome, data di nascita, mail, residenza ecc..). Il sistema una volta che l'utente avrà inserito i dati richiesti nell'apposita maschera invierà
+alla mail indicata in fase di registrazione una mail contenente nome utente e password.
+L'utente nel tempo massimo di 2 giorni dovrà collegarsi al sito e confermare la registrazione inserendo il nome utente e la password fornite; solo allora verrà
+inserito come utente registrato e potrà accedere a tutte le funzionalità offerte dal sistema per l'utente registrato. L'utente registrato potrà scegliere i prodotti,
+inserirli nel carrello e acquistarli.
