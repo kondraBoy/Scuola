@@ -76,4 +76,4 @@ Versioni HTTP
 	.1996: HTTP/1.0 (connessione TCP separata per ogni richiesta/risorsa)
 	.1999: HTTP/1.1 (connessioni TCP persistenti riutilizzabili per più richieste)
 	.2015: HTTP/2 (invio e ricezione parallela di più richieste/risposte su una singola connessione , compressione degli header)
-	.2022: HTTP/3 (basato su protocollo QUIC: sostituisce TCP con UDP
+	.2022: HTTP/3 (basato su protocollo QUIC: sostituisce TCP con UDP)

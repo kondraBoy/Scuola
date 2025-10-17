@@ -1,0 +1,51 @@
+Le reti ethernet e lo strato di collegamento
+
+Dispositivi di rete a livello 2
+
+Al livello 2 si trova lo switch, hub (1)
+
+HUB
+
+.I primi dispositivi utilizzati nel corso degli anni come concentratori sono stati gli hub
+
+.Sono sostanzialmente dei ripetitori di bit che riproducono i bit in ingresso a un'interfaccia su tutte le altre interfacce
+
+.La distanza massima tra un nodo ed un hub è 100m, in caso di malfunzionamento di un adattore l'hub è in grado di rilevarlo e disconnetterlo dalla rete
+
+.Si collocano al livello 1 della pila ISO/OSI
+
+.Possiamo organizzare la rete in modo gerarchico ponendo un hub a livello più alto (backbone hub) al quale connettere i singoli hub, dove ogni singola LAN collegata può essere considerata un segmento di rete
+
+.La creazione di una rete multilivello a hub non comporta aumenti di throughput
+
+.Permettono di creare reti con buona tolleranza ai guasti, in modo da creare segmenti comprendenti pochi host o introducendo ridondanze che permettono il funzionamento della rete anche in presenza di rotture
+di uno o più hub stessi
+
+BRIDGE
+
+.Si colloca al livello 2 della pila ISO/OSI
+
+.A differenza degli hub, che si limitano a ritrasmettere i bit, i bridge ricevono il frame e lo memorizzano in appositi buffer, nel leggono le intestazioni individuando l'host di destinazione e selezionando la ritrasmissione solo sulla linea interessata (link di uscita) con MAC address
+
+.Applicano un filtro sui pacchetti, bloccando i frame che sono destinati allo stesso segmento e inoltrando solo quelli destinati a host presenti su altri segmenti della LAN
+
+.Utilizzando il protocollo CSMA/CD sul segmento LAN di uscita verificando lo stato della linea prima di trasmettere, in quanto l'host destinatario potrebbe avere iniziato a sua una trasmissione (store & forward)
+
+.Isolano i domini di collisione, determinando un aumento complessivo del throughput massimo, non inducono limitazioni sul numero massimo delle stazioni, ne sull'estensione geografica e non richiedono alcuna modifica per la loro instalazione negli adattori dei computer
+
+SWITCH
+
+.Si colloca al livello 2 della pila ISO/OSI
+
+.Sostituisce l'hub e il bridge: commutatore
+
+.In sostanza si tratta di un bridge ad alte prestazioni e dotato di un numero elevato di interfacce
+
+.Utilizzano memorie ad accesso veloce (CAM) [Content Access Memory] per effettuare lo smistamento dei frame
+
+.Garantiscono la banda per ogni stazione collegata alla porta
+
+.Permettono la trasmissione full duplex, cioè sulla stessa interfaccia possono essere spediti e ricevuti frame contemporaneamente
+
+.Abbiamo 5 domini di collisione separati, ma siccome nella inferiore vi sono 3 hub, la banda effettiva dipende dal numero di stazioni effettive collegate all'hub
+

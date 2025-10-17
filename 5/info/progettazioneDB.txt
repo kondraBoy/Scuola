@@ -1,0 +1,33 @@
+Progettazione concettuale
+
+Utilizziamo un modello a zampa di corvo, Crow's Foot. Si rappresentano con rettangoli contenenti il nome dell'entita', al singolare.
+
+Le entita' possono essere descritte usando una serie di attributi. Le entita' che ne necessitano un'altra per esistere sono dette deboli, altrimenti forti.
+
+La chiave primaria (pk) indica un attributo (od insieme di attributi, come codice fiscale e mattricola) che permette di distinguere le varie istanze di una stessa entita'.
+
+La chiave primaria va sottolineata e va scritto fra parentesi (pk) a fianco.
+
+Un attributo e' opzionale quando puo' non essere valorizzato (null), derivato quando puo' essere calcolato con altri attributi (ad esempio l'eta', calcolabile dalla data di nascita) questi non vanno aggiunti al modello.
+
+Le associazioni rappresentano i legami logici fra le entita'.
+
+Solitamente si scrive la frase italiana che rappresenta l'associazione:
+
+Es : "Lo STUDENTE frequenta 1 CLASSE" e "1 classe e' frequentata da piu' studenti".
+
+Associazioni 1:1, 1:N, N:M
+
+Il | indica la cardinalità minima (prova scritta per forza abbinata ad uno studente) mentre 0 (che indica da 0 a *) 
+
+Esistono anche associazioni ricorsive 
+
+Es: Un dipendente (supervisore) coordina uno o più dipendenti, un dipendente è coordinato da un supervisore
+
+Tra entità possono esserci legami gerarchici, come nella OOP
+
+Le gerarchie possono essere classificate
+	.Totale: tutte le entità appartengono per forza a una sottoentità
+	.Parziale: Possono esistere entità della superclasse che non sono in alcuna sottoclasse
+	.Esclusiva: Le sottoclassi non hanno niente in comune
+	.Sovrapposta: Quando oggetti della superclasse appartenga a più sottoclassi
